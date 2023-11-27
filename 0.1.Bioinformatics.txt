@@ -1,3 +1,40 @@
+# First we combine files from each lane
+#we are using the following expression to combine gz files, it is slower than simply glueing them together but I think the compression is better 
+#zcat file1.gz file2.gz file3.gz | gzip -c > allfiles-zcat.gz
+
+
+
+find . -type f -name "*R1*.gz" | awk -F '_' '{print $1}' | sort | uniq |
+while IFS= read -r i; do
+sbatch <<EOL
+#!/bin/bash
+#SBATCH --ntasks=1
+#SBATCH --time=03:00:00
+#SBATCH --mem-per-cpu=60G
+cd /home/gwm297/data/SeaChange_WP2/rawdata
+echo "Merging R1 for $i"
+echo "Current directory: $(pwd)"
+echo "Files for R1: ${i}_L001_R1_001.fastq.gz ${i}_L002_R1_001.fastq.gz ${i}_L003_R1_001.fastq.gz ${i}_L004_R1_001.fastq.gz"
+zcat ${i}_L001_R1_001.fastq.gz ${i}_L002_R1_001.fastq.gz ${i}_L003_R1_001.fastq.gz ${i}_L004_R1_001.fastq.gz | gzip -c > ${i}_R1.fastq.gz
+EOL
+
+sbatch <<EOL
+#!/bin/bash
+#SBATCH --ntasks=1
+#SBATCH --time=03:00:00
+#SBATCH --mem-per-cpu=60G
+cd /home/gwm297/data/SeaChange_WP2/rawdata
+echo "Merging R2 for $i"
+echo "Current directory: $(pwd)"
+echo "Files for R2: ${i}_L001_R2_001.fastq.gz ${i}_L002_R2_001.fastq.gz ${i}_L003_R2_001.fastq.gz ${i}_L004_R2_001.fastq.gz"
+zcat ${i}_L001_R2_001.fastq.gz ${i}_L002_R2_001.fastq.gz ${i}_L003_R2_001.fastq.gz ${i}_L004_R2_001.fastq.gz | gzip -c > ${i}_R2.fastq.gz
+EOL
+done
+
+
+
+
+
 # Trimming and QC of raw demultiplexed reads
 Make a list of samples
 ```
