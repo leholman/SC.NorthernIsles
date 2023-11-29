@@ -3,8 +3,10 @@
 #zcat file1.gz file2.gz file3.gz | gzip -c > allfiles-zcat.gz
 
 
+cd rawdata
 
-find . -type f -name "*R1*.gz" | awk -F '_' '{print $1}' | sort | uniq |
+find . -type f -name "*R1_001.fastq.gz" -printf '%P\n' | awk -F '_' '{print $1"_"$2}' | sort | uniq |
+
 while IFS= read -r i; do
 sbatch <<EOL
 #!/bin/bash
@@ -21,6 +23,7 @@ EOL
 sbatch <<EOL
 #!/bin/bash
 #SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
 #SBATCH --time=03:00:00
 #SBATCH --mem-per-cpu=60G
 cd /home/gwm297/data/SeaChange_WP2/rawdata
@@ -31,23 +34,36 @@ zcat ${i}_L001_R2_001.fastq.gz ${i}_L002_R2_001.fastq.gz ${i}_L003_R2_001.fastq.
 EOL
 done
 
+mv *R1.fastq.gz ../filteredData
+mv *R2.fastq.gz ../filteredData
+cd ../filteredData
+
+# Trimming and QC of raw demultiplexed reads 
+## VSEARCH v2.22.1_linux_x86_64
+## fastp 0.23.4
+
+find . -type f -name "*R1.fastq.gz" -printf '%P\n' | awk -F '_' '{print $1"_"$2}' | sort | uniq |
+while IFS= read -r i; do
+
+sbatch <<EOL
+#!/bin/bash
+#SBATCH --ntasks=8
+#SBATCH --time=03:00:00
+#SBATCH --mem-per-cpu=20G
+cd /home/gwm297/data/SeaChange_WP2/filteredData
+module load fastp
+module load vsearch
+echo "Trimming $i"
+fastp  -i ${i}_R1.fastq.gz -I ${i}_R2.fastq.gz -m --merged_out ${i}.trim.fastq -V --detect_adapter_for_pe -D --dup_calc_accuracy 5  -g -x -q 30 -e 25 -l 25 -y -c -p -h ${i}.fastp.report.html -w 8
+echo "Dedup $i"
+vsearch --fastx_uniques ${i}.trim.fastq --fastqout ${i}.trim.vs.fastq --minseqlength 25 --strand both
+gzip ${i}.trim.vs.fastq
+EOL
+done;
 
 
+##### we are here 
 
-
-# Trimming and QC of raw demultiplexed reads
-Make a list of samples
-```
-ll *R1_001.fastq.gz | awk '{print $9}' | cut -f1 -d_ | uniq > sample.list
-```
-# trim all samples and remove reads less than 30Bp
-```
-cat sample.list | parallel -j 30  '/projects/lundbeck/people/npl206/programmes/fastp  -i {}*R1*.fastq.gz -I {}*R2*.fastq.gz -m --merged_out {}.ppm.fq -V --detect_adapter_for_pe -D --dup_calc_accuracy 5  -g -x -q 30 -e 25 -l 25 -y -c -p -h {}.fastp.report.html -w 8'
-```
-# we then remove duplicates using vsearch and zip the files
-```
-cat sample.list | parallel -j 20 'vsearch --fastx_uniques {}.ppm.fq --fastqout {}.ppm.vs.fq --minseqlength 25 --strand both'
-```
 
 ## Now make a bash script that maps all files against all databases
 #!/bin/bash
