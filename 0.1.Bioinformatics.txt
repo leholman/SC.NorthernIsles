@@ -13,7 +13,7 @@ sbatch <<EOL
 #SBATCH --ntasks=1
 #SBATCH --time=03:00:00
 #SBATCH --mem-per-cpu=60G
-cd /home/gwm297/data/SeaChange_WP2/rawdata
+cd /home/gwm297/data/SeaChange_WP2/0.rawdata
 echo "Merging R1 for $i"
 echo "Current directory: $(pwd)"
 echo "Files for R1: ${i}_L001_R1_001.fastq.gz ${i}_L002_R1_001.fastq.gz ${i}_L003_R1_001.fastq.gz ${i}_L004_R1_001.fastq.gz"
@@ -26,7 +26,7 @@ sbatch <<EOL
 #SBATCH --cpus-per-task=8
 #SBATCH --time=03:00:00
 #SBATCH --mem-per-cpu=60G
-cd /home/gwm297/data/SeaChange_WP2/rawdata
+cd /home/gwm297/data/SeaChange_WP2/0.rawdata
 echo "Merging R2 for $i"
 echo "Current directory: $(pwd)"
 echo "Files for R2: ${i}_L001_R2_001.fastq.gz ${i}_L002_R2_001.fastq.gz ${i}_L003_R2_001.fastq.gz ${i}_L004_R2_001.fastq.gz"
@@ -34,9 +34,9 @@ zcat ${i}_L001_R2_001.fastq.gz ${i}_L002_R2_001.fastq.gz ${i}_L003_R2_001.fastq.
 EOL
 done
 
-mv *R1.fastq.gz ../filteredData
-mv *R2.fastq.gz ../filteredData
-cd ../filteredData
+mv *R1.fastq.gz ../1.concatdata
+mv *R2.fastq.gz ../1.concatdata
+cd ../1.concatdata
 
 # Trimming and QC of raw demultiplexed reads 
 ## VSEARCH v2.22.1_linux_x86_64
@@ -50,7 +50,7 @@ sbatch <<EOL
 #SBATCH --ntasks=8
 #SBATCH --time=03:00:00
 #SBATCH --mem-per-cpu=20G
-cd /home/gwm297/data/SeaChange_WP2/filteredData
+cd /home/gwm297/data/SeaChange_WP2/1.concatdata
 module load fastp
 module load vsearch
 echo "Trimming $i"
@@ -60,6 +60,12 @@ vsearch --fastx_uniques ${i}.trim.fastq --fastqout ${i}.trim.vs.fastq --minseqle
 gzip ${i}.trim.vs.fastq
 EOL
 done;
+
+
+
+mv *.trim.vs.fastq.gz ../2.filtereddata/
+
+
 
 
 ##### we are here 
