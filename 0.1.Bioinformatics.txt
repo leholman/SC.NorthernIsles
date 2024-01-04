@@ -38,6 +38,10 @@ mv *R1.fastq.gz ../1.concatdata
 mv *R2.fastq.gz ../1.concatdata
 cd ../1.concatdata
 
+##### we are here 
+
+
+
 # Trimming and QC of raw demultiplexed reads 
 ## VSEARCH v2.22.1_linux_x86_64
 ## fastp 0.23.4
@@ -47,9 +51,10 @@ while IFS= read -r i; do
 
 sbatch <<EOL
 #!/bin/bash
-#SBATCH --ntasks=8
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
 #SBATCH --time=03:00:00
-#SBATCH --mem-per-cpu=20G
+#SBATCH --mem=100G
 cd /home/gwm297/data/SeaChange_WP2/1.concatdata
 module load fastp
 module load vsearch
@@ -62,13 +67,22 @@ EOL
 done;
 
 
-
 mv *.trim.vs.fastq.gz ../2.filtereddata/
 
 
 
+##TEST
 
-##### we are here 
+#!/bin/bash
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=02:30:00
+#SBATCH --mem=300G
+
+module load bowtie2
+cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/test
+time bowtie2 -k 1000 -x /datasets/mjolnir_databases/refseq/nt/20231201/nt.1 -U LV7009024877-LV7005367193-WP2-028_S28.trim.vs.fastq.gz --no-unal --threads 24  -S test.out.sam
+
 
 
 ## Now make a bash script that maps all files against all databases
