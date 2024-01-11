@@ -38,9 +38,6 @@ mv *R1.fastq.gz ../1.concatdata
 mv *R2.fastq.gz ../1.concatdata
 cd ../1.concatdata
 
-##### we are here 
-
-
 
 # Trimming and QC of raw demultiplexed reads 
 ## VSEARCH v2.22.1_linux_x86_64
@@ -70,18 +67,75 @@ done;
 mv *.trim.vs.fastq.gz ../2.filtereddata/
 
 
+## Lets summarise the results 
 
-##TEST
+find . -type f -name "*.trim.vs.fastq.gz" -printf '%P\n' | awk -F '_' '{print $1"_"$2}' | sort | uniq |
+while IFS= read -r i; do
+
+sbatch <<EOL
+#!/bin/bash
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=0:10:00
+#SBATCH --mem=10G
+
+cd /home/gwm297/data/SeaChange_WP2/1.concatdata
+read_count=\$(zcat "${i}" | grep -c '^@')
+echo "${i},\$read_count" >> vsearch.counts.csv
+EOL
+
+done
+
+
+for fastq_gz_file in *.fastq.gz; do
+    # Get the file name without the path
+    file_name=$(basename "$fastq_gz_file")
+
+    # Use zcat to decompress the file, grep to count lines starting with "@"
+    read_count=$(zcat "$fastq_gz_file" | grep -c '^@')
+
+    # Print the result
+    echo "File: $file_name, Read Count: $read_count"
+done
+
+sort -t',' -k1,1 -o vsearch.counts.csv vsearch.counts.csv 
+
+echo "Sample,sequencing,duplication rate,raw reads,fastP filtered reads,too short reads,low complexity,low quality,GC content,Insert Size Peak,Sample2,dedupReads"> data.summary.output.csv
+
+paste -d ',' \
+  <(ls *html | cut -f1 -d"." ) \
+  <(grep 'sequencing' *html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR % 2 == 1') \
+  <(grep 'duplication rate' *html | cut -f5 -d">" | cut -f1 -d"%") \
+  <(grep 'total reads' *html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR % 2 == 1') \
+  <(grep 'total reads' *html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR % 2 == 0') \
+  <(grep 'reads too short' *html | cut -f5 -d">" | cut -f1 -d"<" | cut -f2 -d"(" | cut -f1 -d"%" ) \
+  <(grep 'low complexity' *html | cut -f5 -d">" | cut -f1 -d"<" | cut -f2 -d"(" | cut -f1 -d"%") \
+  <(grep 'low quality' *html | cut -f5 -d">" | cut -f2 -d"(" | cut -f1 -d"%" ) \
+  <(grep 'GC content' *html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR % 2 == 0') \
+  <(grep 'Insert size peak' *html | cut -f5 -d">" | cut -f1 -d"<" ) \
+  <(cut -d',' -f1 vsearch.counts.csv) \
+  <(cut -d',' -f2 vsearch.counts.csv) \
+  >> data.summary.output.csv
+
+
+
+##### we are here 
+
+##This loop works 
 
 #!/bin/bash
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=25
-#SBATCH --time=02:30:00
+#SBATCH --time=03:00:00
 #SBATCH --mem=300G
 
 module load bowtie2
+module load samtools
 cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/test
-time bowtie2 -k 1000 -x /datasets/mjolnir_databases/refseq/nt/20231201/nt.1 -U LV7009024877-LV7005367193-WP2-028_S28.trim.vs.fastq.gz --no-unal --threads 24  -S test.out.sam
+time bowtie2 -k 1000 -t -x /datasets/mjolnir_databases/refseq/nt/20231201/nt.1 -U LV7009024877-LV7005367193-WP2-028_S28.trim.vs.fastq.gz --no-unal --threads 24  | samtools view -bS - > output.bam
+
+
+####ADD MAKE BAM FILE 
 
 
 
