@@ -129,11 +129,15 @@ find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -nam
 
 # commands generator
 
+find /projects/mjolnir1/data/databases/KapKBH/20230803/phylonorway -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u > databases2.txt
+find /projects/mjolnir1/data/databases/KapKBH/20230803/arctic_animals -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u >> databases2.txt
 
+/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/Undetermined_S0.trim.vs.fastq.gz
+/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024928-LV7005367174-WP2-008_S8.trim.vs.fastq.gz
 
 # Define the input files
 sample_list="samples.txt"
-database_list="databases.txt"
+database_list="databases2.txt"
 
 # Loop through sample names
 while IFS= read -r file; do
@@ -142,8 +146,8 @@ while IFS= read -r file; do
         # Generate the command
         command="bowtie2 -k 1000 -t -x $DB -U $file --no-unal --threads 24  | samtools view -bS - > $(basename $file).$(basename $DB).bam"
         # Print the command to a text file
-        echo "$command" >> commands.txt
-    done < databases.txt
+        echo "$command" >> commands2.txt
+    done < databases2.txt
 done < samples.txt
 
 
@@ -175,6 +179,61 @@ eval "$cmd"
 
 
 ##We are here
+
+find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | grep -oP '(?<=-)(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC)(?=_S[0-9]+\.trim\.vs\.fastq\.gz$)' |
+
+
+find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sed -n 's/.*-\(WP2-[0-9]\+\|ExrNTC\|LibPTC\|ExrPTC_S[0-9]\)\+\.trim\.vs\.fastq\.gz/\1/p'
+
+
+i='/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024928-LV7005367174-WP2-008_S8.trim.vs.fastq.gz'
+
+cat samples.txt |
+while IFS= read -r i; do
+
+sbatch <<EOL
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=6:00:00
+#SBATCH --mem=100G
+
+module load samtools
+cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping
+filename=$(basename "${i}")
+filename2=$(echo "${i}" | sed -n -E 's/.*-(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC)(_S[0-9]+)?\.trim\.vs\.fastq\.gz/\1\2/p')
+
+samtools merge $filename2.merged.sam.gz $filename*.bam -@ 24
+samtools view --threads 24  -H $filename2.merged.sam.gz | gzip > $filename2.merged.Header.sam.gz
+samtools view --threads 24 $filename2.merged.sam.gz | gzip > $filename2.merged.alignment.sam.gz'
+/projects/mjolnir1/people/gwm297/metagenomicsTools/gzsort/gz-sort -S 30G -P 10 $filename2.merged.alignment.sam.gz $filename2.merged.alignment.sort.sam.gz
+zcat $filename2.merged.Header.sam.gz $filename2.merged.alignment.sort.sam.gz | samtools view -h -o $filename2.merged.sort.sam.gz
+
+EOL
+
+#rm *.merged.Header.sam.gz *.merged.alignment.sam.gz *.merged.alignment.sort.sam.gz
+
+done
+
+find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sed -E 's/.*-(WP[0-9]+|ExrNTC|LibPTC|ExrPTC)231009[0-9]+-(WP[0-9]+|ExrNTC|LibPTC|ExrPTC)_S([0-9]+)\.trim\.vs\.fastq\.gz/\1\2-\3/'
+find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sed -n -E '/WP2/s/.*\/([0-9]+-WP2-[0-9]+)_S[0-9]+.trim.vs.fastq.gz$/WP2-\1/p; /WP2/!s/.*\/([^-]+)-[0-9]+_S[0-9]+.trim.vs.fastq.gz$/\1/p'
+find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sed -n 's/.*-\(WP2-[0-9]\+\|ExrNTC\|LibPTC\|ExrPTC_S[0-9]\+\)\+\.trim\.vs\.fastq\.gz/\1/p'
+
+
+/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024928-LV7005367174-WP2-008_S8.trim.vs.fastq.gz
+
+ls /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping/LV7009024914-LV7005367200-WP2-023_S23.trim.vs.fastq.gz.*.bam
+
+## Merge all 
+
+time cat sample.list | parallel -j 2 'samtools merge  {}.merged.sam.gz {}*.bam -@ 24'
+time cat sample.list | parallel -j 2 'samtools view --threads 24  -H {}.merged.sam.gz | gzip > {}.merged.Header.sam.gz'
+time cat sample.list | parallel -j 2 'samtools view --threads 24 {}.merged.sam.gz | gzip > {}.merged.alignment.sam.gz'
+time cat sample.list | parallel -j 2 '/projects/lundbeck/people/npl206/programmes/gz-sort/gz-sort -S 30G -P 10 {}.merged.alignment.sam.gz {}.merged.alignment.sort.sam.gz'
+time cat sample.list | parallel -j 2 'zcat {}.merged.Header.sam.gz {}.merged.alignment.sort.sam.gz | samtools view -h -o {}.merged.sort.sam.gz'
+#rm *.merged.Header.sam.gz *.merged.alignment.sam.gz *.merged.alignment.sort.sam.gz (edited) 
+
+
 
 
 
