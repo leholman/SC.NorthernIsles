@@ -236,7 +236,7 @@ echo 'step 3 complete'
 /projects/mjolnir1/people/gwm297/metagenomicsTools/gzsort/gz-sort -S 100G -P 10 \$filename2.merged.alignment.sam.gz \$filename2.merged.alignment.sort.sam.gz && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step4
 echo 'step 4 complete'
 
-zcat \$filename2.merged.Header.sam.gz \$filename2.merged.alignment.sort.sam.gz | samtools view -h -o \$filename2.merged.sort.sam.gz && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/\$filename2.Step5
+zcat \$filename2.merged.Header.sam.gz \$filename2.merged.alignment.sort.sam.gz | samtools view -h -o \$filename2.merged.sort.sam.gz && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step5
 echo 'FINISHED'
 
 rm \$filename2.merged.Header.sam.gz \$filename2.merged.alignment.sam.gz \$filename2.merged.alignment.sort.sam.gz && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step6delete
