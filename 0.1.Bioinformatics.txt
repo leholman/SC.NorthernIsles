@@ -178,15 +178,7 @@ eval "$cmd"
 ### execute the above sbatch file
 
 
-##We are here
-
-find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | grep -oP '(?<=-)(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC)(?=_S[0-9]+\.trim\.vs\.fastq\.gz$)' |
-
-
-find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sed -n 's/.*-\(WP2-[0-9]\+\|ExrNTC\|LibPTC\|ExrPTC_S[0-9]\)\+\.trim\.vs\.fastq\.gz/\1/p'
-
-
-i='/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024928-LV7005367174-WP2-008_S8.trim.vs.fastq.gz'
+### Now we merge all the files with the below 
 
 cat samples.txt |
 while IFS= read -r i; do
@@ -195,31 +187,41 @@ sbatch <<EOL
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=25
-#SBATCH --time=6:00:00
-#SBATCH --mem=200G
-#SBATCH --job-name MergeTest
-
+#SBATCH --time=2-0:00:00
+#SBATCH --mem=600G
+#SBATCH --job-name Merge
 
 module load samtools
-i='/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024928-LV7005367174-WP2-008_S8.tri$
 cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping
 filename=$(basename "${i}")
-filename2=$(echo "${i}" | sed -n -E 's/.*-(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC)(_S[0-9]+)?\.trim\.vs\.fastq\.$
-samtools merge -f $filename2.merged.sam.gz $filename*.bam -@ 24
+filename2=$(echo "${i}" | sed -n -E 's/.*-(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC)(_S[0-9]+)?\.trim\.vs\.fastq\.gz/\1\2/p')
+#samtools merge -f ../4.merged/$filename2.merged.sam.gz $filename*.bam -@ 24
 echo 'step 1 complete'
-samtools view --threads 24 -H $filename2.merged.sam.gz | gzip > $filename2.merged.Header.sam.gz
+touch 9.monitoring/.$filename2.Step1
+cd ../4.merged
+#samtools view --threads 24 -H $filename2.merged.sam.gz | gzip > $filename2.merged.Header.sam.gz
 echo 'step 2 complete'
-samtools view --threads 24 $filename2.merged.sam.gz | gzip > $filename2.merged.alignment.sam.gz
+touch 9.monitoring/.$filename2.Step2
+#samtools view --threads 24 $filename2.merged.sam.gz | gzip > $filename2.merged.alignment.sam.gz
 echo 'step 3 complete'
-/projects/mjolnir1/people/gwm297/metagenomicsTools/gzsort/gz-sort -S 100G -P 10 $filename2.merged.alignme$
+touch 9.monitoring/.$filename2.Step3
+#/projects/mjolnir1/people/gwm297/metagenomicsTools/gzsort/gz-sort -S 100G -P 10 $filename2.merged.alignment.sam.gz $filename2.merged.alignment.sort.sam.gz
 echo 'step 4 complete'
-zcat $filename2.merged.Header.sam.gz $filename2.merged.alignment.sort.sam.gz | samtools view -h -o $filen$
+touch 9.monitoring/.$filename2.Step4
+zcat $filename2.merged.Header.sam.gz $filename2.merged.alignment.sort.sam.gz | samtools view -h -o $filename2.merged.sort.sam.gz
 echo 'FINISHED'
+touch 9.monitoring/.$filename2.Step5
+rm $filename2.merged.Header.sam.gz $filename2.merged.alignment.sam.gz $filename2.merged.alignment.sort.sam.gz
+touch 9.monitoring/.$filename2.Step6delete
+
 EOL
 
-#rm *.merged.Header.sam.gz *.merged.alignment.sam.gz *.merged.alignment.sort.sam.gz
-
 done
+
+###### EVERYHTING IS DONE NOW
+
+##metaDMG activate! 
+
 
 find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sed -E 's/.*-(WP[0-9]+|ExrNTC|LibPTC|ExrPTC)231009[0-9]+-(WP[0-9]+|ExrNTC|LibPTC|ExrPTC)_S([0-9]+)\.trim\.vs\.fastq\.gz/\1\2-\3/'
 find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sed -n -E '/WP2/s/.*\/([0-9]+-WP2-[0-9]+)_S[0-9]+.trim.vs.fastq.gz$/WP2-\1/p; /WP2/!s/.*\/([^-]+)-[0-9]+_S[0-9]+.trim.vs.fastq.gz$/\1/p'
