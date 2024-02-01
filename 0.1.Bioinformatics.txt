@@ -178,30 +178,6 @@ eval "$cmd"
 ### execute the above sbatch file
 
 
-cat samples.txt |
-while IFS= read -r i; do
-
-sbatch <<EOL
-#!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --cpus-per-task=1
-#SBATCH --time=0:10:00
-#SBATCH --mem=20G
-#SBATCH --job-name test
-
-module load samtools
-cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping
-filename=\$(basename "${i}")
-filename2=\$(echo "${i}" | sed -n -E 's/.*-(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC)(_S[0-9]+)?\.trim\.vs\.fastq\.gz/\1\2/p')
-echo \$filename
-echo \$filename2
-
-EOL
-
-done
-
-
-
 
 ### Now we merge all the files with the below 
 
@@ -219,7 +195,7 @@ sbatch <<EOL
 module load samtools
 cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping
 filename=\$(basename "${i}")
-filename2=\$(echo "${i}" | sed -n -E 's/.*-(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC)(_S[0-9]+)?\.trim\.vs\.fastq\.gz/\1\2/p')
+filename2=\$(echo "${i}" | sed -n -E 's/.*-(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC|LibNTC)(_S[0-9]+)?\.trim\.vs\.fastq\.gz/\1\2/p')
 echo \$filename
 echo \$filename2
 samtools merge -f ../4.merged/\$filename2.merged.sam.gz \$filename*.bam -@ 24 && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step1
