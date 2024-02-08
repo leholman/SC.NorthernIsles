@@ -1,0 +1,83 @@
+### Cleaning shit up! 
+
+
+## First lets remap WP2-011_S11
+
+## Make a list of new mappings to do
+
+ while IFS= read -r DB; do
+        # Generate the command
+        command="bowtie2 -k 1000 -t -x $DB -U $file --no-unal --threads 24  | samtools view -bS - > LV7009024867-LV7005367198-WP2-011_S11.trim.vs.fastq.gz.$(basename $DB).bam"
+         # Print the command to a text file
+echo "$command" >> commandsClean01.txt
+done < databases.txt
+
+
+#!/bin/bash
+#SBATCH --job-name NorthMapclean
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=03:00:00
+#SBATCH --mem=300G
+#SBATCH --array=1-74
+#SBATCH --export=ALL
+#SBATCH --output=NorthMap_%A_%a.out
+
+module load bowtie2
+module load samtools
+echo "SLURM_JOBID: " $SLURM_JOBID
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID
+cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping/
+cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commandsClean01.txt)
+
+# Execute the command or script
+eval "$cmd"
+
+
+
+### DONE
+
+cat CleanUpsamples.txt |sed -n -E 's/.*-(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC|LibNTC)(_S[0-9]+)?\.trim\.vs\.fastq\.gz/\1\2/p'
+
+#next we clean up samples that didn't merge in time
+
+cat CleanUpsamples.txt |
+while IFS= read -r i; do
+
+sbatch <<EOL
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=3-0:00:00
+#SBATCH --mem=600G
+#SBATCH --job-name Merge
+
+module load samtools
+cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping
+filename=\$(basename "${i}")
+filename2=\$(echo "${i}" | sed -n -E 's/.*-(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC|LibNTC)(_S[0-9]+)?\.trim\.vs\.fastq\.gz/\1\2/p')
+echo \$filename
+echo \$filename2
+#samtools merge -f ../4.merged/\$filename2.merged.sam.gz \$filename*.bam -@ 24 && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step1
+#echo 'step 1 complete'
+
+cd ../4.merged
+
+samtools view --threads 24 -H \$filename2.merged.sam.gz | gzip > \$filename2.merged.Header.sam.gz && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step2
+echo 'step 2 complete'
+
+samtools view --threads 24 \$filename2.merged.sam.gz | gzip > \$filename2.merged.alignment.sam.gz && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step3
+echo 'step 3 complete'
+
+/projects/mjolnir1/people/gwm297/metagenomicsTools/gzsort/gz-sort -S 100G -P 10 \$filename2.merged.alignment.sam.gz \$filename2.merged.alignment.sort.sam.gz && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step4
+echo 'step 4 complete'
+
+zcat \$filename2.merged.Header.sam.gz \$filename2.merged.alignment.sort.sam.gz | samtools view -h -o \$filename2.merged.sort.sam.gz && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step5
+echo 'FINISHED'
+
+rm \$filename2.merged.Header.sam.gz \$filename2.merged.alignment.sam.gz \$filename2.merged.alignment.sort.sam.gz && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step6delete
+
+EOL
+
+done 

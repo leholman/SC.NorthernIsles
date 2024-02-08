@@ -122,18 +122,12 @@ paste -d ',' \
 ##### we are here 
 
 #Make a list of databases
-find /datasets/mjolnir_databases/refseq -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u > databases.txt
-find /datasets/mjolnir_databases/refseq -type f -name '*.bt2' | sed -E 's/\.rev\.[0-9]+\.?bt2$|\.?[0-9]+\.?bt2$//' | sort -u >> databases.txt
+find -L /datasets/mjolnir_databases/holi_db -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u > databases.txt
+find -L /datasets/mjolnir_databases/holi_db -type f -name '*.bt2' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u >> databases.txt
 
 find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sort > samples.txt
 
-# commands generator
 
-find /projects/mjolnir1/data/databases/KapKBH/20230803/phylonorway -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u > databases2.txt
-find /projects/mjolnir1/data/databases/KapKBH/20230803/arctic_animals -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u >> databases2.txt
-
-/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/Undetermined_S0.trim.vs.fastq.gz
-/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024928-LV7005367174-WP2-008_S8.trim.vs.fastq.gz
 
 # Define the input files
 sample_list="samples.txt"
@@ -188,7 +182,7 @@ sbatch <<EOL
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=25
-#SBATCH --time=2-0:00:00
+#SBATCH --time=3-0:00:00
 #SBATCH --mem=600G
 #SBATCH --job-name Merge
 
