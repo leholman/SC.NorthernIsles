@@ -122,8 +122,9 @@ paste -d ',' \
 ##### we are here 
 
 #Make a list of databases
-find -L /datasets/mjolnir_databases/holi_db -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u > databases.txt
-find -L /datasets/mjolnir_databases/holi_db -type f -name '*.bt2' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u >> databases.txt
+find -L /datasets/mjolnir_databases/holi_db -type f -name '*.bt2l' -exec readlink -f {} \; | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u > databases.txt
+find -L /datasets/mjolnir_databases/holi_db -type f -name '*.bt2' -exec readlink -f {} \; | sed -E 's/\.rev\.[0-9]+\.?bt2$|\.?[0-9]+\.?bt2$//' | sort -u >> databases.txt
+
 
 find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sort > samples.txt
 

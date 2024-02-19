@@ -1,0 +1,104 @@
+### Cleaning shit up! Second run!
+
+
+## First lets remap WP2-011_S11
+/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024867-LV7005367198-WP2-011_S11.trim.vs.fastq.gz
+/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024889-LV7005367201-WP2-029_S29.trim.vs.fastq.gz
+/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024901-LV7005367209-WP2-030_S30.trim.vs.fastq.gz
+
+## Make a list of new mappings to do
+
+while IFS= read -r file; do
+    # Loop through database names
+    while IFS= read -r DB; do
+        # Generate the command
+        command="bowtie2 -k 1000 -t -x $DB -U $file --no-unal --threads 24  | samtools view -bS - > $(basename $file).$(basename $DB).bam"
+        # Print the command to a text file
+        echo "$command" >> commandsclean03.txt
+    done < databases.txt
+done < Cleansamples.txt
+
+
+
+#!/bin/bash
+#SBATCH --job-name NorthMapclean2
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=03:00:00
+#SBATCH --mem=300G
+#SBATCH --array=1-171
+#SBATCH --export=ALL
+#SBATCH --output=NorthMapClean19Feb_%A_%a.out
+
+module load bowtie2
+module load samtools
+echo "SLURM_JOBID: " $SLURM_JOBID
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID
+cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping/
+cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commandsclean03.txt)
+
+# Execute the command or script
+eval "$cmd"
+
+
+
+### DONE
+
+## now we write a script to remerge LV7009024877-LV7005367193-WP2-028_S28.trim.vs.fastq.gz from step 3
+
+
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=5-0:00:00
+#SBATCH --mem=600G
+#SBATCH --job-name Clean28
+
+module load samtools
+cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping
+echo WP2-028_S28
+
+cd ../4.merged
+
+/projects/mjolnir1/people/gwm297/metagenomicsTools/gzsort/gz-sort -S 100G -P 10 WP2-028_S28.merged.alignment.sam.gz WP2-028_S28.merged.alignment.sort.sam.gz 
+zcat WP2-028_S28.merged.Header.sam.gz WP2-028_S28.merged.alignment.sort.sam.gz | samtools view -h -o WP2-028_S28.merged.sort.sam.gz
+rm WP2-028_S28.merged.Header.sam.gz WP2-028_S28.merged.alignment.sam.gz WP2-028_S28.merged.alignment.sort.sam.gz 
+
+
+### Finally we write something to merge the small control files 
+
+/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024862-LibNTC23100901-LibNTC_S51.trim.vs.fastq.gz
+/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024865-ExrNTC23100901-ExrNTC_S27.trim.vs.fastq.gz
+/projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/LV7009024911-ExrPTC23100901-ExrPTC_S47.trim.vs.fastq.gz
+
+
+
+#next we clean up samples that didn't merge in time
+
+cat ControlCleanup.txt |
+while IFS= read -r i; do
+
+sbatch <<EOL
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=4-0:00:00
+#SBATCH --mem=400G
+#SBATCH --job-name ControlClean
+
+module load samtools
+cd /projects/mjolnir1/people/gwm297/SeaChange_WP2/3.mapping
+filename=\$(basename "${i}")
+filename2=\$(echo "${i}" | sed -n -E 's/.*-(WP2-[0-9]+|ExrNTC|LibPTC|ExrPTC|LibNTC)(_S[0-9]+)?\.trim\.vs\.fastq\.gz/\1\2/p')
+echo \$filename
+echo \$filename2
+samtools merge -f ../4.merged/\$filename2.merged.sam.gz \$filename*.bam -@ 24 && touch /projects/mjolnir1/people/gwm297/SeaChange_WP2/9.monitoring/.\$filename2.Step1
+echo 'merge complete'
+cd ../4.merged
+samtools sort -n -@ 10 -m 10G \$filename2.merged.sam.gz -o \$filename2.merged.sort.sam.gz
+echo 'sort complete'
+
+EOL
+
+done 
