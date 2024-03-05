@@ -21,7 +21,7 @@ done < Cleansamples.txt
 
 
 #!/bin/bash
-#SBATCH --job-name NorthMapclean2
+#SBATCH --job-name NorthMapclean
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=25
 #SBATCH --time=03:00:00
