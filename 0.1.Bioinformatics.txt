@@ -219,18 +219,34 @@ done
 ### now metaDMG
 
 #!/bin/bash
-#SBATCH --job-name metaDMG
+#SBATCH --job-name mDMG02
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=25
-#SBATCH --time=3-00:00:00
+#SBATCH --time=6-00:00:00
 #SBATCH --mem=300G
 #SBATCH --export=ALL
-#SBATCH --output=metaDMG04mar.out
-
+#SBATCH --output=metaDMG05mar.out
+module load anaconda3
 source activate metaDMG
 export LD_LIBRARY_PATH="/home/gwm297/.conda/envs/metaDMG/lib:$LD_LIBRARY_PATH"
 cd /home/gwm297/data/SeaChange_WP2/5.metaDMG
-metaDMG compute config1.yaml
+metaDMG compute config2.yaml
+
+
+#!/bin/bash
+#SBATCH --job-name mDMG.H
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=19
+#SBATCH --time=6-00:00:00
+#SBATCH --mem=400G
+#SBATCH --export=ALL
+#SBATCH --output=metaDMG05mar2.out
+module load anaconda3
+source activate metaDMG
+export LD_LIBRARY_PATH="/home/gwm297/.conda/envs/metaDMG/lib:$LD_LIBRARY_PATH"
+cd /home/gwm297/data/SeaChange_WP2/5.metaDMG
+metaDMG compute configH.yaml
+
 
 
 
