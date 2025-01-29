@@ -11,6 +11,7 @@ library(ggridges)
 library(vegan)
 library(readr)
 library(breakaway)
+library(rioja)
 
 # Here we have made our input into smaller 100MB files and now read them in
 setwd("rawdata/MetagenomicFirstRound/")
@@ -100,6 +101,16 @@ raw.metazoa.1.wide <- raw.metazoa.1 %>%
   )
 
 
+raw.metazoa.wide <- raw.metazoa %>%
+  pivot_wider(
+    id_cols = tax_name,         # Rows will be `tax_name`
+    names_from = sample,        # Columns will be `sample`
+    values_from = N_reads,      # Observations will be `N_reads`
+    values_fill = 0             # Fill missing values with 0
+  )
+
+
+
 # plants
 df1 <- data %>% filter(MAP_damage > DamMin, N_reads >= MinRead, mean_L > MinLength, MAP_significance  > LR,  grepl("Viridiplantae",tax_path), grepl("^genus", tax_rank), grepl("", sample))
 inputdata <- df1
@@ -111,6 +122,15 @@ raw.plants <- inputdata[inputdata$N_reads>99,]
 raw.plants.50 <- inputdata[inputdata$N_reads>49,]
 
 raw.plants.50.wide <- raw.plants.50 %>%
+  pivot_wider(
+    id_cols = tax_name,         # Rows will be `tax_name`
+    names_from = sample,        # Columns will be `sample`
+    values_from = N_reads,      # Observations will be `N_reads`
+    values_fill = 0             # Fill missing values with 0
+  )
+
+
+raw.plants.wide <- raw.plants %>%
   pivot_wider(
     id_cols = tax_name,         # Rows will be `tax_name`
     names_from = sample,        # Columns will be `sample`
@@ -137,6 +157,18 @@ raw.bacteria.50.wide <- raw.bacteria.50 %>%
     values_from = N_reads,      # Observations will be `N_reads`
     values_fill = 0             # Fill missing values with 0
   )
+
+
+raw.bacteria.wide <- raw.bacteria %>%
+  pivot_wider(
+    id_cols = tax_name,         # Rows will be `tax_name`
+    names_from = sample,        # Columns will be `sample`
+    values_from = N_reads,      # Observations will be `N_reads`
+    values_fill = 0             # Fill missing values with 0
+  )
+
+
+
 ```
 
 Now we make some plots, first the animals
@@ -310,16 +342,138 @@ ggplot(richness_plot_data_bacteria, aes(x = age, y = Richness, color = CoreID)) 
   )
 
 
+```
+
+
+
+
+## Beta Div
+
+Now let's examine the structure between samples 
+
+First the animals 
+
+```{r, fig.width=14,fig.height=7.5}
 raw.metazoa.50.wide.d <- as.data.frame(raw.metazoa.50.wide)
 rownames(raw.metazoa.50.wide.d) <- raw.metazoa.50.wide.d[,1]
 raw.metazoa.50.wide.d <- raw.metazoa.50.wide.d[,-c(1,2,3)]
 
+par(mfrow = c(1, 2)) 
 metaz.ord <- metaMDS(vegdist(t(raw.metazoa.50.wide.d),method = "jaccard",binary = TRUE),trymax = 200)
-plot(metaz.ord$points[,1],metaz.ord$points[,2],pch=16,col=as.numeric(as.factor(metadata$CoreID[match(rownames(metaz.ord$points),metadata$Sample)])))
-ordisurf(metaz.ord,metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],add=TRUE)
-text(metaz.ord$points[,1],metaz.ord$points[,2]+0.05,labels=metadata$age[match(rownames(metaz.ord$points),metadata$Sample)])
+metaz.ord.b <- metaMDS(vegdist(t(raw.metazoa.50.wide.d),method = "bray"),trymax = 200)
+plot(metaz.ord$points[,1],metaz.ord$points[,2],pch=16,col=as.numeric(as.factor(metadata$CoreID[match(rownames(metaz.ord$points),metadata$Sample)])),main="Jaccard 50")
+#ordisurf(metaz.ord,metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],add=TRUE)
+text(metaz.ord$points[,1],metaz.ord$points[,2]+0.05,labels=metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],cex=0.8)
+legend("topleft",bty='n', col=c(1,2,3),pch=16,legend=levels(as.factor(metadata$CoreID[match(rownames(metaz.ord.b$points),metadata$Sample)])))
+
+plot(metaz.ord.b$points[,1],metaz.ord.b$points[,2],pch=16,col=as.numeric(as.factor(metadata$CoreID[match(rownames(metaz.ord.b$points),metadata$Sample)])),main="Bray 50")
+#ordisurf(metaz.ord,metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],add=TRUE)
+text(metaz.ord.b$points[,1],metaz.ord.b$points[,2]+0.05,labels=metadata$age[match(rownames(metaz.ord.b$points),metadata$Sample)],cex=0.8)
+legend("topleft",bty='n', col=c(1,2,3),pch=16,legend=levels(as.factor(metadata$CoreID[match(rownames(metaz.ord.b$points),metadata$Sample)])))
+```
+
+Now plants...
+
+```{r, fig.width=14,fig.height=7.5}
+raw.plants.50.wide.d <- as.data.frame(raw.plants.50.wide)
+rownames(raw.plants.50.wide.d) <- raw.plants.50.wide.d[,1]
+raw.plants.50.wide.d <- raw.plants.50.wide.d[,-c(1,2,3)]
+
+par(mfrow = c(1, 2)) 
+metaz.ord <- metaMDS(vegdist(t(raw.plants.50.wide.d),method = "jaccard",binary = TRUE),trymax = 200)
+metaz.ord.b <- metaMDS(vegdist(t(raw.plants.50.wide.d),method = "bray"),trymax = 200)
+plot(metaz.ord$points[,1],metaz.ord$points[,2],pch=16,col=as.numeric(as.factor(metadata$CoreID[match(rownames(metaz.ord$points),metadata$Sample)])),main="Jaccard 50")
+#ordisurf(metaz.ord,metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],add=TRUE)
+text(metaz.ord$points[,1],metaz.ord$points[,2]+0.05,labels=metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],cex=0.8)
+legend("topleft",bty='n', col=c(1,2,3),pch=16,legend=levels(as.factor(metadata$CoreID[match(rownames(metaz.ord.b$points),metadata$Sample)])))
+
+plot(metaz.ord.b$points[,1],metaz.ord.b$points[,2],pch=16,col=as.numeric(as.factor(metadata$CoreID[match(rownames(metaz.ord.b$points),metadata$Sample)])),main="Bray 50")
+#ordisurf(metaz.ord,metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],add=TRUE)
+text(metaz.ord.b$points[,1],metaz.ord.b$points[,2]+0.05,labels=metadata$age[match(rownames(metaz.ord.b$points),metadata$Sample)],cex=0.8)
+legend("topleft",bty='n', col=c(1,2,3),pch=16,legend=levels(as.factor(metadata$CoreID[match(rownames(metaz.ord.b$points),metadata$Sample)])))
+```
 
 
+Finally the bacteria
+
+```{r, fig.width=14,fig.height=7.5}
+raw.bacteria.50.wide.d <- as.data.frame(raw.bacteria.50.wide)
+rownames(raw.bacteria.50.wide.d) <- raw.bacteria.50.wide.d[,1]
+raw.bacteria.50.wide.d <- raw.bacteria.50.wide.d[,-c(1,2,3)]
+
+par(mfrow = c(1, 2)) 
+metaz.ord <- metaMDS(vegdist(t(raw.bacteria.50.wide.d),method = "jaccard",binary = TRUE),trymax = 200)
+metaz.ord.b <- metaMDS(vegdist(t(raw.plants.50.wide.d),method = "bray"),trymax = 200)
+plot(metaz.ord$points[,1],metaz.ord$points[,2],pch=16,col=as.numeric(as.factor(metadata$CoreID[match(rownames(metaz.ord$points),metadata$Sample)])),main="Jaccard 50")
+#ordisurf(metaz.ord,metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],add=TRUE)
+text(metaz.ord$points[,1],metaz.ord$points[,2]+0.05,labels=metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],cex=0.8)
+legend("topleft",bty='n', col=c(1,2,3),pch=16,legend=levels(as.factor(metadata$CoreID[match(rownames(metaz.ord.b$points),metadata$Sample)])))
+
+plot(metaz.ord.b$points[,1],metaz.ord.b$points[,2],pch=16,col=as.numeric(as.factor(metadata$CoreID[match(rownames(metaz.ord.b$points),metadata$Sample)])),main="Bray 50")
+#ordisurf(metaz.ord,metadata$age[match(rownames(metaz.ord$points),metadata$Sample)],add=TRUE)
+text(metaz.ord.b$points[,1],metaz.ord.b$points[,2]+0.05,labels=metadata$age[match(rownames(metaz.ord.b$points),metadata$Sample)],cex=0.8)
+legend("topleft",bty='n', col=c(1,2,3),pch=16,legend=levels(as.factor(metadata$CoreID[match(rownames(metaz.ord.b$points),metadata$Sample)])))
+```
+
+## Taxonomic Overview
+Here we are showing taxonomic diversity for all samples across all cores, including only spp with high certainty (>100 reads), showing only 240 out of 322.
+
+```{r, fig.width=12,fig.height=7.5}
+
+par(mfrow = c(1, 1)) 
+
+
+raw.metazoa.wide.d <- as.data.frame(raw.metazoa.wide)
+rownames(raw.metazoa.wide.d) <- raw.metazoa.wide.d[,1]
+raw.metazoa.wide.d <- raw.metazoa.wide.d[,-1]
+raw.metazoa.wide.d <- raw.metazoa.wide.d[order(rowSums(raw.metazoa.wide.d),decreasing = TRUE),]
+
+strat.plot(t(raw.metazoa.wide.d)[,1:40],yvar = metadata$age[match(colnames(raw.metazoa.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.metazoa.wide.d)[,41:80],yvar = metadata$age[match(colnames(raw.metazoa.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.metazoa.wide.d)[,81:120],yvar = metadata$age[match(colnames(raw.metazoa.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.metazoa.wide.d)[,121:160],yvar = metadata$age[match(colnames(raw.metazoa.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.metazoa.wide.d)[,161:200],yvar = metadata$age[match(colnames(raw.metazoa.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.metazoa.wide.d)[,201:240],yvar = metadata$age[match(colnames(raw.metazoa.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+
+```
+
+Let's have a look at the plants, showing all 166.
+
+
+```{r, fig.width=12,fig.height=7.5}
+
+raw.plants.wide.d <- as.data.frame(raw.plants.wide)
+rownames(raw.plants.wide.d) <- raw.plants.wide.d[,1]
+raw.plants.wide.d <- raw.plants.wide.d[,-1]
+raw.plants.wide.d <- raw.plants.wide.d[order(rowSums(raw.plants.wide.d),decreasing = TRUE),]
+
+strat.plot(t(raw.plants.wide.d)[,1:40],yvar = metadata$age[match(colnames(raw.plants.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.plants.wide.d)[,41:80],yvar = metadata$age[match(colnames(raw.plants.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.plants.wide.d)[,81:120],yvar = metadata$age[match(colnames(raw.plants.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.plants.wide.d)[,121:166],yvar = metadata$age[match(colnames(raw.plants.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+
+```
+
+Finally the bacteria, showing only 360 out of 1049.
+
+```{r, fig.width=12,fig.height=7.5}
+
+raw.bacteria.wide.d <- as.data.frame(raw.bacteria.wide)
+rownames(raw.bacteria.wide.d) <- raw.bacteria.wide.d[,1]
+raw.bacteria.wide.d <- raw.bacteria.wide.d[,-1]
+raw.bacteria.wide.d <- raw.bacteria.wide.d[order(rowSums(raw.bacteria.wide.d),decreasing = TRUE),]
+
+strat.plot(t(raw.bacteria.wide.d)[,1:40],yvar = metadata$age[match(colnames(raw.bacteria.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.bacteria.wide.d)[,41:80],yvar = metadata$age[match(colnames(raw.bacteria.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.bacteria.wide.d)[,81:120],yvar = metadata$age[match(colnames(raw.bacteria.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.bacteria.wide.d)[,121:160],yvar = metadata$age[match(colnames(raw.bacteria.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.bacteria.wide.d)[,161:200],yvar = metadata$age[match(colnames(raw.bacteria.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.bacteria.wide.d)[,201:240],yvar = metadata$age[match(colnames(raw.bacteria.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.bacteria.wide.d)[,241:280],yvar = metadata$age[match(colnames(raw.bacteria.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.bacteria.wide.d)[,281:320],yvar = metadata$age[match(colnames(raw.bacteria.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
+strat.plot(t(raw.bacteria.wide.d)[,321:360],yvar = metadata$age[match(colnames(raw.bacteria.wide.d),metadata$Sample)],y.rev=TRUE,plot.line=FALSE,lwd.bar=3,ylabel = "Age(CalYr BP)",cex.ylabel = 0.8,cex.xlabel = 1,xLeft = 0.1,yBottom = 0.1,ylabPos=3,las=2,col.bar = "orange")
 
 
 ```
+
+
