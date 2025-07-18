@@ -15,6 +15,8 @@ setwd("../../")
 #metadata
 metadata <- read.csv("metadata.csv")
 
+
+
 # Minimum amount of damage filter
 DamMin = 0.0
 D_Max = 1.0

@@ -1,6 +1,57 @@
 ####
-
 data <- read.csv("metadata.csv")
+
+data <- read.csv("PlottingUpdateJun25.csv")
+
+
+status_colors <- c(
+  "_"   = "grey60",
+  "_S"  = "steelblue",
+  "L_"  = "orange",
+  "L_S" = "darkgreen"
+)
+
+pdf("figures/statusJUN2025.pdf",width = 8,height = 3)
+plot(data$Est.Cal.YrBP,as.factor(data$CoreID),ylim=c(0.5,3.5),xlim=c(12000,0),pch="|",col="grey",cex=1.5,yaxt = "n",ylab="",xlab="Estimated Cal. Years BP")
+points(data$Est.Cal.YrBP[grep("L",data$Status)],as.factor(data$CoreID)[grep("L",data$Status)],ylim=c(0.5,3.5),xlim=c(12000,0),pch="-",col="grey25")
+axis(2, at = 1:3, labels = levels(as.factor(data$CoreID)), las = 1)
+dev.off()
+
+status_colors <- c(
+  "_"   = "grey60",
+  "_S"  = "steelblue",
+  "L_"  = "orange",
+  "L_S" = "darkgreen"
+)
+
+status_labels <- c(
+  "_"   = "Being sequenced",
+  "_S"  = "Sequenced",
+  "L_"  = "Lipids only",
+  "L_S" = "Sequenced + Lipids"
+)
+
+# Create a standalone legend plot
+pdf("figures/statusJUN2025_legend.pdf", width = 4, height = 3)
+
+# Empty plot
+plot.new()
+par(mar = c(0, 0, 0, 0))  # remove margins
+legend("center",
+       legend = status_labels,
+       col = status_colors,
+       pch = 15,
+       pt.cex = 2,
+       cex = 1.2,
+       bty = "n",
+)
+
+dev.off()
+
+
+# Example usage in a plot:
+plot(x, y, col = status_colors[as.factor(data$Status)])
+
 
 
 datin <- data[data$CoreID=="PC012",]
