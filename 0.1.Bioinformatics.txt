@@ -139,19 +139,41 @@ cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands.txt)
 # Execute the command or script
 eval "$cmd"
 
+######## we are here 22 July - set off mapping with not NT databases 
+grep -v "/nt/" databases.txt > databases.noNT.txt
 
+# Define the input files
+sample_list="samples.txt"
+database_list="databases.noNT.txt"
 
+# Empty the output file
+> commands.txt
+
+# Loop through sample names
+while IFS= read -r file; do
+    # Extract base sample name without suffix
+    loopfile=$(basename "$file" | sed -E 's/.trim.vs.d1.fastq.gz$//')
+ mkdir $loopfile
+    # Loop through database names
+    while IFS= read -r DB; do
+        # Generate the command
+        command="bowtie2 -k 1000 -t -x $DB -U $file --no-unal --threads 24 | samtools view -bS - > ${loopfile}/${loopfile}.$(basename $DB).bam"
+        
+        # Print the command to a text file
+        echo "$command" >> commands.txt
+    done < "$database_list"
+done < "$sample_list"
 
 
 ##### slurm command bash script (sbatch script) OBS change array 1-46 should be the number of lines in the command.txt file
 
 #!/bin/bash
-#SBATCH --job-name NorthMap
+#SBATCH --job-name NorthMap25
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=25
-#SBATCH --time=03:00:00
+#SBATCH --time=04:00:00
 #SBATCH --mem=300G
-#SBATCH --array=1-7056
+#SBATCH --array=1-6048
 #SBATCH --export=ALL
 #SBATCH --output=NorthMap_%A_%a.out
 
@@ -165,12 +187,6 @@ cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands.txt)
 
 # Execute the command or script
 eval "$cmd"
-
-
-
-
-
-
 
 
 ### basement
