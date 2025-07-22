@@ -5,6 +5,8 @@
 # July 2025
 ###############################################################################
 
+#### 1.0 Quality check and preprocessing
+
 ## First we run this script to QC, merge and discard poor sequences before mapping
 ls *_R1.fastq.gz | sed 's/_R1.fastq.gz$//' | sort | uniq |
 while IFS= read -r i; do
@@ -35,6 +37,135 @@ echo "${i},\$read_count" >> vsearch.counts.csv
 mv ${i}.trim.vs.d1.fastq.gz ../1.premapping/${i}.trim.vs.d1.fastq.gz
 EOL
 done;
+
+### now we extract all the outputs from the html files
+ls *.fastp.report.html | sed 's/.fastp.report.html//' | sort > sample_names.txt
+sort -t',' -k1,1 vsearch.counts.csv > sorted.vsearch.counts.csv
+
+echo "Sample,sequencing,duplication rate,raw reads,fastP filtered reads,too short reads,low complexity,low quality,GC content,Insert Size Peak,no overlap percent,ID2,premapping reads" > data.summary.output.csv
+
+paste -d ',' \
+  sample_names.txt \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'sequencing' $f.fastp.report.html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR==1'); echo "${val:-NA}"; done) \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'duplication rate' $f.fastp.report.html | cut -f5 -d">" | cut -f1 -d"%"); echo "${val:-NA}"; done) \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'total reads' $f.fastp.report.html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR==1'); echo "${val:-NA}"; done) \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'total reads' $f.fastp.report.html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR==2'); echo "${val:-NA}"; done) \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'reads too short' $f.fastp.report.html | cut -f5 -d">" | cut -f1 -d"<" | cut -f2 -d"(" | cut -f1 -d"%"); echo "${val:-NA}"; done) \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'low complexity' $f.fastp.report.html | cut -f5 -d">" | cut -f1 -d"<" | cut -f2 -d"(" | cut -f1 -d"%"); echo "${val:-NA}"; done) \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'low quality' $f.fastp.report.html | cut -f5 -d">" | cut -f2 -d"(" | cut -f1 -d"%"); echo "${val:-NA}"; done) \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'GC content' $f.fastp.report.html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR==2'); echo "${val:-NA}"; done) \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'Insert size peak' $f.fastp.report.html | cut -f5 -d">" | cut -f1 -d"<"); echo "${val:-NA}"; done) \
+  <(for f in $(cat sample_names.txt); do val=$(grep 'This estimation is based on paired-end overlap analysis' $f.fastp.report.html | sed -E 's/.* ([0-9]+\.[0-9]+)% .*/\1/'); echo "${val:-NA}"; done) \
+  <(cut -d',' -f1 sorted.vsearch.counts.csv) \
+  <(cut -d',' -f2 sorted.vsearch.counts.csv) \
+  >> data.summary.output.csv
+
+#### 2.1 Eukaryotic Mapping 
+cd ../2.mapping
+find -L /datasets/globe_databases/holi_db \( -name '*.bt2' -o -name '*.bt2l' \) |
+
+# ── 1. Pick newest date for each family (refseq/plant, nt, etc.) ──
+awk -F/ '
+{
+  fam  = $(NF-3) "/" $(NF-2);   # e.g. refseq/plant
+  date = $(NF-1);               # e.g. 20250505
+  line = $0;                    # full path including part-number & extension
+
+  # remember newest date
+  if (date > newest[fam]) newest[fam] = date;
+
+  # keep every line, keyed by fam|date
+  bucket[fam, date] = bucket[fam, date] ? bucket[fam, date] ORS line : line;
+}
+END {
+  # spit out only lines that belong to the newest date for each family
+  for (key in bucket) {
+    split(key, a, SUBSEP); fam = a[1]; date = a[2];
+    if (date == newest[fam]) print bucket[key];
+  }
+}' |
+
+# ── 2. Now strip .rev.N.bt2[l] or .N.bt2[l] so we have a clean prefix ──
+sed -E 's/\.rev\.[0-9]+\.?bt2l?$|\.?[0-9]+\.?bt2l?$//' |
+
+# ── 3. Remove any duplicates that are left ──
+sort -u > databases.txt
+
+## find samples
+find /projects/seachange/people/gwm297/SeaChange_WP2/1.premapping/ -type f -name '*fastq.gz' | sort > samples.txt
+
+
+# Define the input files
+sample_list="samples.txt"
+database_list="databases.txt"
+
+# Empty the output file
+> commands.txt
+
+# Loop through sample names
+while IFS= read -r file; do
+    # Extract base sample name without suffix
+    loopfile=$(basename "$file" | sed -E 's/.trim.vs.d1.fastq.gz$//')
+ mkdir $loopfile
+    # Loop through database names
+    while IFS= read -r DB; do
+        # Generate the command
+        command="bowtie2 -k 1000 -t -x $DB -U $file --no-unal --threads 24 | samtools view -bS - > ${loopfile}/${loopfile}.$(basename $DB).bam"
+        
+        # Print the command to a text file
+        echo "$command" >> commands.txt
+    done < "$database_list"
+done < "$sample_list"
+
+## test boi
+#!/bin/bash
+#SBATCH --job-name NorthMap
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=03:00:00
+#SBATCH --mem=300G
+#SBATCH --array=23,145,982,1245,2003,3567,4001,5032,6000,6999
+#SBATCH --export=ALL
+#SBATCH --output=NorthMap_%A_%a.out
+
+module load bowtie2
+module load samtools
+echo "SLURM_JOBID: " $SLURM_JOBID
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID
+cd /projects/seachange/people/gwm297/SeaChange_WP2/2.mapping/
+cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands.txt)
+
+# Execute the command or script
+eval "$cmd"
+
+
+
+
+
+##### slurm command bash script (sbatch script) OBS change array 1-46 should be the number of lines in the command.txt file
+
+#!/bin/bash
+#SBATCH --job-name NorthMap
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=03:00:00
+#SBATCH --mem=300G
+#SBATCH --array=1-7056
+#SBATCH --export=ALL
+#SBATCH --output=NorthMap_%A_%a.out
+
+module load bowtie2
+module load samtools
+echo "SLURM_JOBID: " $SLURM_JOBID
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID
+cd /projects/seachange/people/gwm297/SeaChange_WP2/2.mapping/
+cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands.txt)
+
+# Execute the command or script
+eval "$cmd"
+
 
 
 
@@ -168,8 +299,8 @@ paste -d ',' \
 ##### we are here 
 
 #Make a list of databases
-find -L /datasets/mjolnir_databases/holi_db -type f -name '*.bt2l' -exec readlink -f {} \; | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u > databases.txt
-find -L /datasets/mjolnir_databases/holi_db -type f -name '*.bt2' -exec readlink -f {} \; | sed -E 's/\.rev\.[0-9]+\.?bt2$|\.?[0-9]+\.?bt2$//' | sort -u >> databases.txt
+find -L /datasets/globe_databases/holi_db -type f -name '*.bt2l' -exec readlink -f {} \; | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sed -E '/\/2023[0-9]{4}\//d' | sort -u > databases.txt
+find -L /datasets/globe_databases/holi_db -type f -name '*.bt2' -exec readlink -f {} \; | sed -E 's/\.rev\.[0-9]+\.?bt2$|\.?[0-9]+\.?bt2$//' | sed -E '/\/2023[0-9]{4}\//d' |sort -u >> databases.txt
 
 
 find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sort > samples.txt

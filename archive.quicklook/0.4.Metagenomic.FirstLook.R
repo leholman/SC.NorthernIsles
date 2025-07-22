@@ -11,6 +11,7 @@ setwd("rawdata/MetagenomicFirstRound/")
 con <- pipe("cat part.gz_* | gunzip -c", "rb")
 data <- read_csv(con)
 close(con)
+data2 <-read.csv("results.csv")
 setwd("../../")
 #metadata
 metadata <- read.csv("metadata.csv")
