@@ -1,0 +1,170 @@
+#################HOLI_pipeline_prefiltering_updatedJul2025 - Overview###################
+
+#Merging step (if needed)
+#echo "Current directory: $(pwd)"
+#echo "Files for R1: ${i}_22LJMFLT4_L7_1.fq.gz ${i}_22MH55LT4_L7_1.fq.gz"
+#zcat ${i}_22LJMFLT4_L7_1.fq.gz ${i}_22MH55LT4_L7_1.fq.gz | gzip -c > ${i}_L7_1.fastq.gz
+
+#echo "Files for R2: ${i}_22LJMFLT4_L7_2.fq.gz ${i}_22MH55LT4_L7_2.fq.gz"
+#zcat ${i}_22LJMFLT4_L7_2.fq.gz ${i}_22MH55LT4_L7_2.fq.gz | gzip -c > ${i}_L7_2.fastq.gz
+
+#Trimming and quality control
+echo "Trimming $i"
+fastp  -i ${i}_R1.fastq.gz -I ${i}_R2.fastq.gz -m --merged_out ${i}.trim.fastq -V --detect_adapter_for_pe -D --dup_calc_accuracy 5 -g -x -q 30 -e 25 -l 30 -y -c -p -h ${i}.fastp.report.html -w 8
+echo "Dedup $i"
+
+vsearch --fastx_uniques ${i}.trim.fastq --fastqout ${i}.trim.vs.fastq --minseqlength 30 --strand both
+read_count=\$(zcat "${i}.trim.vs.fastq" | grep -c '^@')
+echo "${i},\$read_count" >> vsearch.counts.csv
+
+sga preprocess --dust-threshold=4 -m 30 ${i}.trim.vs.fastq  -o ${i}.trim.vs.d1.fastq
+gzip ${i}.trim.vs.d1.fastq
+
+#summary overview
+echo "Sample,sequencing,duplication rate,raw reads,fastP filtered reads,too short reads,low complexity,low quality,GC content,Insert Size Peak,Sample2,dedupReads"> data.summary.output.csv
+
+paste -d ',' \
+  <(ls *html | cut -f1 -d"." ) \
+  <(grep 'sequencing' *html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR % 2 == 1') \
+  <(grep 'duplication rate' *html | cut -f5 -d">" | cut -f1 -d"%") \
+  <(grep 'total reads' *html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR % 2 == 1') \
+  <(grep 'total reads' *html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR % 2 == 0') \
+  <(grep 'reads too short' *html | cut -f5 -d">" | cut -f1 -d"<" | cut -f2 -d"(" | cut -f1 -d"%" ) \
+  <(grep 'low complexity' *html | cut -f5 -d">" | cut -f1 -d"<" | cut -f2 -d"(" | cut -f1 -d"%") \
+  <(grep 'low quality' *html | cut -f5 -d">" | cut -f2 -d"(" | cut -f1 -d"%" ) \
+  <(grep 'GC content' *html | cut -f5 -d">" | cut -f1 -d"<" | awk 'NR % 2 == 0') \
+  <(grep 'Insert size peak' *html | cut -f5 -d">" | cut -f1 -d"<" ) \
+  <(cut -d',' -f1 vsearch.counts.csv) \
+  <(cut -d',' -f2 vsearch.counts.csv) \
+  >> data.summary.output.csv
+
+#Mapping - databases
+##MAPPING - Eukaryotic db
+find /datasets/globe_databases/refseq -type f -name '*.bt2' | sed -E 's/\.rev\.[0-9]+\.?bt2$|\.?[0-9]+\.?bt2$//' | sort -u > databases.txt
+find /projects/seachange/people/mxd270/mxd270/shell_middens_2025/2.filterredata/ -type f -name '*.trim.vs.fastq.gz' | sort > samples.txt
+
+# Define the input files
+sample_list="samples.txt"
+database_list="databases.txt"
+
+# Loop through sample names
+while IFS= read -r file; do
+    # Loop through database names
+    while IFS= read -r DB; do
+        # Generate the command
+        command="bowtie2 -k 1000 -t -x $DB -U $file --no-unal --threads 24  | samtools view -bS - > $(basename $file).$(basename $DB).bam"
+        # Print the command to a text file
+        echo "$command" >> commands.txt
+    done < databases.txt
+done < samples.txt
+
+###Mapping - GTDB
+/projects/seachange/scratch/hires-organelles-viruses-smags/pkg/db
+find /projects/seachange/scratch/hires-organelles-viruses-smags/pkg/db -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2$|\.?[0-9]+\.?bt2$//' | sort -u > gtdb_database.txt
+
+# Define the input files
+sample_list="samples.txt"
+database_list="gtdb_smags.txt"
+
+# Loop through sample names
+while IFS= read -r file; do
+    # Loop through database names
+    while IFS= read -r DB; do
+        # Generate the command
+        command="bowtie2 --threads 24 -x $DB -k 1000 -D 15 -R 2 -N 1 -L 22 -i S,1,1.15 --np 1 --mp '1,1' --rdg '0,1' --rfg '0,1' --score-min 'L,0,-0.1' --mm --no-unal -U $file | samtools view -bS - > $(basename $file).$(basename $DB).bam"
+        # Print the command to a text file
+        echo "$command" >> commands_gtdb.txt
+    done < gtdb_smags.txt
+done < samples.txt
+##########Post- processing alignments - path B (step X)
+
+##1.postprocessing - GTDB files
+#sorting - adjust based on file size
+samtools sort -@ 12 -m 8G -o ${filename}.sort.bam $file
+
+#categorise bacterial reads from GTDB (conda environment - 'get-reads-taxonomy')- https://github.com/genomewalker/get-reads-taxonomy
+conda activate get-reads-taxonomy
+
+getRTax --bam ${filename}.bam -T /projects/seachange/scratch/hires-organelles-viruses-smags/pkg/misc/hires-organelles-viruses-smags.tax.tsv -r '{\"domain\":[\"d__Bacteria\", \"d__Archaea\", \"d__Viruses\"]}' --threads 10 --unique --only-read-ids -p ${filename}.bact_reads.txt
+
+zcat ${filename}.bact_reads.txt* > ${filename}.bact_reads_all.txt
+
+##2.postprocessing - Eukaryotic reads
+#mergeing eukaryotic files only
+samtools merge -f ${filename}.merged.sam.gz ${filename}.*.bam -@ 24
+
+#compressbam eukaryotic files only
+/projects/seachange/apps/metaDMG-cpp/misc/compressbam --threads 20 --input ${filename}.merged.sam.gz --output ${filename}.merged.compressed.bam &> ${filename}.merged.compressed.log.txt
+
+#3.Remove bacterial reads from BAMfiles
+samtools view -h ${filename}.merged.compressed.bam | grep -v -F -f ${filename}.hires-organelles-viruses-smags.sort.bact_reads_all.txt | samtools view -@ 10 -b -o ${filename}.no_bact.bam
+
+#4.FilterBAM on new bamfiles with no bacterial reads iDS - adjust memory flags based on size files - https://github.com/genomewalker/bam-filter
+samtools sort -n -@ 10 -m 10G -o ${filename}.no_bact.sort_n.bam ${filename}.no_bact.bam
+
+filterBAM reassign --bam ${filename}.no_bact.bam -t 6 -i 1 -A 92 -m 20G -n 3 -s 0.0 --squarem-min-improvement 0.001 --squarem-max-step-factor 2.0 -o ${filename}.no_bact.reassign.bam &> ${filename}.no_bact.reassign.log.txt
+#filterBAM filter -e 0.6 -m 8G -t 8 -n 3 -A 92 -a 94 -N --bam ${filename}.no_bact.reassign.bam --stats ${filename}.no_bact.reassign.stats.tsv.gz --stats-filtered ${filename}.no_bact.reassign.stats-filtered.tsv.gz --bam-filtered ${filename}.no_bact.reassign.filtered.bam
+
+#5.metaDMG
+samtools sort -n -@ 10 -m 10G -o ${filename}.no_bact.sort_n.bam ${filename}.no_bact.reassign.filtered.bam
+
+echo "Processing sample: $SAMPLE"
+
+# Step 5.1: Taxonomic classification
+/projects/seachange/apps/metaDMG-cpp/metaDMG-cpp lca \
+  --names /datasets/globe_databases/holi_db/ncbitaxtaxjan2024/names.dmp \
+  --nodes /datasets/globe_databases/holi_db/ncbitaxtaxjan2024/nodes.dmp \
+  --acc2tax /datasets/globe_databases/holi_db/ncbitaxtaxjan2024/combinedAcc2taxaIDjan2024.gz \
+  --sim_score_low 0.95 --sim_score_high 1.0 --how_many 15 --weight_type 0 \
+  --fix_ncbi 0 --threads 8 --filtered_acc2tax $OUTPUT_PATH/${SAMPLE}.no_bact.sort_n.acc2tax \
+  --bam $INPUT_PATH/${SAMPLE}.no_bact.sort_n.bam \
+  --out_prefix $OUTPUT_PATH/${SAMPLE}.no_bact.sort_n
+
+# Step 5.2: Damage estimation
+/projects/seachange/apps/metaDMG-cpp/metaDMG-cpp dfit \
+  $OUTPUT_PATH/${SAMPLE}.no_bact.sort_n.bdamage.gz --threads 6 \
+  --names /datasets/globe_databases/holi_db/ncbitaxtaxjan2024/names.dmp \
+  --nodes /datasets/globe_databases/holi_db/ncbitaxtaxjan2024/nodes.dmp \
+  --showfits 2 --nopt 10 --nbootstrap 20 --doboot 1 --seed 1234 --lib ds \
+  --out_prefix $OUTPUT_PATH/${SAMPLE}.no_bact.sort_n
+
+# Step 5.3: Aggregation
+/projects/seachange/apps/metaDMG-cpp/metaDMG-cpp aggregate \
+  $OUTPUT_PATH/${SAMPLE}.no_bact.sort_n.bdamage.gz \
+  --names /datasets/globe_databases/holi_db/ncbitaxtaxjan2024/names.dmp \
+  --nodes /datasets/globe_databases/holi_db/ncbitaxtaxjan2024/nodes.dmp \
+  --lcastat $OUTPUT_PATH/${SAMPLE}.no_bact.sort_n.stat.gz \
+  --dfit $OUTPUT_PATH/${SAMPLE}.no_bact.sort_n.dfit.gz \
+  --out_prefix $OUTPUT_PATH/${SAMPLE}.no_bact.sort_n.agg
+
+echo "Sample ${SAMPLE} completed successfully."
+
+#Create final concateated output
+gunzip *.agg.stat.gz
+
+#Define header for final output table
+header_file="LV7008867405_MKDL250001184-1A.trim.vs.fastq.gz.no_bact.sort_n.agg.stat"
+
+# Get the header
+header=$(head -n 1 "$header_file")
+
+# Add the header to the concatenated file
+echo -e "filename\t$header" > concatenated_metaDMG_final.tsv
+
+for file in LV7008867405_MKDL250001184-1A.trim.vs.fastq.gz.no_bact.sort_n.agg.stat \
+	    LV7008867406_MKDL250001184-1A.trim.vs.fastq.gz.no_bact.sort_n.agg.stat \
+            LV7008867407_MKDL250001184-1A.trim.vs.fastq.gz.no_bact.sort_n.agg.stat \
+           .....
+do
+    tail -n +2 "$file" | while read -r line; do
+        echo -e "$file\t$line" >> concatenated_metaDMG_final.tsv
+    done
+done
+
+#########################################to be installed conda
+sga - bioconda
+getRTax - https://github.com/genomewalker/get-reads-taxonomy
+filterBAM - faster version - https://github.com/genomewalker/bam-filter
+
+
+

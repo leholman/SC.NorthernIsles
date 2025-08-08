@@ -140,6 +140,15 @@ cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands.txt)
 eval "$cmd"
 
 ######## we are here 22 July - set off mapping with not NT databases 
+
+### some have failed 
+
+sacct -j 38511125 --name=NorMap --format "JobID%20,JobName,Partition,NodeList,Elapsed,CPUTime,ReqMem,MaxRSS,State%15, AllocTRES%32_" | grep "CANCELLED" | cut -d'.' -f1| cut -d'_' -f2 > failed.txt 
+
+
+
+
+
 grep -v "/nt/" databases.txt > databases.noNT.txt
 
 # Define the input files
@@ -187,6 +196,106 @@ cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands.txt)
 
 # Execute the command or script
 eval "$cmd"
+
+###### NOW WE RUN THE NT 
+
+find /projects/seachange/people/gwm297/NCBIntBUILD -type f -name '*.bt2l' |  sed -E 's/\.rev\.[0-9]+\.?bt2l?$|\.?[0-9]+\.?bt2l?$//' | sort -u > databases.nt.txt
+
+# Define the input files
+sample_list="samples.txt"
+database_list="databases.nt.txt"
+
+
+while IFS= read -r file; do
+    # Extract base sample name without suffix
+    loopfile=$(basename "$file" | sed -E 's/.trim.vs.d1.fastq.gz$//')
+ mkdir $loopfile
+    # Loop through database names
+    while IFS= read -r DB; do
+        # Generate the command
+        command="bowtie2 -k 1000 -t -x $DB -U $file --no-unal --threads 24 | samtools view -bS - > ${loopfile}/${loopfile}.$(basename $DB).bam"
+        
+        # Print the command to a text file
+        echo "$command" >> commands.nt.txt
+    done < "$database_list"
+done < "$sample_list"
+
+#!/bin/bash
+#SBATCH --job-name NtMapper
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=12:00:00
+#SBATCH --mem=300G
+#SBATCH --array=1-2464%15
+#SBATCH --export=ALL
+#SBATCH --output=NorthNtMap_%A_%a.out
+
+module load bowtie2
+module load samtools
+echo "SLURM_JOBID: " $SLURM_JOBID
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID
+cd /projects/seachange/people/gwm297/SeaChange_WP2/2.mapping/
+cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands.nt.txt)
+
+# Execute the command or script
+eval "$cmd"
+
+
+
+
+## NOW THE BACTERIA  
+find /projects/seachange/scratch/hires-organelles-viruses-smags/pkg/db -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u > gtdb_database.txt
+
+
+# Loop through sample names
+while IFS= read -r file; do
+    # Loop through database names
+    while IFS= read -r DB; do
+        # Generate the command
+        command="bowtie2 --threads 24 -x $DB -k 1000 -D 15 -R 2 -N 1 -L 22 -i S,1,1.15 --np 1 --mp '1,1' --rdg '0,1' --rfg '0,1' --score-min 'L,0,-0.1' --mm --no-unal -U $file | samtools view -bS - > /projects/seachange/people/gwm297/SeaChange_WP2/3.bacmapping/$(basename $file).$(basename $DB).bam"
+        # Print the command to a text file
+        echo "$command" >> commands_gtdb.txt
+    done < gtdb_database.txt
+done < samples.txt
+
+#!/bin/bash
+#SBATCH --job-name NorBacMap
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=12:00:00
+#SBATCH --mem=400G
+#SBATCH --array=1-112%15
+#SBATCH --export=ALL
+#SBATCH --output=NorBacMap_%A_%a.out
+
+module load bowtie2
+module load samtools
+echo "SLURM_JOBID: " $SLURM_JOBID
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID
+cd /projects/seachange/people/gwm297/SeaChange_WP2/3.bacmapping
+cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands_gtdb.txt)
+
+# Execute the command or script
+eval "$cmd"
+
+sacct -j 38801731   --format="JobID%20,State" -P --noheader | grep "CANCELLED" | cut -d'.' -f1 | cut -d'_' -f2 | sort -n | paste -sd, \
+> failed_bac_array.txt
+
+### now we resubmit these lines with more time 
+sbatch \
+  --job-name=BacRetry \
+  --array=$(cat failed_bac_array.txt)%10 \
+  --time=1-12:00:00 \
+  bacmap.sh
+
+
+
+
+
+
+
 
 
 ### basement
@@ -312,8 +421,6 @@ paste -d ',' \
 
 
 
-##### we are here 
-
 #Make a list of databases
 find -L /datasets/globe_databases/holi_db -type f -name '*.bt2l' -exec readlink -f {} \; | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sed -E '/\/2023[0-9]{4}\//d' | sort -u > databases.txt
 find -L /datasets/globe_databases/holi_db -type f -name '*.bt2' -exec readlink -f {} \; | sed -E 's/\.rev\.[0-9]+\.?bt2$|\.?[0-9]+\.?bt2$//' | sed -E '/\/2023[0-9]{4}\//d' |sort -u >> databases.txt
@@ -321,7 +428,7 @@ find -L /datasets/globe_databases/holi_db -type f -name '*.bt2' -exec readlink -
 
 find /projects/mjolnir1/people/gwm297/SeaChange_WP2/2.filtereddata/ -type f -name '*.trim.vs.fastq.gz' | sort > samples.txt
 
-
+cp samples.txt ../3.bacmapping
 
 # Define the input files
 sample_list="samples.txt"
@@ -364,6 +471,84 @@ cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands.txt)
 eval "$cmd"
 
 ### execute the above sbatch file
+ ### lets check for failures 
+sacct -j 38511125 --name=NorMap \
+  --format="JobID%20,State" -P --noheader \
+| grep "CANCELLED" \
+| cut -d'.' -f1 \
+| cut -d'_' -f2 \
+| sort -n \
+| paste -sd, \
+> failed_array_indices.txt
+
+
+### now we resubmit these lines with more time 
+sbatch \
+  --job-name=NorMapRetry \
+  --array=$(cat failed_array_indices.txt)%10 \
+  --time=8:00:00 \
+  NorthMap.noNT.sh
+  
+  
+   ### lets check for failures 
+sacct -j 38741423   --format="JobID%20,State" -P --noheader | grep "CANCELLED" | cut -d'.' -f1 | cut -d'_' -f2 | sort -n | paste -sd, \
+> failed_array_indices_2.txt
+
+
+### now we resubmit these lines with more time 
+sbatch \
+  --job-name=NorMapRetry2 \
+  --array=$(cat failed_array_indices_2.txt)%10 \
+  --time=24:00:00 \
+  NorthMap.noNT.sh
+
+
+
+## now the bacterial mapping 
+find /projects/seachange/scratch/hires-organelles-viruses-smags/pkg/db -type f -name '*.bt2l' | sed -E 's/\.rev\.[0-9]+\.?bt2l$|\.?[0-9]+\.?bt2l$//' | sort -u > gtdb_database.txt
+
+
+# Loop through sample names
+while IFS= read -r file; do
+    # Loop through database names
+    while IFS= read -r DB; do
+        # Generate the command
+        command="bowtie2 --threads 24 -x $DB -k 1000 -D 15 -R 2 -N 1 -L 22 -i S,1,1.15 --np 1 --mp '1,1' --rdg '0,1' --rfg '0,1' --score-min 'L,0,-0.1' --mm --no-unal -U $file | samtools view -bS - > /projects/seachange/people/gwm297/SeaChange_WP2/3.bacmapping/$(basename $file).$(basename $DB).bam"
+        # Print the command to a text file
+        echo "$command" >> commands_gtdb.txt
+    done < gtdb_database.txt
+done < samples.txt
+
+#!/bin/bash
+#SBATCH --job-name NorBacMap
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=12:00:00
+#SBATCH --mem=400G
+#SBATCH --array=1-112%15
+#SBATCH --export=ALL
+#SBATCH --output=NorBacMap_%A_%a.out
+
+module load bowtie2
+module load samtools
+echo "SLURM_JOBID: " $SLURM_JOBID
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID
+cd /projects/seachange/people/gwm297/SeaChange_WP2/3.bacmapping
+cmd=$(awk -v line=$SLURM_ARRAY_TASK_ID 'NR == line {print $0}' commands_gtdb.txt)
+
+# Execute the command or script
+eval "$cmd"
+
+sacct -j 38801731   --format="JobID%20,State" -P --noheader | grep "CANCELLED" | cut -d'.' -f1 | cut -d'_' -f2 | sort -n | paste -sd, \
+> failed_bac_array.txt
+
+### now we resubmit these lines with more time 
+sbatch \
+  --job-name=BacRetry \
+  --array=$(cat failed_bac_array.txt)%10 \
+  --time=1-12:00:00 \
+  bacmap.sh
 
 
 
