@@ -289,12 +289,246 @@ sbatch \
   --array=$(cat failed_bac_array.txt)%10 \
   --time=1-12:00:00 \
   bacmap.sh
+  
+
+
+sacct -j 38898749   --format="JobID%20,State" -P --noheader | grep "CANCELLED" | cut -d'.' -f1 | cut -d'_' -f2 | sort -n | paste -sd, \
+> failed_bac_array2.txt
+
+
+### now we resubmit these lines with more time 
+sbatch \
+  --job-name=BacRetry2 \
+  --array=$(cat failed_bac_array2.txt)%10 \
+  --time=3-00:00:00 \
+  bacmap.sh
+
+
+#!/bin/bash
+#SBATCH --job-name=NorBacCat
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=12
+#SBATCH --time=1-00:00:00
+#SBATCH --mem=128G
+#SBATCH --array=1-1
+#SBATCH --chdir=/projects/seachange/people/gwm297/SeaChange_WP2/3.bacmapping
+#SBATCH --output=/projects/seachange/people/gwm297/SeaChange_WP2/3.bacmapping/logs/%x_%A_%a.out
+#SBATCH --error=/projects/seachange/people/gwm297/SeaChange_WP2/3.bacmapping/logs/%x_%A_%a.err
+
+set -euo pipefail
+set -x
+
+# config
+SAMPLES="${SAMPLES:-/projects/seachange/people/gwm297/SeaChange_WP2/3.bacmapping/samples.txt}"
+TAX="/projects/seachange/scratch/hires-organelles-viruses-smags/pkg/misc/hires-organelles-viruses-smags.tax.tsv"
+
+mkdir -p logs
+
+# pick line N
+line="$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$SAMPLES")"
+[ -n "$line" ] || { echo "No line ${SLURM_ARRAY_TASK_ID} in $SAMPLES"; exit 1; }
+
+base="$(basename "$line")"                          # WP2.001.trim.vs.d1.fastq.gz
+stem="${base%.trim.vs.d1.fastq.gz}"                 # WP2.001
+bam="${base}.hires-organelles-viruses-smags.bam"    # matches your files
+sorted="${stem}.sort.bam"
+
+# 1) sort BAM
+module load conda
+source ~/.bashrc
+module load samtools
+samtools sort -@ 12 -m 8G -o "$sorted" "$bam"
+
+# 2) get-reads-taxonomy
+if command -v conda >/dev/null 2>&1; then
+  eval "$(conda shell.bash hook)"
+  conda activate get-reads-taxonomy
+else
+  echo "conda not found in PATH"; exit 2
+fi
+
+getRTax \
+  --bam "$sorted" \
+  -T "$TAX" \
+  -r '{"domain":["d__Bacteria","d__Archaea","d__Viruses"]}' \
+  --threads 10 \
+  --unique \
+  --only-read-ids \
+  -p "${stem}.bact_reads.txt"
+
+# 3) merge outputs
+zcat "${stem}.bact_reads.txt"* > "${stem}.bact_reads_all.txt"
+
+
+cd /projects/seachange/people/gwm297/SeaChange_WP2/3.bacmapping
+mkdir -p logs
+N=$(wc -l < samples.txt)
+echo "Submitting $N tasks…"
+sbatch --array=1-"$N"%20 \
+--time=3-00:00:00 \
+       --export=ALL,SAMPLES=$(readlink -f samples.txt) \
+       bac_array.sh
+
+
+
+sbatch \
+  --job-name=BacRemap \
+  --array=3 \
+  --time=4-00:00:00 \
+  --mem=250G \
+  bac_array.sh
 
 
 
 
 
 
+##### WE ARE HERE - test the below
+
+#!/bin/bash
+#SBATCH --job-name=PostMerge
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=24
+#SBATCH --time=2-00:00:00
+#SBATCH --mem=300G
+#SBATCH --array=1-1
+#SBATCH --chdir=/projects/seachange/people/gwm297/SeaChange_WP2
+#SBATCH --output=/projects/seachange/people/gwm297/SeaChange_WP2/4.merged/logs/%x_%A_%a.out
+#SBATCH --error=/projects/seachange/people/gwm297/SeaChange_WP2/4.merged/logs/%x_%A_%a.err
+
+set -euo pipefail
+set -x
+
+module load conda
+source ~/.bashrc
+
+ROOT="/projects/seachange/people/gwm297/SeaChange_WP2"
+MAP2="$ROOT/2.mapping"
+BAC="$ROOT/3.bacmapping"
+MERGED="$ROOT/4.merged"
+SAMPLES="${SAMPLES:-$MAP2/samples.txt}"
+
+mkdir -p "$MERGED/logs"
+
+# Nth line -> sample
+line="$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$SAMPLES")"
+[ -n "$line" ] || { echo "No line ${SLURM_ARRAY_TASK_ID} in $SAMPLES"; exit 1; }
+
+base="$(basename "$line")"            # e.g. WP2.003.trim.vs.d1.fastq.gz
+filename="${base%.trim.vs.d1.fastq.gz}"
+sdir="$MAP2/$filename"
+
+
+module load samtools || true
+
+########################################
+## 2. postprocessing – Eukaryotic reads
+########################################
+
+# merging eukaryotic files only  (inputs from 2.mapping/<sample>, output to 4.merged)
+samtools merge -f "$MERGED/${filename}.merged.sam.gz" "$sdir/${filename}."*.bam -@ 24
+
+# compressbam eukaryotic files only  (in 4.merged)
+/projects/seachange/apps/metaDMG-cpp/misc/compressbam --threads 20 \
+  --input "$MERGED/${filename}.merged.sam.gz" \
+  --output "$MERGED/${filename}.merged.compressed.bam" \
+  &> "$MERGED/${filename}.merged.compressed.log.txt"
+
+# switch to 4.merged so the rest of your commands are EXACT as written
+cd "$MERGED"
+
+########################################
+## 3. Remove bacterial reads from BAMfiles
+########################################
+samtools view -h "${filename}.merged.compressed.bam" \
+  | grep -v -F -f "$BAC/${filename}.bact_reads_all.txt" \
+  | samtools view -@ 10 -b -o "${filename}.no_bact.bam"
+
+########################################
+## 4. FilterBAM on new bamfiles with no bacterial reads iDS
+##    (adjust memory flags based on size files)
+########################################
+samtools sort -n -@ 10 -m 10G -o "${filename}.no_bact.sort_n.bam" "${filename}.no_bact.bam"
+
+# make sure filterBAM is available (activate your env if needed)
+if command -v conda >/dev/null 2>&1; then
+  eval "$(conda shell.bash hook)"
+  set +u
+  conda activate bam-filter || true
+  set -u
+fi
+
+filterBAM reassign --bam "${filename}.no_bact.sort_n.bam" -t 6 -i 1 -A 92 -m 20G -n 3 -s 0.0 \
+  --squarem-min-improvement 0.001 --squarem-max-step-factor 2.0 \
+  -o "${filename}.no_bact.reassign.bam" \
+  &> "${filename}.no_bact.reassign.log.txt"
+
+# filter step left commented exactly as you wrote it:
+# filterBAM filter -e 0.6 -m 8G -t 8 -n 3 -A 92 -a 94 -N \
+#   --bam ${filename}.no_bact.reassign.bam \
+#   --stats ${filename}.no_bact.reassign.stats.tsv.gz \
+#   --stats-filtered ${filename}.no_bact.reassign.stats-filtered.tsv.gz \
+#   --bam-filtered ${filename}.no_bact.reassign.filtered.bam
+
+########################################
+## 5. metaDMG
+########################################
+samtools sort -n -@ 10 -m 10G -o "${filename}.no_bact.sort_n.bam" "${filename}.no_bact.reassign.bam"
+
+
+
+sacct -j 39952179   --format="JobID%20,State" -P --noheader | grep -v "COMPLETED" | cut -d'.' -f1 | cut -d'_' -f2 | cut -d'|' -f1 | sort -u -n | paste -sd, > failed.merge.txt
+
+
+sbatch \
+  --job-name=Merge2 \
+  --array=$(cat failed.merge.txt)%10 \
+  --time=4-00:00:00 \
+  --mem=500G \
+  PostMerge.sh
+
+--array=2,3,6
+
+sbatch \
+  --job-name=Merge2 \
+  --array=33 \
+  --time=5-00:00:00 \
+  --mem=600G \
+  PostMerge.sh
+
+
+cd /projects/seachange/people/gwm297/data/SeaChange_WP2/4.merged
+mkdir -p logs
+N=$(wc -l < ../2.mapping/samples.txt)
+sbatch --array=1-"$N"%20 \
+--time=3-00:00:00 \
+       --export=ALL,SAMPLES=$(readlink -f ../2.mapping/samples.txt) \
+        PostMerge.sh
+
+
+
+
+cd /projects/seachange/people/gwm297/data/SeaChange_WP2/4.merged
+mkdir -p logs
+sbatch --array=14 \
+       --export=ALL,SAMPLES=$(readlink -f 2.mapping/samples.txt) \
+       PostMerge.sh
+
+
+
+cd /projects/seachange/people/gwm297/data/SeaChange_WP2/4.merged
+mkdir -p logs
+sbatch --array=1-112 PostMerge.sh
+
+
+
+sbatch --array=13 \
+       --export=ALL,SAMPLES=$(readlink -f 2.mapping/samples.txt) \
+       post_array.sbatch
+       
+sbatch --array=14 \
+       --export=ALL,SAMPLES=$(readlink -f 2.mapping/samples.txt) \
+       PostMerge.sh
 
 
 
@@ -549,6 +783,28 @@ sbatch \
   --array=$(cat failed_bac_array.txt)%10 \
   --time=1-12:00:00 \
   bacmap.sh
+
+
+
+
+
+
+
+
+module load samtools 
+samtools sort -@ 12 -m 8G -o ${filename}.sort.bam $file
+
+#categorise bacterial reads from GTDB (conda environment - 'get-reads-taxonomy')- https://github.com/genomewalker/get-reads-taxonomy
+conda activate get-reads-taxonomy
+
+getRTax --bam ${filename}.bam -T /projects/seachange/scratch/hires-organelles-viruses-smags/pkg/misc/hires-organelles-viruses-smags.tax.tsv -r '{\"domain\":[\"d__Bacteria\", \"d__Archaea\", \"d__Viruses\"]}' --threads 10 --unique --only-read-ids -p ${filename}.bact_reads.txt
+
+zcat ${filename}.bact_reads.txt* > ${filename}.bact_reads_all.txt
+
+
+
+
+
 
 
 
