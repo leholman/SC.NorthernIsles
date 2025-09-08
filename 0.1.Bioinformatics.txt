@@ -373,7 +373,7 @@ sbatch --array=1-"$N"%20 \
 
 sbatch \
   --job-name=BacRemap \
-  --array=3 \
+  --array=6 \
   --time=4-00:00:00 \
   --mem=250G \
   bac_array.sh
@@ -474,6 +474,77 @@ filterBAM reassign --bam "${filename}.no_bact.sort_n.bam" -t 6 -i 1 -A 92 -m 20G
 ## 5. metaDMG
 ########################################
 samtools sort -n -@ 10 -m 10G -o "${filename}.no_bact.sort_n.bam" "${filename}.no_bact.reassign.bam"
+
+
+
+
+#### Great now we run metaDMG on all the sorted bam files 
+
+cd ../5.metaDMG/
+realpath ../4.merged/*.sort_n.bam | sed 's|.*/maps/|/|' > samples.txt
+
+
+
+#!/bin/bash
+#SBATCH --job-name=metaDMG
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=18
+#SBATCH --time=2-00:00:00
+#SBATCH --mem=100G
+#SBATCH --array=1-1
+#SBATCH --output=/projects/seachange/people/gwm297/SeaChange_WP2/5.metaDMG/logs/%x_%A_%a.out
+#SBATCH --error=/projects/seachange/people/gwm297/SeaChange_WP2/5.metaDMG/logs/%x_%A_%a.err
+
+set -euo pipefail
+
+SAMPLES="/projects/seachange/people/gwm297/SeaChange_WP2/5.metaDMG/samples.txt"
+NCBI_DIR="/projects/seachange/people/gwm297/databases/NCBItaxJan2024/NCBItaxJul2025"
+
+NAMES="$NCBI_DIR/names.dmp"
+NODES="$NCBI_DIR/nodes.dmp"
+ACC2TAX="$NCBI_DIR/combinedAcc2taxaIDjul2025.txt.gz"
+
+OUTDIR="/projects/seachange/people/gwm297/SeaChange_WP2/5.metaDMG"
+LOGDIR="$OUTDIR/logs"; mkdir -p "$LOGDIR"
+
+
+# Pick sample
+bam="$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$SAMPLES" || true)"
+[ -n "${bam:-}" ] || { echo "No line ${SLURM_ARRAY_TASK_ID} in $SAMPLES"; exit 1; }
+
+# Derive sample id (strip suffix)
+bam_base="$(basename "$bam")"
+sample="${bam_base%.no_bact.sort_n.bam}"
+prefix="$OUTDIR/${sample}"
+
+# 5.1 LCA
+/projects/seachange/apps/metaDMG-cpp/metaDMG-cpp lca \
+  --names "$NAMES" --nodes "$NODES" --acc2tax "$ACC2TAX" \
+  --sim_score_low 0.95 --sim_score_high 1.0 --how_many 15 --weight_type 0 \
+  --fix_ncbi 0 --threads 16 \
+  --filtered_acc2tax "${prefix}.acc2tax" \
+  --bam "$bam" --out_prefix "$prefix"
+
+# 5.2 Damage fit
+/projects/seachange/apps/metaDMG-cpp/metaDMG-cpp dfit \
+  "${prefix}.bdamage.gz" --threads 16 \
+  --names "$NAMES" --nodes "$NODES" \
+  --showfits 2 --nopt 10 --nbootstrap 20 --doboot 1 --seed 1234 --lib ds \
+  --out_prefix "$prefix"
+
+# 5.3 Aggregate
+/projects/seachange/apps/metaDMG-cpp/metaDMG-cpp aggregate \
+  "${prefix}.bdamage.gz" \
+  --names "$NAMES" --nodes "$NODES" \
+  --lcastat "${prefix}.stat.gz" --dfit "${prefix}.dfit.gz" \
+  --out_prefix "${prefix}.agg"
+
+
+
+
+
+
+
 
 
 
