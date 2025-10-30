@@ -458,22 +458,22 @@ if command -v conda >/dev/null 2>&1; then
   set -u
 fi
 
-filterBAM reassign --bam "${filename}.no_bact.sort_n.bam" -t 6 -i 1 -A 92 -m 20G -n 3 -s 0.0 \
-  --squarem-min-improvement 0.001 --squarem-max-step-factor 2.0 \
-  -o "${filename}.no_bact.reassign.bam" \
-  &> "${filename}.no_bact.reassign.log.txt"
+#filterBAM reassign --bam "${filename}.no_bact.sort_n.bam" -t 6 -i 1 -A 92 -m 20G -n 3 -s 0.0 \
+#  --squarem-min-improvement 0.001 --squarem-max-step-factor 2.0 \
+#  -o "${filename}.no_bact.reassign.bam" \
+#  &> "${filename}.no_bact.reassign.log.txt"
 
 # filter step left commented exactly as you wrote it:
-# filterBAM filter -e 0.6 -m 8G -t 8 -n 3 -A 92 -a 94 -N \
-#   --bam ${filename}.no_bact.reassign.bam \
-#   --stats ${filename}.no_bact.reassign.stats.tsv.gz \
-#   --stats-filtered ${filename}.no_bact.reassign.stats-filtered.tsv.gz \
-#   --bam-filtered ${filename}.no_bact.reassign.filtered.bam
+ filterBAM filter -e 0.6 -m 8G -t 8 -n 3 -A 92 -a 94 -N \
+   --bam "${filename}.no_bact.sort_n.bam" \
+   --stats ${filename}.no_bact.reassign.stats.tsv.gz \
+   --stats-filtered ${filename}.no_bact.reassign.stats-filtered.tsv.gz \
+   --bam-filtered ${filename}.no_bact.reassign.filtered.bam
 
 ########################################
 ## 5. metaDMG
 ########################################
-samtools sort -n -@ 10 -m 10G -o "${filename}.no_bact.sort_n.bam" "${filename}.no_bact.reassign.bam"
+samtools sort -n -@ 10 -m 10G -o "${filename}.no_bact.sort_n.bam" "${filename}.no_bact.reassign.filtered.bam"
 
 
 
@@ -542,7 +542,21 @@ prefix="$OUTDIR/${sample}"
 
 
 
+Now merge 
 
+{
+  # Get header from the first file
+  zcat "$(ls *.agg.stat.gz | head -1)" | head -n 1 | awk '{print "filename\t"$0}'
+
+  # Loop through each file
+  for f in *.agg.stat.gz; do
+    # Strip directory path if present
+    fname=$(basename "$f")
+
+    # Skip header, add filename first
+    zcat "$f" | tail -n +2 | awk -v name="$fname" '{print name"\t"$0}'
+  done
+} > merged.txt
 
 
 
@@ -554,7 +568,7 @@ sacct -j 39952179   --format="JobID%20,State" -P --noheader | grep -v "COMPLETED
 sbatch \
   --job-name=Merge2 \
   --array=$(cat failed.merge.txt)%10 \
-  --time=4-00:00:00 \
+  --time=5-00:00:00 \
   --mem=500G \
   PostMerge.sh
 
@@ -562,7 +576,7 @@ sbatch \
 
 sbatch \
   --job-name=Merge2 \
-  --array=33 \
+  --array=3,6 \
   --time=5-00:00:00 \
   --mem=600G \
   PostMerge.sh
@@ -572,7 +586,8 @@ cd /projects/seachange/people/gwm297/data/SeaChange_WP2/4.merged
 mkdir -p logs
 N=$(wc -l < ../2.mapping/samples.txt)
 sbatch --array=1-"$N"%20 \
---time=3-00:00:00 \
+--time=5-00:00:00 \
+--mem=500G \
        --export=ALL,SAMPLES=$(readlink -f ../2.mapping/samples.txt) \
         PostMerge.sh
 
