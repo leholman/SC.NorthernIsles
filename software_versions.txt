@@ -1,0 +1,69 @@
+# Recorded 2026-10-22 15:01:00 on mjolnircomp06fl.unicph.domain
+
+== fastp
+fastp 0.24.0
+
+== vsearch
+vsearch v2.30.0_linux_x86_64, 503.3GB RAM, 128 cores
+https://github.com/torognes/vsearch
+
+
+== sga
+String Graph Assembler (sga) Version 0.10.15
+Written by Jared Simpson.
+
+
+== bowtie2
+/opt/software/bowtie2/2.4.2/bowtie2-align-s version 2.4.2
+64-bit
+Built on envmodbld02pl.unicph.domain
+
+== samtools
+samtools 1.21
+Using htslib 1.21
+Copyright (C) 2024 Genome Research Ltd.
+
+== modules loaded
+Currently Loaded Modulefiles:
+conda/25.1.1
+fastp/0.24.0
+vsearch/2.30.0
+bowtie2/2.4.2
+samtools/1.21
+
+== filterBAM
+filterBAM 2.0.0+30.g2b73003
+
+bam-filter                2.0.0+30.g2b73003          pypi_0    pypi
+pysam                     0.23.3                   pypi_0    pypi
+python                    3.9.23          hc30ae73_0_cpython    conda-forge
+
+== getRTax
+getRTax 0.0.3
+
+get-reads-taxonomy        0.0.3                    pypi_0    pypi
+python                    3.9.23          hc30ae73_0_cpython    conda-forge
+
+== compressbam (metaDMG-cpp)
+fatal: detected dubious ownership in repository at '/maps/projects/seachange-AUDIT/apps/metaDMG-cpp'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /maps/projects/seachange-AUDIT/apps/metaDMG-cpp
+
+== holi_db releases (2.mapping/databases.txt)
+archaea/20250505
+arctic_animals/20230803
+fungi/20250505
+invertebrate/20250505
+mito/20250505
+nt/20250722
+phylonorway/20250127
+plant/20250505
+plastid/20250505
+protozoa/20250505
+vertebrate_mammalian/20250505
+vert_other/20250505
+viral/20250505
+
+== microbial DB (3.bacmapping)
+drwxr-sr-x. 2 mxd270 comp-prj-seachange 376 2025-05-14 /projects/seachange-AUDIT/scratch/hires-organelles-viruses-smags/pkg/db
