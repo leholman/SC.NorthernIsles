@@ -1,0 +1,2412 @@
+taxid	name	rank	kingdom	blank_thr	n_blanks_seen
+1	root	no rank	NA	164806	6
+131567	cellular organisms	cellular root	NA	164806	6
+2	Bacteria	domain	NA	162452	3
+3379134	Pseudomonadati	kingdom	Pseudomonadati	159813	3
+1224	Pseudomonadota	phylum	Pseudomonadati	159797	3
+28216	Betaproteobacteria	class	Pseudomonadati	149018	3
+80840	Burkholderiales	order	Pseudomonadati	148943	3
+506	Alcaligenaceae	family	Pseudomonadati	148384	2
+222	Achromobacter	genus	Pseudomonadati	147886	1
+85698	Achromobacter xylosoxidans	species	Pseudomonadati	146606	1
+119060	Burkholderiaceae	family	Pseudomonadati	18283	2
+32008	Burkholderia	genus	Pseudomonadati	18265	2
+87882	Burkholderia cepacia complex	species group	Pseudomonadati	18264	2
+488447	Burkholderia contaminans	species	Pseudomonadati	14556	2
+28211	Alphaproteobacteria	class	Pseudomonadati	10154	3
+76892	Caulobacteraceae	family	Pseudomonadati	9953	2
+204458	Caulobacterales	order	Pseudomonadati	9953	2
+41275	Brevundimonas	genus	Pseudomonadati	9884	2
+41276	Brevundimonas vesicularis	species	Pseudomonadati	6789	1
+2759	Eukaryota	domain	NA	6131	6
+33154	Opisthokonta	domain	NA	5431	6
+6072	Eumetazoa	kingdom	Metazoa	5385	6
+33208	Metazoa	kingdom	Metazoa	5385	6
+33213	Bilateria	kingdom	Metazoa	5385	6
+7711	Chordata	phylum	Metazoa	5372	6
+7742	Vertebrata	subphylum	Metazoa	5372	6
+7776	Gnathostomata	subphylum	Metazoa	5372	6
+33511	Deuterostomia	kingdom	Metazoa	5372	6
+89593	Craniata	subphylum	Metazoa	5372	6
+117570	Teleostomi	subphylum	Metazoa	5372	6
+117571	Euteleostomi	subphylum	Metazoa	5372	6
+8287	Sarcopterygii	superclass	Metazoa	5351	6
+1338369	Dipnotetrapodomorpha	superclass	Metazoa	5351	6
+32523	Tetrapoda	superclass	Metazoa	5350	6
+32524	Amniota	superclass	Metazoa	5350	6
+32525	Theria	class	Metazoa	5322	6
+40674	Mammalia	class	Metazoa	5322	6
+9347	Eutheria	class	Metazoa	5321	6
+1437010	Boreoeutheria	class	Metazoa	5319	6
+314145	Laurasiatheria	superorder	Metazoa	4320	6
+91561	Artiodactyla	order	Metazoa	4303	6
+9821	Suidae	family	Metazoa	4217	6
+35497	Suina	suborder	Metazoa	4217	6
+9822	Sus	genus	Metazoa	4214	6
+9823	Sus scrofa	species	Metazoa	4214	6
+2622653	unclassified Brevundimonas	no rank	Pseudomonadati	2992	2
+1783272	Bacillati	kingdom	Bacillati	2629	3
+1239	Bacillota	phylum	Bacillati	1946	3
+91061	Bacilli	class	Bacillati	1941	3
+186826	Lactobacillales	order	Bacillati	1897	3
+33958	Lactobacillaceae	family	Bacillati	1673	3
+2995143	Brevundimonas sp. SL130	species	Pseudomonadati	1592	1
+217203	Achromobacter spanius	species	Pseudomonadati	1280	1
+2759736	Lacticaseibacillus	genus	Bacillati	1262	3
+1597	Lacticaseibacillus paracasei	species	Bacillati	1253	3
+3015997	Brevundimonas sp. NIBR10	species	Pseudomonadati	1239	1
+314146	Euarchontoglires	superorder	Metazoa	999	6
+9443	Primates	order	Metazoa	994	6
+376913	Haplorrhini	suborder	Metazoa	992	6
+314293	Simiiformes	infraorder	Metazoa	991	6
+9526	Catarrhini	parvorder	Metazoa	987	6
+314295	Hominoidea	superfamily	Metazoa	974	6
+9604	Hominidae	family	Metazoa	968	6
+207598	Homininae	subfamily	Metazoa	966	6
+9605	Homo	genus	Metazoa	950	6
+9606	Homo sapiens	species	Metazoa	950	6
+10219	Hemichordata	phylum	Metazoa	887	2
+10220	Enteropneusta	class	Metazoa	887	2
+10221	Harrimaniidae	family	Metazoa	887	2
+10222	Saccoglossus	genus	Metazoa	887	2
+10224	Saccoglossus kowalevskii	species	Metazoa	887	2
+1236	Gammaproteobacteria	class	Pseudomonadati	708	3
+3193	Embryophyta	subphylum	Viridiplantae	699	6
+3398	Magnoliopsida	class	Viridiplantae	699	6
+33090	Viridiplantae	kingdom	Viridiplantae	699	6
+35493	Streptophyta	phylum	Viridiplantae	699	6
+58023	Tracheophyta	subphylum	Viridiplantae	699	6
+58024	Spermatophyta	subphylum	Viridiplantae	699	6
+78536	Euphyllophyta	subphylum	Viridiplantae	699	6
+131221	Streptophytina	subphylum	Viridiplantae	699	6
+1437183	Mesangiospermae	class	Viridiplantae	699	6
+1760	Actinomycetes	class	Bacillati	681	3
+201174	Actinomycetota	phylum	Bacillati	681	3
+72274	Pseudomonadales	order	Pseudomonadati	536	3
+135621	Pseudomonadaceae	family	Pseudomonadati	536	3
+286	Pseudomonas	genus	Pseudomonadati	515	3
+179879	Burkholderia anthina	species	Pseudomonadati	460	1
+517	Bordetella	genus	Pseudomonadati	459	1
+520	Bordetella pertussis	species	Pseudomonadati	459	1
+85009	Propionibacteriales	order	Bacillati	437	3
+287	Pseudomonas aeruginosa	species	Pseudomonadati	430	2
+136841	Pseudomonas aeruginosa group	species group	Pseudomonadati	430	2
+31957	Propionibacteriaceae	family	Bacillati	429	3
+1912216	Cutibacterium	genus	Bacillati	427	3
+1747	Cutibacterium acnes	species	Bacillati	426	3
+4447	Liliopsida	class	Viridiplantae	362	4
+4734	commelinids	subclass	Viridiplantae	362	4
+1437197	Petrosaviidae	subclass	Viridiplantae	362	4
+4618	Zingiberales	order	Viridiplantae	357	3
+4637	Musaceae	family	Viridiplantae	357	1
+4640	Musa	genus	Viridiplantae	357	1
+4641	Musa acuminata	species	Viridiplantae	357	1
+71240	eudicotyledons	class	Viridiplantae	337	5
+91827	Gunneridae	class	Viridiplantae	337	5
+1437201	Pentapetalae	class	Viridiplantae	337	5
+85006	Micrococcales	order	Bacillati	311	2
+71275	rosids	class	Viridiplantae	304	4
+91835	fabids	class	Viridiplantae	302	4
+3744	Rosales	order	Viridiplantae	298	3
+3481	Cannabaceae	family	Viridiplantae	298	2
+3482	Cannabis	genus	Viridiplantae	297	2
+3483	Cannabis sativa	species	Viridiplantae	297	2
+1734925	Cutibacterium acnes subsp. acnes	subspecies	Bacillati	278	2
+80864	Comamonadaceae	family	Pseudomonadati	249	2
+8457	Sauropsida	superclass	Metazoa	229	4
+32561	Sauria	superclass	Metazoa	229	4
+8492	Archosauria	superclass	Metazoa	228	4
+8782	Aves	class	Metazoa	228	4
+436486	Dinosauria	superclass	Metazoa	228	4
+436489	Saurischia	superclass	Metazoa	228	4
+436491	Theropoda	superclass	Metazoa	228	4
+436492	Coelurosauria	superclass	Metazoa	228	4
+1329799	Archelosauria	superclass	Metazoa	228	4
+8825	Neognathae	infraclass	Metazoa	227	4
+8976	Galliformes	order	Metazoa	221	4
+1549675	Galloanserae	superorder	Metazoa	221	4
+9005	Phasianidae	family	Metazoa	220	4
+1300	Streptococcaceae	family	Bacillati	212	2
+1268	Micrococcaceae	family	Bacillati	204	2
+1357	Lactococcus	genus	Bacillati	201	2
+1580	Levilactobacillus brevis	species	Bacillati	199	1
+2767886	Levilactobacillus	genus	Bacillati	199	1
+1269	Micrococcus	genus	Bacillati	195	2
+2620948	unclassified Micrococcus	no rank	Bacillati	195	1
+2995171	Micrococcus sp. SL257	species	Bacillati	195	1
+4751	Fungi	kingdom	Fungi	193	3
+451864	Dikarya	subkingdom	Fungi	193	3
+1363	Lactococcus garvieae	species	Bacillati	185	1
+4890	Ascomycota	phylum	Fungi	175	3
+716545	saccharomyceta	phylum	Fungi	175	3
+9030	Gallus	genus	Metazoa	169	4
+9031	Gallus gallus	species	Metazoa	169	4
+9072	Phasianinae	subfamily	Metazoa	169	4
+1243	Leuconostoc	genus	Bacillati	166	2
+33968	Leuconostoc pseudomesenteroides	species	Bacillati	166	1
+147537	Saccharomycotina	subphylum	Fungi	161	2
+3015999	Brevundimonas sp. NIBR11	species	Pseudomonadati	161	1
+468	Moraxellaceae	family	Pseudomonadati	149	2
+469	Acinetobacter	genus	Pseudomonadati	149	2
+2887326	Moraxellales	order	Pseudomonadati	149	2
+5758	Entamoeba	genus	NA	113	2
+33084	Entamoebidae	family	NA	113	2
+554915	Amoebozoa	domain	NA	113	2
+555406	Archamoebae	phylum	NA	113	2
+2605435	Evosea	phylum	NA	113	2
+2682482	Mastigamoebida	order	NA	113	2
+1385	Bacillales	order	Bacillati	112	2
+46681	Entamoeba dispar	species	NA	111	2
+370354	Entamoeba dispar SAW760	strain	NA	111	2
+90964	Staphylococcaceae	family	Bacillati	110	2
+3239873	Dipodascomycetes	class	Fungi	108	2
+3243772	Dipodascales	order	Fungi	108	2
+9845	Ruminantia	suborder	Metazoa	107	5
+35500	Pecora	infraorder	Metazoa	107	5
+1279	Staphylococcus	genus	Bacillati	106	2
+74313	Brevundimonas subvibrioides	species	Pseudomonadati	103	1
+108981	Acinetobacter schindleri	species	Pseudomonadati	102	1
+9895	Bovidae	family	Metazoa	101	4
+356	Hyphomicrobiales	order	Pseudomonadati	99	3
+85023	Microbacteriaceae	family	Bacillati	95	2
+4951	Yarrowia	genus	Fungi	94	2
+4952	Yarrowia lipolytica	species	Fungi	94	2
+3316682	Dipodascales incertae sedis	no rank	Fungi	94	2
+214697	Musa acuminata AAA Group	genotype	Viridiplantae	90	1
+1282	Staphylococcus epidermidis	species	Bacillati	84	2
+2975441	Sphaerotilaceae	family	Pseudomonadati	83	1
+8495	Alligator	genus	Metazoa	79	1
+34915	Alligatorinae	subfamily	Metazoa	79	1
+38654	Alligator sinensis	species	Metazoa	79	1
+1294634	Crocodylia	order	Metazoa	79	1
+1294636	Alligatoridae	family	Metazoa	79	1
+204457	Sphingomonadales	order	Pseudomonadati	78	2
+135614	Lysobacterales	order	Pseudomonadati	75	2
+27592	Bovinae	subfamily	Metazoa	72	4
+91347	Enterobacterales	order	Pseudomonadati	72	3
+32033	Lysobacteraceae	family	Pseudomonadati	71	2
+283	Comamonas	genus	Pseudomonadati	67	2
+10239	Viruses	acellular root	NA	62	2
+2731341	Duplodnaviria	realm	NA	62	2
+2731360	Heunggongvirae	kingdom	Heunggongvirae	62	2
+2731618	Uroviricota	phylum	Heunggongvirae	62	2
+2731619	Caudoviricetes	class	Heunggongvirae	62	2
+2788787	unclassified Caudoviricetes	no rank	Heunggongvirae	62	2
+196013	Caldimonas	genus	Pseudomonadati	62	1
+32003	Nitrosomonadales	order	Pseudomonadati	61	1
+32011	Methylophilaceae	family	Pseudomonadati	61	1
+1581557	Candidatus Methylopumilus planktonicus	species	Pseudomonadati	61	1
+1679002	Candidatus Methylopumilus	genus	Pseudomonadati	61	1
+4891	Saccharomycetes	class	Fungi	60	2
+4892	Saccharomycetales	order	Fungi	60	2
+4893	Saccharomycetaceae	family	Fungi	60	2
+4930	Saccharomyces	genus	Fungi	60	2
+4932	Saccharomyces cerevisiae	species	Fungi	60	2
+40214	Acinetobacter johnsonii	species	Pseudomonadati	60	1
+38820	Poales	order	Viridiplantae	59	4
+1301	Streptococcus	genus	Bacillati	58	2
+665874	Limnohabitans	genus	Pseudomonadati	58	1
+2626134	unclassified Limnohabitans	no rank	Pseudomonadati	58	1
+2986281	Limnohabitans sp. TEGF004	species	Pseudomonadati	58	1
+4479	Poaceae	family	Viridiplantae	57	4
+196821	unclassified Pseudomonas	no rank	Pseudomonadati	57	2
+238749	Diaphorobacter	genus	Pseudomonadati	57	2
+2649760	unclassified Diaphorobacter	no rank	Pseudomonadati	57	2
+3016636	Diaphorobacter sp. ED-3	species	Pseudomonadati	57	1
+559292	Saccharomyces cerevisiae S288C	strain	Fungi	53	1
+75	Caulobacter	genus	Pseudomonadati	52	2
+85007	Mycobacteriales	order	Bacillati	52	2
+2648921	unclassified Caulobacter	no rank	Pseudomonadati	52	1
+543	Enterobacteriaceae	family	Pseudomonadati	51	3
+9903	Bos	genus	Metazoa	51	4
+80865	Delftia	genus	Pseudomonadati	51	2
+80866	Delftia acidovorans	species	Pseudomonadati	51	1
+9102	Meleagris	genus	Metazoa	49	2
+9103	Meleagris gallopavo	species	Metazoa	49	2
+466552	Meleagridinae	subfamily	Metazoa	49	2
+113557	Lacticaseibacillus paracasei subsp. tolerans	subspecies	Bacillati	47	1
+9963	Caprinae	subfamily	Metazoa	46	4
+5204	Basidiomycota	phylum	Fungi	45	2
+452284	Ustilaginomycotina	subphylum	Fungi	45	2
+55193	Malassezia	genus	Fungi	44	2
+162474	Malasseziales	order	Fungi	44	2
+742845	Malasseziaceae	family	Fungi	44	2
+1538075	Malasseziomycetes	class	Fungi	44	2
+48736	Ralstonia	genus	Pseudomonadati	43	2
+215580	Caldimonas thermodepolymerans	species	Pseudomonadati	43	1
+41425	Phacochoerus	genus	Metazoa	42	5
+41426	Phacochoerus africanus	species	Metazoa	42	5
+76775	Malassezia restricta	species	Fungi	42	2
+33882	Microbacterium	genus	Bacillati	42	2
+1270	Micrococcus luteus	species	Bacillati	42	1
+2157	Archaea	domain	NA	41	3
+85025	Nocardiaceae	family	Bacillati	41	2
+2767842	Lactiplantibacillus	genus	Bacillati	41	1
+1590	Lactiplantibacillus plantarum	species	Bacillati	40	1
+3366610	Methanobacteriati	kingdom	Methanobacteriati	39	3
+976	Bacteroidota	phylum	Pseudomonadati	39	2
+1653	Corynebacteriaceae	family	Bacillati	39	2
+1716	Corynebacterium	genus	Bacillati	39	2
+68336	Bacteroidota/Chlorobiota group	kingdom	Pseudomonadati	39	2
+165697	Sphingopyxis	genus	Pseudomonadati	39	2
+1783270	FCB group	kingdom	Pseudomonadati	39	2
+2614943	unclassified Sphingopyxis	no rank	Pseudomonadati	39	1
+2933562	Sphingopyxis sp. GC21	species	Pseudomonadati	39	1
+3423718	Sphingopyxidaceae	family	Pseudomonadati	39	2
+415978	Sus scrofa scrofa	subspecies	Metazoa	38	1
+1827	Rhodococcus	genus	Bacillati	37	2
+12916	Acidovorax	genus	Pseudomonadati	37	1
+758826	Acidovorax radicis	species	Pseudomonadati	37	1
+33317	Protostomia	kingdom	Metazoa	36	6
+2235	Halobacteriales	order	Methanobacteriati	36	3
+28890	Methanobacteriota	phylum	Methanobacteriati	36	3
+183963	Halobacteria	class	Methanobacteriati	36	3
+1644056	Haloferacaceae	family	Methanobacteriati	36	3
+2290931	Stenosarchaea group	phylum	Methanobacteriati	36	3
+2840174	Rhodococcus erythropolis group	species group	Bacillati	36	2
+136846	Stutzerimonas stutzeri group	species group	Pseudomonadati	35	2
+225991	Comamonas aquatica	species	Pseudomonadati	35	2
+2901164	Stutzerimonas	genus	Pseudomonadati	35	2
+41294	Nitrobacteraceae	family	Pseudomonadati	34	3
+93217	Pandoraea	genus	Pseudomonadati	34	1
+106589	Cupriavidus	genus	Pseudomonadati	34	2
+2608999	Cupriavidus cauae	species	Pseudomonadati	34	1
+359160	BOP clade	family	Viridiplantae	32	3
+2949090	Comamonas endophytica	species	Pseudomonadati	32	1
+2745519	Pseudomonas sp. OE 28.3	species	Pseudomonadati	32	1
+147368	Pooideae	subfamily	Viridiplantae	31	3
+6656	Arthropoda	phylum	Metazoa	30	5
+88770	Panarthropoda	kingdom	Metazoa	30	5
+1206794	Ecdysozoa	kingdom	Metazoa	30	5
+547	Enterobacter	genus	Pseudomonadati	30	2
+354276	Enterobacter cloacae complex	species group	Pseudomonadati	30	2
+2624094	unclassified Pandoraea	no rank	Pseudomonadati	30	1
+3002643	Pandoraea sp. XJJ-1	species	Pseudomonadati	30	1
+3016000	Caulobacter sp. NIBR1757	species	Pseudomonadati	30	1
+147389	Triticeae	tribe	Viridiplantae	29	3
+1648030	Triticinae	subtribe	Viridiplantae	29	3
+1648038	Triticodae	no rank	Viridiplantae	29	3
+2962065	Pollutimonas sp. M17	species	Pseudomonadati	29	1
+2987599	Pollutimonas	genus	Pseudomonadati	29	1
+2987600	unclassified Pollutimonas	no rank	Pseudomonadati	29	1
+71274	asterids	class	Viridiplantae	28	5
+197562	Pancrustacea	phylum	Metazoa	28	5
+197563	Mandibulata	phylum	Metazoa	28	5
+4564	Triticum	genus	Viridiplantae	28	3
+4565	Triticum aestivum	species	Viridiplantae	28	2
+136842	Pseudomonas chlororaphis group	species group	Pseudomonadati	28	2
+214687	Musa acuminata subsp. malaccensis	subspecies	Viridiplantae	28	1
+9935	Ovis	genus	Metazoa	26	3
+37174	Ovis canadensis	species	Metazoa	26	3
+642	Aeromonas	genus	Pseudomonadati	26	2
+84642	Aeromonadaceae	family	Pseudomonadati	26	2
+135624	Aeromonadales	order	Pseudomonadati	26	2
+4575	Zea	genus	Viridiplantae	25	3
+4577	Zea mays	species	Viridiplantae	25	3
+30522	Bos indicus x Bos taurus	species	Metazoa	25	2
+147369	Panicoideae	subfamily	Viridiplantae	25	3
+147370	PACMAD clade	family	Viridiplantae	25	3
+147429	Andropogoneae	tribe	Viridiplantae	25	3
+1648029	Tripsacinae	subtribe	Viridiplantae	25	3
+1648033	Andropogonodae	no rank	Viridiplantae	25	3
+338	Xanthomonas	genus	Pseudomonadati	25	2
+28095	Burkholderia gladioli	species	Pseudomonadati	25	1
+75682	Oxalobacteraceae	family	Pseudomonadati	25	1
+136843	Pseudomonas fluorescens group	species group	Pseudomonadati	25	2
+2895353	Telluria group	no rank	Pseudomonadati	25	1
+40323	Stenotrophomonas	genus	Pseudomonadati	24	2
+105219	Ralstonia mannitolilytica	species	Pseudomonadati	24	1
+33554	Carnivora	order	Metazoa	23	4
+316	Stutzerimonas stutzeri	species	Pseudomonadati	22	2
+578833	Stutzerimonas stutzeri subgroup	species subgroup	Pseudomonadati	22	2
+3015996	Caulobacter sp. NIBR2454	species	Pseudomonadati	22	1
+7898	Actinopterygii	superclass	Metazoa	21	5
+32443	Teleostei	infraclass	Metazoa	21	5
+41665	Neopterygii	subclass	Metazoa	21	5
+186623	Actinopteri	class	Metazoa	21	5
+186625	Clupeocephala	infraclass	Metazoa	21	5
+1489341	Osteoglossocephalai	infraclass	Metazoa	21	5
+379584	Caniformia	suborder	Metazoa	21	4
+347324	Pseudomonas phage F10	species	Heunggongvirae	21	1
+93681	Roseateles	genus	Pseudomonadati	21	1
+110932	Leifsonia	genus	Bacillati	21	1
+171549	Bacteroidales	order	Pseudomonadati	21	1
+200643	Bacteroidia	class	Pseudomonadati	21	1
+374	Bradyrhizobium	genus	Pseudomonadati	20	3
+1134454	Cutibacterium acnes HL096PA1	strain	Bacillati	20	1
+3803	Fabaceae	family	Viridiplantae	20	3
+3814	Papilionoideae	subfamily	Viridiplantae	20	3
+72025	Fabales	order	Viridiplantae	20	3
+2231393	50 kb inversion clade	subfamily	Viridiplantae	20	3
+296	Pseudomonas fragi	species	Pseudomonadati	20	1
+2062	Streptomycetaceae	family	Bacillati	20	2
+85011	Kitasatosporales	order	Bacillati	20	2
+206389	Rhodocyclales	order	Pseudomonadati	20	2
+6960	Hexapoda	subphylum	Metazoa	19	5
+7496	Pterygota	subclass	Metazoa	19	5
+33340	Neoptera	infraclass	Metazoa	19	5
+50557	Insecta	class	Metazoa	19	5
+85512	Dicondylia	class	Metazoa	19	5
+9608	Canidae	family	Metazoa	19	4
+648	Aeromonas caviae	species	Pseudomonadati	19	1
+1310165	Ralstonia pseudosolanacearum	species	Pseudomonadati	19	1
+3116862	Ralstonia solanacearum species complex	species group	Pseudomonadati	19	2
+339	Xanthomonas campestris	species	Pseudomonadati	19	1
+38304	Corynebacterium tuberculostearicum	species	Bacillati	19	1
+2663824	unclassified Leifsonia	no rank	Bacillati	19	1
+2781978	Leifsonia sp. ZF2019	species	Bacillati	19	1
+40215	Acinetobacter junii	species	Pseudomonadati	18	2
+335929	Erythrobacteraceae	family	Pseudomonadati	18	2
+1599	Latilactobacillus sakei	species	Bacillati	18	1
+214326	Latilactobacillus sakei subsp. sakei	subspecies	Bacillati	18	1
+2767885	Latilactobacillus	genus	Bacillati	18	1
+2866628	Diaphorobacter sp. MNS-0	species	Pseudomonadati	18	1
+91888	lamiids	class	Viridiplantae	17	5
+9787	Perissodactyla	order	Metazoa	17	3
+9900	Bison	genus	Metazoa	17	3
+9901	Bison bison	species	Metazoa	17	3
+43346	Bison bison bison	subspecies	Metazoa	17	3
+1868596	Pseudomonas phage MD8	species	Heunggongvirae	17	2
+1883	Streptomyces	genus	Bacillati	17	2
+119045	Methylobacteriaceae	family	Pseudomonadati	17	2
+334542	Rhodococcus qingshengii	species	Bacillati	17	2
+2008795	Azonexaceae	family	Pseudomonadati	17	2
+1303	Streptococcus oralis	species	Bacillati	17	1
+29388	Staphylococcus capitis	species	Bacillati	17	1
+32207	Rothia	genus	Bacillati	17	1
+33392	Endopterygota	cohort	Metazoa	16	5
+1489388	Euteleosteomorpha	cohort	Metazoa	16	4
+9611	Canis	genus	Metazoa	16	4
+9612	Canis lupus	species	Metazoa	16	4
+9788	Equidae	family	Metazoa	16	3
+9789	Equus	genus	Metazoa	16	3
+9913	Bos taurus	species	Metazoa	16	4
+3792	Saxifragaceae	family	Viridiplantae	16	3
+9922	Capra	genus	Metazoa	16	2
+9925	Capra hircus	species	Metazoa	16	2
+23242	Chrysosplenium	genus	Viridiplantae	16	3
+40784	Chrysosplenium tetrandrum	species	Viridiplantae	16	3
+41946	Saxifragales	order	Viridiplantae	16	3
+376170	Haloplanus	genus	Methanobacteriati	16	1
+1449437	Pseudomonas phage vB_PaeP_Tr60_Ab31	species	Heunggongvirae	16	2
+2617521	unclassified Haloplanus	no rank	Methanobacteriati	16	1
+3032186	Chrysosplenieae	tribe	Viridiplantae	16	3
+3252679	Haloplanus sp. GCM10025708	species	Methanobacteriati	16	1
+1358	Lactococcus lactis	species	Bacillati	16	2
+9915	Bos indicus	species	Metazoa	16	2
+40324	Stenotrophomonas maltophilia	species	Pseudomonadati	16	2
+53408	Pseudomonas citronellolis	species	Pseudomonadati	16	1
+73029	Dechloromonas	genus	Pseudomonadati	16	2
+83494	unclassified Comamonadaceae	no rank	Pseudomonadati	16	1
+995085	Stenotrophomonas maltophilia group	species group	Pseudomonadati	16	2
+2053287	Acinetobacter pseudolwoffii	species	Pseudomonadati	16	2
+171552	Prevotellaceae	family	Pseudomonadati	16	1
+281362	Dechloromonas denitrificans	species	Pseudomonadati	16	1
+2631580	unclassified Bradyrhizobium	no rank	Pseudomonadati	15	2
+2715960	Bradyrhizobium sp. PSBB068	species	Pseudomonadati	15	2
+1355477	Bradyrhizobium diazoefficiens	species	Pseudomonadati	15	1
+4069	Solanales	order	Viridiplantae	14	5
+4070	Solanaceae	family	Viridiplantae	14	5
+424551	Solanoideae	subfamily	Viridiplantae	14	5
+34353	Dipodascaceae	family	Fungi	14	2
+43987	Geotrichum	genus	Fungi	14	2
+147538	Pezizomycotina	subphylum	Fungi	14	3
+314147	Glires	superorder	Metazoa	14	3
+716546	leotiomyceta	subphylum	Fungi	14	3
+1073	Rhodopseudomonas	genus	Pseudomonadati	14	2
+70346	Acinetobacter variabilis	species	Pseudomonadati	14	2
+125216	Roseomonas	genus	Pseudomonadati	14	2
+1522432	Pseudoduganella	genus	Pseudomonadati	14	1
+2637179	unclassified Pseudoduganella	no rank	Pseudomonadati	14	1
+2995154	Pseudoduganella sp. SL102	species	Pseudomonadati	14	1
+3003351	Pseudomonas sp. GXZC	species	Pseudomonadati	14	1
+3120395	Acetobacterales	order	Pseudomonadati	14	2
+3385906	Roseomonadaceae	family	Pseudomonadati	14	2
+34062	Faucicola osloensis	species	Pseudomonadati	14	1
+1604696	Faucicola	genus	Pseudomonadati	14	1
+2608887	unclassified Streptococcus	no rank	Bacillati	14	1
+2710759	Streptococcus sp. ZB199	species	Bacillati	14	1
+4071	Capsicum	genus	Viridiplantae	13	4
+4072	Capsicum annuum	species	Viridiplantae	13	4
+9527	Cercopithecidae	family	Metazoa	13	3
+314294	Cercopithecoidea	superfamily	Metazoa	13	3
+424564	Capsiceae	tribe	Viridiplantae	13	4
+2231382	NPAAA clade	subfamily	Viridiplantae	13	3
+20	Phenylobacterium	genus	Pseudomonadati	13	1
+294	Pseudomonas fluorescens	species	Pseudomonadati	13	2
+303	Pseudomonas putida	species	Pseudomonadati	13	2
+1573	Clavibacter	genus	Bacillati	13	2
+13687	Sphingomonas	genus	Pseudomonadati	13	2
+28447	Clavibacter michiganensis	species	Bacillati	13	1
+33014	Clavibacter michiganensis subsp. insidiosus	subspecies	Bacillati	13	1
+41297	Sphingomonadaceae	family	Pseudomonadati	13	2
+136845	Pseudomonas putida group	species group	Pseudomonadati	13	2
+376175	Caldimonas aquatica	species	Pseudomonadati	13	1
+1649457	Homoserinibacter	genus	Bacillati	13	1
+2609290	unclassified Microbacterium	no rank	Bacillati	13	2
+2640670	unclassified Phenylobacterium	no rank	Pseudomonadati	13	1
+2649549	unclassified Homoserinibacter	no rank	Bacillati	13	1
+2978473	Roseateles amylovorans	species	Pseudomonadati	13	1
+2985506	Homoserinibacter sp. YIM 151385	species	Bacillati	13	1
+3015177	Phenylobacterium sp. NIBR 498073	species	Pseudomonadati	13	1
+1302	Streptococcus gordonii	species	Bacillati	13	1
+9965	Capricornis	genus	Metazoa	12	2
+34865	Capricornis sumatraensis	species	Metazoa	12	2
+43927	Halobaculum	genus	Methanobacteriati	12	1
+3032281	Halobaculum halobium	species	Methanobacteriati	12	1
+1076	Rhodopseudomonas palustris	species	Pseudomonadati	12	1
+83618	Pseudoxanthomonas	genus	Pseudomonadati	12	1
+158836	Enterobacter hormaechei	species	Pseudomonadati	12	2
+3236656	Metapseudomonas	genus	Pseudomonadati	12	1
+89248	Equus quagga	species	Metazoa	11	2
+9592	Gorilla	genus	Metazoa	11	2
+9593	Gorilla gorilla	species	Metazoa	11	2
+9595	Gorilla gorilla gorilla	subspecies	Metazoa	11	2
+163735	Phaseoleae	tribe	Viridiplantae	11	2
+2233855	indigoferoid/millettioid clade	subfamily	Viridiplantae	11	2
+237	Flavobacterium	genus	Pseudomonadati	11	2
+407	Methylobacterium	genus	Pseudomonadati	11	1
+49546	Flavobacteriaceae	family	Pseudomonadati	11	2
+82115	Rhizobiaceae	family	Pseudomonadati	11	2
+82380	Microbacterium oxydans	species	Bacillati	11	1
+108980	Acinetobacter ursingii	species	Pseudomonadati	11	1
+117743	Flavobacteriia	class	Pseudomonadati	11	2
+149698	Massilia	genus	Pseudomonadati	11	1
+196159	unclassified Sphingomonas	no rank	Pseudomonadati	11	1
+196869	unclassified Flavobacterium	no rank	Pseudomonadati	11	1
+200644	Flavobacteriales	order	Pseudomonadati	11	2
+457921	Massilia varians	species	Pseudomonadati	11	1
+2984843	Methylobacterium flocculans	species	Pseudomonadati	11	1
+28090	Acinetobacter lwoffii	species	Pseudomonadati	11	1
+54061	Ralstonia sp.	species	Pseudomonadati	11	1
+209769	unclassified Ralstonia	no rank	Pseudomonadati	11	1
+507	Alcaligenes	genus	Pseudomonadati	10	2
+3913	Vigna	genus	Viridiplantae	10	2
+5042	Eurotiales	order	Fungi	10	2
+5073	Penicillium	genus	Fungi	10	1
+9528	Cercopithecinae	subfamily	Metazoa	10	2
+147545	Eurotiomycetes	class	Fungi	10	3
+451871	Eurotiomycetidae	subclass	Fungi	10	3
+1131492	Aspergillaceae	family	Fungi	10	2
+68	Lysobacter	genus	Pseudomonadati	10	2
+337	Burkholderia glumae	species	Pseudomonadati	10	2
+357	Agrobacterium	genus	Pseudomonadati	10	1
+1290	Staphylococcus hominis	species	Bacillati	10	1
+56458	Xanthomonas sacchari	species	Pseudomonadati	10	1
+134537	Paraburkholderia fungorum	species	Pseudomonadati	10	1
+227290	Rhizobium/Agrobacterium group	no rank	Pseudomonadati	10	2
+259357	unclassified Alcaligenes	no rank	Pseudomonadati	10	1
+337004	Microcella	genus	Bacillati	10	1
+344163	Microbacterium terricola	species	Bacillati	10	1
+768503	Cytophagia	class	Pseudomonadati	10	2
+768507	Cytophagales	order	Pseudomonadati	10	2
+1822464	Paraburkholderia	genus	Pseudomonadati	10	2
+1903411	Yersiniaceae	family	Pseudomonadati	10	2
+2643310	unclassified Xanthomonas	no rank	Pseudomonadati	10	1
+2749999	Pseudomonas sp. RtIB026	species	Pseudomonadati	10	1
+2991054	Alcaligenes sp. SMD-FA	species	Pseudomonadati	10	1
+2993872	Comamonadaceae bacterium OS-1	species	Pseudomonadati	10	1
+2994971	Microcella daejeonensis	species	Bacillati	10	1
+2676247	Aquirufa	genus	Pseudomonadati	10	1
+2696560	Aquirufa lenticrescens	species	Pseudomonadati	10	1
+3141701	Flectobacillaceae	family	Pseudomonadati	10	1
+3916	Vigna radiata var. radiata	varietas	Viridiplantae	9	2
+6657	Crustacea	subphylum	Metazoa	9	3
+9721	Cetacea	infraorder	Metazoa	9	4
+9906	Bos javanicus	species	Metazoa	9	3
+9989	Rodentia	order	Metazoa	9	3
+157791	Vigna radiata	species	Viridiplantae	9	2
+2172821	Multicrustacea	superclass	Metazoa	9	3
+2653789	Whippomorpha	suborder	Metazoa	9	4
+2698737	Sar	domain	NA	9	1
+613	Serratia	genus	Pseudomonadati	9	2
+1364	Pseudolactococcus piscium	species	Bacillati	9	1
+297352	Pseudolactococcus piscium MKFS47	strain	Bacillati	9	1
+2593676	unclassified Streptomyces	no rank	Bacillati	9	2
+2861775	Pseudomonas sp. YeP6b	species	Pseudomonadati	9	1
+3436058	Pseudolactococcus	genus	Bacillati	9	1
+43675	Rothia mucilaginosa	species	Bacillati	9	1
+558537	Delftia lacustris	species	Pseudomonadati	9	1
+7399	Hymenoptera	order	Metazoa	8	5
+7400	Apocrita	suborder	Metazoa	8	4
+7434	Aculeata	infraorder	Metazoa	8	4
+561	Escherichia	genus	Pseudomonadati	8	2
+562	Escherichia coli	species	Pseudomonadati	8	2
+4335	Primulaceae	family	Viridiplantae	8	1
+5747	Eustigmatophyceae	class	NA	8	1
+5748	Nannochloropsis	genus	NA	8	1
+6681	Malacostraca	class	Metazoa	8	3
+6682	Eucarida	superorder	Metazoa	8	3
+6683	Decapoda	order	Metazoa	8	3
+9722	Odontoceti	parvorder	Metazoa	8	4
+33467	Priapulida	phylum	Metazoa	8	1
+33634	Stramenopiles	domain	NA	8	1
+37621	Priapulus caudatus	species	Metazoa	8	1
+37847	Priapulus	genus	Metazoa	8	1
+37891	Priapulidae	family	Metazoa	8	1
+41945	Ericales	order	Viridiplantae	8	2
+72041	Eumalacostraca	subclass	Metazoa	8	3
+72520	Nannochloropsis gaditana	species	NA	8	1
+85163	Androsace	genus	Viridiplantae	8	1
+118796	Lipotes	genus	Metazoa	8	3
+118797	Lipotes vexillifer	species	Metazoa	8	3
+119500	Lipotidae	family	Metazoa	8	3
+175028	Androsace chamaejasme	species	Viridiplantae	8	1
+425072	Monodopsidaceae	family	NA	8	1
+425074	Eustigmatales	order	NA	8	1
+1093141	Nannochloropsis gaditana CCMP526	strain	NA	8	1
+1173061	Geotrichum candidum	species	Fungi	8	1
+1215728	Scalidophora	superphylum	Metazoa	8	1
+1777052	Pseudomonas phage JBD44	species	Heunggongvirae	8	2
+2082883	Priapulimorpha	class	Metazoa	8	1
+2082909	Priapulimorphida	order	Metazoa	8	1
+2696291	Ochrophyta	domain	NA	8	1
+570	Klebsiella	genus	Pseudomonadati	8	1
+1375	Aerococcus	genus	Bacillati	8	1
+13690	Sphingobium yanoikuyae	species	Pseudomonadati	8	1
+31988	Aminobacter	genus	Pseudomonadati	8	1
+51665	Aerococcus urinaeequi	species	Bacillati	8	1
+53335	Pantoea	genus	Pseudomonadati	8	2
+69277	Phyllobacteriaceae	family	Pseudomonadati	8	2
+85015	Nocardioidaceae	family	Bacillati	8	2
+165695	Sphingobium	genus	Pseudomonadati	8	2
+186817	Bacillaceae	family	Bacillati	8	2
+186827	Aerococcaceae	family	Bacillati	8	1
+196198	unclassified Stenotrophomonas	no rank	Pseudomonadati	8	2
+206351	Neisseriales	order	Pseudomonadati	8	2
+244566	Pseudomonas lurida	species	Pseudomonadati	8	1
+321846	Pseudomonas simiae	species	Pseudomonadati	8	1
+489632	Ectopseudomonas chengduensis	species	Pseudomonadati	8	1
+582680	Microbacterium azadirachtae	species	Bacillati	8	1
+585890	Chitiniphilus	genus	Pseudomonadati	8	1
+587753	Pseudomonas chlororaphis	species	Pseudomonadati	8	1
+1903409	Erwiniaceae	family	Pseudomonadati	8	2
+2599307	Stenotrophomonas sp. SBJS02	species	Pseudomonadati	8	1
+2626991	unclassified Roseateles	no rank	Pseudomonadati	8	1
+2890311	Klebsiella/Raoultella group	no rank	Pseudomonadati	8	1
+2897177	Chitinibacteraceae	family	Pseudomonadati	8	1
+2981137	Chitiniphilus purpureus	species	Pseudomonadati	8	1
+2995138	Roseateles sp. SL47	species	Pseudomonadati	8	1
+3236654	Ectopseudomonas	genus	Pseudomonadati	8	2
+3423717	Sphingobiaceae	family	Pseudomonadati	8	2
+1839	Nocardioides	genus	Bacillati	8	1
+28037	Streptococcus mitis	species	Bacillati	8	1
+34072	Variovorax	genus	Pseudomonadati	8	1
+85030	Geodermatophilaceae	family	Bacillati	8	1
+88138	Modestobacter	genus	Bacillati	8	1
+1643682	Geodermatophilales	order	Bacillati	8	1
+2643866	unclassified Modestobacter	no rank	Bacillati	8	1
+2851567	Modestobacter sp. L9-4	species	Bacillati	8	1
+3409772	Streptococcus mitis group	species group	Bacillati	8	1
+36668	Formicidae	family	Metazoa	7	4
+2153479	Formicoidea	superfamily	Metazoa	7	4
+6447	Mollusca	phylum	Metazoa	7	5
+85692	Triticum dicoccoides	species	Viridiplantae	7	2
+1206795	Lophotrochozoa	kingdom	Metazoa	7	5
+2697495	Spiralia	kingdom	Metazoa	7	5
+2251	Haloferax	genus	Methanobacteriati	7	1
+3817	Arachis	genus	Viridiplantae	7	2
+9957	Oryx	genus	Metazoa	7	3
+9959	Hippotraginae	subfamily	Metazoa	7	3
+59534	Oryx dammah	species	Metazoa	7	3
+72004	Bos mutus	species	Metazoa	7	3
+163725	Dalbergieae	tribe	Viridiplantae	7	2
+1562058	Penicillium pulvis	species	Fungi	7	1
+1748331	Haloferax namakaokahaiae	species	Methanobacteriati	7	1
+2231387	dalbergioids sensu lato	subfamily	Viridiplantae	7	2
+2231390	Pterocarpus clade	tribe	Viridiplantae	7	2
+549	Pantoea agglomerans	species	Pseudomonadati	7	2
+1111	Porphyrobacter	genus	Pseudomonadati	7	1
+1386	Bacillus	genus	Bacillati	7	2
+2070	Pseudonocardiaceae	family	Bacillati	7	2
+46352	Agrococcus	genus	Bacillati	7	1
+47715	Lacticaseibacillus rhamnosus	species	Bacillati	7	1
+85010	Pseudonocardiales	order	Bacillati	7	2
+96492	Frigoribacterium	genus	Bacillati	7	1
+198620	Pseudomonas koreensis	species	Pseudomonadati	7	1
+204455	Rhodobacterales	order	Pseudomonadati	7	1
+204525	Teichococcus cervicalis	species	Pseudomonadati	7	1
+207340	Roseomonas mucosa	species	Pseudomonadati	7	1
+653685	Bacillus subtilis group	species group	Bacillati	7	1
+1149133	Metapseudomonas furukawaii	species	Pseudomonadati	7	1
+1654067	Pantoea agglomerans group	species group	Pseudomonadati	7	2
+2615065	unclassified Agrococcus	no rank	Bacillati	7	1
+2627005	unclassified Frigoribacterium	no rank	Bacillati	7	1
+2645906	unclassified Pseudoxanthomonas	no rank	Pseudomonadati	7	1
+2683265	unclassified Porphyrobacter	no rank	Pseudomonadati	7	1
+2800788	Erythrobacter/Porphyrobacter group	no rank	Pseudomonadati	7	2
+2854260	Porphyrobacter sp. ULC335	species	Pseudomonadati	7	1
+2994664	Frigoribacterium sp. SL97	species	Bacillati	7	1
+2995140	Microbacterium sp. SL75	species	Bacillati	7	1
+2995141	Agrococcus sp. SL85	species	Bacillati	7	1
+2047	Rothia dentocariosa	species	Bacillati	7	1
+8012	Osmeridae	family	Metazoa	7	1
+8013	Osmerus	genus	Metazoa	7	1
+28127	Hoylesella buccalis	species	Pseudomonadati	7	1
+41711	Osmeriformes	order	Metazoa	7	1
+47420	Hydrogenophaga	genus	Pseudomonadati	7	1
+134034	Corynebacterium freneyi	species	Bacillati	7	1
+182230	Osmerinae	subfamily	Metazoa	7	1
+363952	Comamonas thiooxydans	species	Pseudomonadati	7	1
+1489798	Stomiati	cohort	Metazoa	7	1
+2610897	unclassified Hydrogenophaga	no rank	Pseudomonadati	7	1
+2806262	Hydrogenophaga sp. YM1	species	Pseudomonadati	7	1
+2974257	Hoylesella	genus	Pseudomonadati	7	1
+6544	Bivalvia	class	Metazoa	6	5
+6545	Pteriomorphia	subclass	Metazoa	6	5
+6566	Pectinidae	family	Metazoa	6	5
+106218	Pectinida	order	Metazoa	6	5
+106219	Pectinoidea	superfamily	Metazoa	6	5
+2785011	Autobranchia	subclass	Metazoa	6	5
+4642	Zingiberaceae	family	Viridiplantae	6	2
+4650	Zingiber	genus	Viridiplantae	6	2
+6692	Pleocyemata	suborder	Metazoa	6	2
+6730	Achelata	infraorder	Metazoa	6	2
+6731	Palinuridae	family	Metazoa	6	2
+6734	Panulirus	genus	Metazoa	6	2
+9850	Cervidae	family	Metazoa	6	4
+28734	Macroscelidea	order	Metazoa	6	1
+28735	Macroscelididae	family	Metazoa	6	1
+28736	Elephantulus	genus	Metazoa	6	1
+28737	Elephantulus edwardii	species	Metazoa	6	1
+94328	Zingiber officinale	species	Viridiplantae	6	2
+115587	Palinuroidea	superfamily	Metazoa	6	2
+150431	Panulirus ornatus	species	Metazoa	6	2
+311790	Afrotheria	superorder	Metazoa	6	2
+3078114	Neoaves	infraclass	Metazoa	6	3
+270	Thermus	genus	Thermotogati	6	1
+408	Methylorubrum extorquens	species	Pseudomonadati	6	1
+1283	Staphylococcus haemolyticus	species	Bacillati	6	2
+1297	Deinococcota	phylum	Thermotogati	6	1
+68933	Thermales	order	Thermotogati	6	1
+136849	Pseudomonas syringae group	species group	Pseudomonadati	6	2
+169133	Citricoccus	genus	Bacillati	6	1
+188786	Thermaceae	family	Thermotogati	6	1
+188787	Deinococci	class	Thermotogati	6	1
+413882	Caldimonas brevitalea	species	Pseudomonadati	6	1
+1183400	Agrobacterium tumefaciens complex	species group	Pseudomonadati	6	1
+2219225	Pseudomonas asiatica	species	Pseudomonadati	6	1
+2282523	Methylorubrum	genus	Pseudomonadati	6	2
+2619321	unclassified Thermus	no rank	Thermotogati	6	1
+2624378	unclassified Corynebacterium	no rank	Bacillati	6	1
+2632435	unclassified Citricoccus	no rank	Bacillati	6	1
+2849039	Thermus sp. PS18	species	Thermotogati	6	1
+2962064	Microbacterium sp. M28	species	Bacillati	6	1
+2993873	Comamonadaceae bacterium OS-4	species	Pseudomonadati	6	1
+3004095	Citricoccus sp. NR2	species	Bacillati	6	1
+3017361	Corynebacterium sp. SCR221107	species	Bacillati	6	1
+3384194	Thermotogati	kingdom	Thermotogati	6	1
+838	Prevotella	genus	Pseudomonadati	6	1
+9577	Hylobatidae	family	Metazoa	6	1
+28132	Prevotella melaninogenica	species	Pseudomonadati	6	1
+29151	Osmerus eperlanus	species	Metazoa	6	1
+38290	Corynebacterium macginleyi	species	Bacillati	6	1
+57493	Kocuria	genus	Bacillati	6	1
+72000	Kocuria rhizophila	species	Bacillati	6	1
+32519	Ostariophysi	subcohort	Metazoa	5	4
+34695	Myrmicinae	subfamily	Metazoa	5	4
+64792	Wasmannia	genus	Metazoa	5	4
+64793	Wasmannia auropunctata	species	Metazoa	5	4
+123365	Neoteleostei	cohort	Metazoa	5	4
+123366	Eurypterygia	cohort	Metazoa	5	4
+123367	Ctenosquamata	cohort	Metazoa	5	4
+123368	Acanthomorphata	cohort	Metazoa	5	4
+123369	Euacanthomorphacea	cohort	Metazoa	5	4
+144001	Blepharidattini	tribe	Metazoa	5	4
+186626	Otophysi	subcohort	Metazoa	5	4
+186634	Otomorpha	cohort	Metazoa	5	4
+1489872	Percomorphaceae	cohort	Metazoa	5	4
+6573	Mizuhopecten yessoensis	species	Metazoa	5	5
+186466	Mizuhopecten	genus	Metazoa	5	5
+2745514	Pseudomonas salmasensis	species	Pseudomonadati	5	1
+3818	Arachis hypogaea	species	Viridiplantae	5	2
+3846	Glycine	genus	Viridiplantae	5	2
+4085	Nicotiana	genus	Viridiplantae	5	2
+9596	Pan	genus	Metazoa	5	2
+9975	Lagomorpha	order	Metazoa	5	2
+9979	Leporidae	family	Metazoa	5	2
+9984	Oryctolagus	genus	Metazoa	5	2
+9986	Oryctolagus cuniculus	species	Metazoa	5	2
+27317	Geotrichum galactomycetum	species	Fungi	5	2
+424554	Nicotianoideae	subfamily	Viridiplantae	5	2
+424562	Nicotianeae	tribe	Viridiplantae	5	2
+1462606	Glycine subgen. Soja	subgenus	Viridiplantae	5	2
+69	Lysobacter enzymogenes	species	Pseudomonadati	5	1
+358	Agrobacterium tumefaciens	species	Pseudomonadati	5	1
+615	Serratia marcescens	species	Pseudomonadati	5	2
+1423	Bacillus subtilis	species	Bacillati	5	1
+1707	Cellulomonas	genus	Bacillati	5	1
+1873	Micromonospora	genus	Bacillati	5	2
+28056	Micromonosporaceae	family	Bacillati	5	2
+31989	Paracoccaceae	family	Pseudomonadati	5	1
+74829	Stutzerimonas balearica	species	Pseudomonadati	5	1
+85008	Micromonosporales	order	Bacillati	5	2
+85016	Cellulomonadaceae	family	Bacillati	5	1
+111527	pseudomallei group	species group	Pseudomonadati	5	1
+255475	Aurantimonadaceae	family	Pseudomonadati	5	1
+314722	Pseudoxanthomonas suwonensis	species	Pseudomonadati	5	1
+319939	Metapseudomonas otitidis	species	Pseudomonadati	5	1
+1855416	Qipengyuania	genus	Pseudomonadati	5	2
+2617518	unclassified Micromonospora	no rank	Bacillati	5	1
+2620175	unclassified Cellulomonas	no rank	Bacillati	5	1
+2644704	unclassified Aminobacter	no rank	Pseudomonadati	5	1
+2645039	unclassified Qipengyuania	no rank	Pseudomonadati	5	1
+2725477	Pseudomonas tohonis	species	Pseudomonadati	5	1
+2736875	Bradyrhizobium xenonodulans	species	Pseudomonadati	5	1
+2961893	Pseudomonas triclosanedens	species	Pseudomonadati	5	1
+2979461	Qipengyuania sp. SS22	species	Pseudomonadati	5	1
+2979870	Aminobacter sp. NyZ550	species	Pseudomonadati	5	1
+2982531	Xanthomonas sp. AM6	species	Pseudomonadati	5	1
+2991051	Pseudomonas sp. KU26590	species	Pseudomonadati	5	1
+2992573	Lysobacter auxotrophicus	species	Pseudomonadati	5	1
+2995174	Pseudomonas quebecensis	species	Pseudomonadati	5	1
+3018036	Sphingomonas sp. CV7422	species	Pseudomonadati	5	1
+3073808	Telluraves	infraclass	Metazoa	5	2
+9539	Macaca	genus	Metazoa	5	1
+34073	Variovorax paradoxus	species	Pseudomonadati	5	1
+80869	Paracidovorax citrulli	species	Pseudomonadati	5	1
+180282	Delftia tsuruhatensis	species	Pseudomonadati	5	1
+219181	Ottowia	genus	Pseudomonadati	5	1
+2640874	unclassified Cupriavidus	no rank	Pseudomonadati	5	1
+2766470	Leuconostoc falkenbergense	species	Bacillati	5	1
+2816950	Ottowia testudinis	species	Pseudomonadati	5	1
+2861799	Pseudomonas sp. Colony2	species	Pseudomonadati	5	1
+3051137	Paracidovorax	genus	Pseudomonadati	5	1
+4107	Solanum	genus	Viridiplantae	4	3
+424574	Solaneae	tribe	Viridiplantae	4	3
+16728	Asarum	genus	Viridiplantae	4	1
+16736	Piperales	order	Viridiplantae	4	1
+76106	Asarum satsumense	species	Viridiplantae	4	1
+232347	Magnoliidae	class	Viridiplantae	4	1
+323284	Alcaligenes aquatilis	species	Pseudomonadati	4	1
+2956716	Asaraceae	family	Viridiplantae	4	1
+7088	Lepidoptera	order	Metazoa	4	2
+7147	Diptera	order	Metazoa	4	3
+8006	Salmoniformes	order	Metazoa	4	2
+8015	Salmonidae	family	Metazoa	4	2
+8157	Carangidae	family	Metazoa	4	1
+8160	Seriola	genus	Metazoa	4	1
+9053	Phasianus	genus	Metazoa	4	1
+9054	Phasianus colchicus	species	Metazoa	4	1
+9796	Equus caballus	species	Metazoa	4	2
+9881	Odocoileinae	subfamily	Metazoa	4	2
+9918	Bubalus	genus	Metazoa	4	3
+10066	Muridae	family	Metazoa	4	2
+10088	Mus	genus	Metazoa	4	1
+10090	Mus musculus	species	Metazoa	4	1
+33550	Hystricomorpha	suborder	Metazoa	4	3
+37567	Ditrysia	parvorder	Metazoa	4	2
+39107	Murinae	subfamily	Metazoa	4	2
+41191	Glossata	suborder	Metazoa	4	2
+41196	Neolepidoptera	infraorder	Metazoa	4	2
+41197	Heteroneura	parvorder	Metazoa	4	2
+41447	Seriola dumerili	species	Metazoa	4	1
+41705	Protacanthopterygii	cohort	Metazoa	4	2
+85604	Amphiesmenoptera	superorder	Metazoa	4	2
+91836	malvids	class	Viridiplantae	4	3
+337687	Muroidea	suborder	Metazoa	4	3
+504568	Salmoninae	subfamily	Metazoa	4	2
+715989	sordariomyceta	subphylum	Fungi	4	2
+862507	Mus	subgenus	Metazoa	4	1
+1489904	Carangaria	cohort	Metazoa	4	1
+1489907	Carangiformes	order	Metazoa	4	1
+1963758	Myomorpha	suborder	Metazoa	4	3
+99	Ancylobacter	genus	Pseudomonadati	4	1
+234	Brucella	genus	Pseudomonadati	4	2
+1613	Limosilactobacillus fermentum	species	Bacillati	4	2
+1696	Brevibacterium	genus	Bacillati	4	1
+1813	Amycolatopsis	genus	Bacillati	4	2
+1817	Nocardia	genus	Bacillati	4	2
+2745	Halomonas	genus	Pseudomonadati	4	2
+4668	Amaryllidaceae	family	Viridiplantae	4	1
+4678	Allium	genus	Viridiplantae	4	1
+4679	Allium cepa	species	Viridiplantae	4	1
+7100	Noctuidae	family	Metazoa	4	1
+7509	Siphonaptera	order	Metazoa	4	1
+7511	Pulicidae	family	Metazoa	4	1
+7514	Ctenocephalides	genus	Metazoa	4	1
+7515	Ctenocephalides felis	species	Metazoa	4	1
+28256	Halomonadaceae	family	Pseudomonadati	4	2
+33057	Thauera	genus	Pseudomonadati	4	1
+33069	Pseudomonas viridiflava	species	Pseudomonadati	4	1
+34008	Rhodovulum	genus	Pseudomonadati	4	1
+35806	Rhodovulum sulfidophilum	species	Pseudomonadati	4	1
+37570	Noctuoidea	superfamily	Metazoa	4	1
+40553	Allioideae	subfamily	Viridiplantae	4	1
+48479	environmental samples	no rank	NA	4	1
+60550	Burkholderia pyrrocinia	species	Pseudomonadati	4	1
+73496	Asparagales	order	Viridiplantae	4	1
+76890	Asticcacaulis	genus	Pseudomonadati	4	2
+77133	uncultured bacterium	species	NA	4	1
+85019	Brevibacteriaceae	family	Bacillati	4	1
+85413	Bosea	genus	Pseudomonadati	4	1
+87883	Burkholderia multivorans	species	Pseudomonadati	4	2
+93218	Pandoraea apista	species	Pseudomonadati	4	1
+101571	Burkholderia ubonensis	species	Pseudomonadati	4	1
+104431	Obtectomera	parvorder	Metazoa	4	1
+118882	Brucellaceae	family	Pseudomonadati	4	2
+119042	Hyphomicrobiales incertae sedis	no rank	Pseudomonadati	4	1
+129369	Pulicoidea	superfamily	Metazoa	4	1
+135619	Oceanospirillales	order	Pseudomonadati	4	2
+140693	Pulicomorpha	suborder	Metazoa	4	1
+186801	Clostridia	class	Bacillati	4	1
+186802	Eubacteriales	order	Bacillati	4	1
+212791	Enhydrobacter	genus	Pseudomonadati	4	1
+335928	Xanthobacteraceae	family	Pseudomonadati	4	2
+476429	Archaeopsyllinae	subfamily	Metazoa	4	1
+648995	Agrobacterium pusense	species	Pseudomonadati	4	1
+703248	Allieae	tribe	Viridiplantae	4	1
+1249668	Burkholderia ubonensis MSMB22	strain	Pseudomonadati	4	1
+1381124	Limosilactobacillus fermentum 3872	strain	Bacillati	4	1
+1775411	Rhodanobacteraceae	family	Pseudomonadati	4	2
+1812935	Enterobacter roggenkampii	species	Pseudomonadati	4	1
+1894999	Enhydrobacter sp.	species	Pseudomonadati	4	1
+2008794	Zoogloeaceae	family	Pseudomonadati	4	1
+2609274	unclassified Thauera	no rank	Pseudomonadati	4	1
+2614124	unclassified Brevibacterium	no rank	Bacillati	4	1
+2626613	unclassified Ancylobacter	no rank	Pseudomonadati	4	1
+2628350	unclassified Asticcacaulis	no rank	Pseudomonadati	4	2
+2632610	unclassified Brucella	no rank	Pseudomonadati	4	1
+2632691	unclassified Enhydrobacter	no rank	Pseudomonadati	4	1
+2653178	unclassified Bosea (in: a-proteobacteria)	no rank	Pseudomonadati	4	1
+2742598	Limosilactobacillus	genus	Bacillati	4	2
+2826938	Brucella/Ochrobactrum group	no rank	Pseudomonadati	4	2
+2831100	Boseaceae	family	Pseudomonadati	4	1
+2831106	Devosiaceae	family	Pseudomonadati	4	1
+2886044	Brucella sp. JSBI001	species	Pseudomonadati	4	1
+2897772	Thauera sp. WB-2	species	Pseudomonadati	4	1
+2908006	Pseudomonas silvicola	species	Pseudomonadati	4	1
+2962597	Pseudomonas sp. Z8(2022)	species	Pseudomonadati	4	1
+2962632	Cellulomonas sp. NTE-D12	species	Bacillati	4	1
+2968969	Stutzerimonas frequens	species	Pseudomonadati	4	2
+2969621	Bosea sp. NBC_00550	species	Pseudomonadati	4	1
+2979468	Streptomyces sp. S465	species	Bacillati	4	1
+2994495	Pseudomonas paraeruginosa	species	Pseudomonadati	4	1
+2995142	Pseudoxanthomonas sp. SL93	species	Pseudomonadati	4	1
+2995155	Asticcacaulis sp. SL142	species	Pseudomonadati	4	1
+2995166	Ancylobacter sp. SL191	species	Pseudomonadati	4	1
+3019968	Pseudomonas sp. MM227	species	Pseudomonadati	4	1
+301	Ectopseudomonas oleovorans	species	Pseudomonadati	4	1
+1313	Streptococcus pneumoniae	species	Bacillati	4	1
+2053	Gordonia	genus	Bacillati	4	1
+9479	Platyrrhini	parvorder	Metazoa	4	1
+9578	Hylobates	genus	Metazoa	4	1
+43263	Aquipseudomonas alcaligenes	species	Pseudomonadati	4	1
+76760	Pseudomonas rhodesiae	species	Pseudomonadati	4	1
+81572	Hylobates moloch	species	Metazoa	4	1
+85026	Gordoniaceae	family	Bacillati	4	1
+172043	Brevundimonas nasdae	species	Pseudomonadati	4	1
+202956	Acinetobacter towneri	species	Pseudomonadati	4	1
+475937	Rhodopseudomonas boonkerdii	species	Pseudomonadati	4	1
+489909	Nosocomiicoccus	genus	Bacillati	4	1
+489910	Nosocomiicoccus ampullae	species	Bacillati	4	1
+504346	Pseudomonas phage PAJU2	species	Heunggongvirae	4	1
+1267217	Melaminivora jejuensis	species	Pseudomonadati	4	1
+1623287	Detrevirus	genus	Heunggongvirae	4	1
+1649468	Melaminivora	genus	Pseudomonadati	4	1
+2604841	unclassified Detrevirus	no rank	Heunggongvirae	4	1
+2615069	unclassified Nocardioides	no rank	Bacillati	4	1
+2638500	unclassified Comamonas	no rank	Pseudomonadati	4	1
+2813778	Brevundimonas fontaquae	species	Pseudomonadati	4	1
+3119969	Bubalus kerabau	species	Metazoa	4	1
+3236652	Aquipseudomonas	genus	Pseudomonadati	4	1
+3424297	Caudoviricetes incertae sedis	no rank	Heunggongvirae	4	1
+7952	Cypriniformes	order	Metazoa	3	3
+76071	Beloniformes	order	Metazoa	3	1
+91882	campanulids	class	Viridiplantae	3	4
+94935	Belonidae	family	Metazoa	3	1
+123731	Belonoidei	suborder	Metazoa	3	1
+129042	Cololabis	genus	Metazoa	3	1
+129043	Cololabis saira	species	Metazoa	3	1
+186627	Cypriniphysae	superorder	Metazoa	3	3
+1489908	Ovalentaria	cohort	Metazoa	3	2
+1489913	Atherinomorphae	superorder	Metazoa	3	2
+3502	Fagales	order	Viridiplantae	3	3
+3745	Rosaceae	family	Viridiplantae	3	1
+3848	Glycine soja	species	Viridiplantae	3	2
+4143	Lamiales	order	Viridiplantae	3	1
+7203	Brachycera	suborder	Metazoa	3	2
+7524	Hemiptera	order	Metazoa	3	3
+8292	Amphibia	class	Metazoa	3	1
+9597	Pan paniscus	species	Metazoa	3	2
+9681	Felidae	family	Metazoa	3	3
+10167	Bathyergidae	family	Metazoa	3	1
+10180	Heterocephalus	genus	Metazoa	3	1
+10181	Heterocephalus glaber	species	Metazoa	3	1
+30533	Moschidae	family	Metazoa	3	1
+33342	Paraneoptera	cohort	Metazoa	3	3
+40139	Dolichoderinae	subfamily	Metazoa	3	1
+41666	Batrachia	superorder	Metazoa	3	1
+43733	Muscomorpha	infraorder	Metazoa	3	2
+43738	Schizophora	no rank	Metazoa	3	2
+68408	Moschus berezovskii	species	Metazoa	3	1
+68410	Moschus	genus	Metazoa	3	1
+83484	Linepithema	genus	Metazoa	3	1
+83485	Linepithema humile	species	Metazoa	3	1
+171637	Amygdaloideae	subfamily	Viridiplantae	3	1
+183967	Thermoplasmata	class	Methanobacteriati	3	1
+232378	Proteales	order	Viridiplantae	3	1
+379583	Feliformia	suborder	Metazoa	3	3
+480117	Cyclorrhapha	infraorder	Metazoa	3	2
+480118	Eremoneura	infraorder	Metazoa	3	2
+1235850	Methanomassiliicoccales	order	Methanobacteriati	3	1
+1291539	Methanomethylophilus	genus	Methanobacteriati	3	1
+1291540	Methanomethylophilus alvi	species	Methanobacteriati	3	1
+1561947	Penicillium longicatenatum	species	Fungi	3	1
+2283796	Thermoplasmatota	phylum	Methanobacteriati	3	1
+2517203	Methanomethylophilaceae	family	Methanobacteriati	3	1
+22	Shewanella	genus	Pseudomonadati	3	1
+544	Citrobacter	genus	Pseudomonadati	3	2
+614	Serratia liquefaciens	species	Pseudomonadati	3	1
+1350	Enterococcus	genus	Bacillati	3	1
+1762	Mycobacteriaceae	family	Bacillati	3	2
+1971	Streptomyces noursei	species	Bacillati	3	1
+2034	Curtobacterium	genus	Bacillati	3	1
+2040	Aeromicrobium	genus	Bacillati	3	1
+2063	Kitasatospora	genus	Bacillati	3	1
+4098	Nicotiana tomentosiformis	species	Viridiplantae	3	1
+7041	Coleoptera	order	Metazoa	3	1
+7065	Tenebrionidae	family	Metazoa	3	1
+7069	Tribolium	genus	Metazoa	3	1
+7070	Tribolium castaneum	species	Metazoa	3	1
+9126	Passeriformes	order	Metazoa	3	2
+9569	Colobinae	subfamily	Metazoa	3	2
+41084	Polyphaga	suborder	Metazoa	3	1
+41088	Cucujiformia	infraorder	Metazoa	3	1
+43668	Brachybacterium	genus	Bacillati	3	1
+46913	Devosia	genus	Pseudomonadati	3	1
+48664	Xanthomonas fragariae	species	Pseudomonadati	3	2
+69657	Hyphomonadaceae	family	Pseudomonadati	3	1
+69658	unclassified Hyphomonadaceae	no rank	Pseudomonadati	3	1
+71527	Tenebrionoidea	superfamily	Metazoa	3	1
+81852	Enterococcaceae	family	Bacillati	3	1
+83265	Aminobacter niigataensis	species	Pseudomonadati	3	1
+85020	Dermabacteraceae	family	Bacillati	3	1
+95486	Burkholderia cenocepacia	species	Pseudomonadati	3	1
+135622	Alteromonadales	order	Pseudomonadati	3	1
+183795	Pseudomonas mediterranea	species	Pseudomonadati	3	1
+196024	Aeromonas dhakensis	species	Pseudomonadati	3	1
+196773	unclassified Devosia	no rank	Pseudomonadati	3	1
+231454	Dyella	genus	Pseudomonadati	3	2
+267890	Shewanellaceae	family	Pseudomonadati	3	1
+543877	Pelagerythrobacter marensis	species	Pseudomonadati	3	1
+1304792	Tenebrionidae incertae sedis	no rank	Metazoa	3	1
+1434306	Streptomyces noursei ZPM	strain	Bacillati	3	1
+1652028	Brachybacterium huguangmaarense	species	Bacillati	3	1
+1775688	Jiella	genus	Pseudomonadati	3	1
+1866885	Mycolicibacterium	genus	Bacillati	3	2
+1871049	Pseudoxanthomonas sp.	species	Pseudomonadati	3	1
+2505979	Pseudomonas viciae	species	Pseudomonadati	3	1
+2633570	unclassified Aeromicrobium	no rank	Bacillati	3	1
+2633591	unclassified Kitasatospora	no rank	Bacillati	3	1
+2634549	unclassified Dyella	no rank	Pseudomonadati	3	1
+2800060	Hyphomonadales	order	Pseudomonadati	3	1
+2800681	Aurantiacibacter	genus	Pseudomonadati	3	1
+2800685	Pelagerythrobacter	genus	Pseudomonadati	3	1
+2800693	unclassified Aurantiacibacter	no rank	Pseudomonadati	3	1
+2908642	Solicola gregarius	species	Bacillati	3	1
+2971236	Xanthomonas sp. CFBP 8445	species	Pseudomonadati	3	1
+2986828	Flavobacterium sp. N2013	species	Pseudomonadati	3	1
+2986834	Flavobacterium sp. N2820	species	Pseudomonadati	3	1
+2986949	Jiella pelagia	species	Pseudomonadati	3	1
+2994496	Dyella sp. GSA-30	species	Pseudomonadati	3	1
+2998080	Kitasatospora sp. YST-16	species	Bacillati	3	1
+2999062	Brevibacterium sp. BRM-1	species	Bacillati	3	1
+3002903	Pseudomonas huanghezhanensis	species	Pseudomonadati	3	1
+3009077	Aeromicrobium sp. HA	species	Bacillati	3	1
+3015152	Micromonospora sp. WMMD812	species	Bacillati	3	1
+3024237	Solicola	genus	Bacillati	3	1
+3073809	Australaves	infraclass	Metazoa	3	2
+3390273	Klebsiella pneumoniae complex	species group	Pseudomonadati	3	1
+815	Bacteroidaceae	family	Pseudomonadati	3	1
+1041	Erythrobacter	genus	Pseudomonadati	3	1
+8016	Oncorhynchus	genus	Metazoa	3	1
+9498	Cebidae	family	Metazoa	3	1
+9869	Rangifer	genus	Metazoa	3	1
+9870	Rangifer tarandus	species	Metazoa	3	1
+32066	Fusobacteriota	phylum	Fusobacteriati	3	1
+38070	Cebinae	subfamily	Metazoa	3	1
+53374	Corynebacterium coyleae	species	Bacillati	3	1
+75787	Rhodocyclaceae	family	Pseudomonadati	3	1
+76115	Aromatoleum bremense	species	Pseudomonadati	3	1
+84595	Gordonia polyisoprenivorans	species	Bacillati	3	1
+121428	Sphingobium xenophagum	species	Pseudomonadati	3	1
+165179	Segatella copri	species	Pseudomonadati	3	1
+165696	Novosphingobium	genus	Pseudomonadati	3	1
+192812	Qipengyuania flava	species	Pseudomonadati	3	1
+203490	Fusobacteriia	class	Fusobacteriati	3	1
+203491	Fusobacteriales	order	Fusobacteriati	3	1
+212743	Rhizobacter	genus	Pseudomonadati	3	1
+224471	Burkholderiales genera incertae sedis	no rank	Pseudomonadati	3	1
+501783	Cloacibacterium	genus	Pseudomonadati	3	1
+537011	Segatella copri DSM 18205	strain	Pseudomonadati	3	1
+551759	Aromatoleum	genus	Pseudomonadati	3	1
+663243	unclassified Variovorax	no rank	Pseudomonadati	3	1
+1211579	Pseudomonas putida NBRC 14164	strain	Pseudomonadati	3	1
+1443105	Pseudomonas aeruginosa SG17M	strain	Pseudomonadati	3	1
+2004710	Cloacibacterium caeni	species	Pseudomonadati	3	1
+2017486	Nocardioides sp. S5	species	Bacillati	3	1
+2633097	unclassified Erythrobacter	no rank	Pseudomonadati	3	1
+2640088	unclassified Rhizobacter	no rank	Pseudomonadati	3	1
+2753607	Rhizobacter sp. AJA081-3	species	Pseudomonadati	3	1
+2762318	Weeksellaceae	family	Pseudomonadati	3	1
+2842349	Pseudomonas asgharzadehiana	species	Pseudomonadati	3	1
+2879114	Pseudomonas sp. HS-18	species	Pseudomonadati	3	1
+2884455	Cupriavidus sp. MP-37	species	Pseudomonadati	3	1
+2906062	Pseudomonas wenzhouensis	species	Pseudomonadati	3	1
+2974251	Segatella	genus	Pseudomonadati	3	1
+3384189	Fusobacteriati	kingdom	Fusobacteriati	3	1
+4081	Solanum lycopersicum	species	Viridiplantae	2	3
+4209	Asterales	order	Viridiplantae	2	3
+4210	Asteraceae	family	Viridiplantae	2	3
+4235	Lactuca	genus	Viridiplantae	2	2
+4236	Lactuca sativa	species	Viridiplantae	2	2
+9362	Eulipotyphla	order	Metazoa	2	5
+30727	Cyprinoidei	suborder	Metazoa	2	3
+49274	Solanum subgen. Lycopersicon	subgenus	Viridiplantae	2	3
+219120	Cichorioideae	subfamily	Viridiplantae	2	2
+219121	Cichorieae	tribe	Viridiplantae	2	2
+745062	Lactucinae	subtribe	Viridiplantae	2	2
+9376	Soricidae	family	Metazoa	2	3
+9379	Sorex	genus	Metazoa	2	3
+42254	Sorex araneus	species	Metazoa	2	3
+47714	Lacticaseibacillus paracasei subsp. paracasei	subspecies	Bacillati	2	1
+183663	Soricinae	subfamily	Metazoa	2	3
+3503	Fagaceae	family	Viridiplantae	2	1
+3511	Quercus	genus	Viridiplantae	2	1
+3646	Malpighiales	order	Viridiplantae	2	2
+3650	Cucurbitaceae	family	Viridiplantae	2	3
+3655	Cucumis	genus	Viridiplantae	2	3
+3659	Cucumis sativus	species	Viridiplantae	2	3
+3688	Salicaceae	family	Viridiplantae	2	2
+3689	Populus	genus	Viridiplantae	2	2
+3691	Populus nigra	species	Viridiplantae	2	2
+3699	Brassicales	order	Viridiplantae	2	3
+3700	Brassicaceae	family	Viridiplantae	2	2
+3705	Brassica	genus	Viridiplantae	2	2
+3708	Brassica napus	species	Viridiplantae	2	2
+3754	Prunus	genus	Viridiplantae	2	1
+3760	Prunus persica	species	Viridiplantae	2	1
+3826	Cicer	genus	Viridiplantae	2	1
+3827	Cicer arietinum	species	Viridiplantae	2	1
+3931	Myrtaceae	family	Viridiplantae	2	1
+3932	Eucalyptus	genus	Viridiplantae	2	1
+4429	Nelumbonaceae	family	Viridiplantae	2	1
+4430	Nelumbo	genus	Viridiplantae	2	1
+4432	Nelumbo nucifera	species	Viridiplantae	2	1
+4480	Aegilops	genus	Viridiplantae	2	2
+4520	Lolium	genus	Viridiplantae	2	2
+4522	Lolium perenne	species	Viridiplantae	2	2
+5139	Sordariales	order	Fungi	2	2
+5178	Helotiales	order	Fungi	2	1
+5759	Entamoeba histolytica	species	NA	2	1
+6684	Dendrobranchiata	suborder	Metazoa	2	3
+6685	Penaeidae	family	Metazoa	2	3
+6712	Astacidea	infraorder	Metazoa	2	1
+6843	Chelicerata	subphylum	Metazoa	2	2
+6854	Arachnida	class	Metazoa	2	2
+6933	Acari	subclass	Metazoa	2	1
+6934	Parasitiformes	superorder	Metazoa	2	1
+6935	Ixodida	order	Metazoa	2	1
+6939	Ixodidae	family	Metazoa	2	1
+7148	Nematocera	suborder	Metazoa	2	3
+7157	Culicidae	family	Metazoa	2	3
+7948	Clupeinae	subfamily	Metazoa	2	2
+8293	Caudata	order	Metazoa	2	1
+8294	Ambystomatidae	family	Metazoa	2	1
+8295	Ambystoma	genus	Metazoa	2	1
+8296	Ambystoma mexicanum	species	Metazoa	2	1
+8504	Lepidosauria	class	Metazoa	2	3
+8509	Squamata	order	Metazoa	2	3
+9230	Sphenisciformes	order	Metazoa	2	2
+9231	Spheniscidae	family	Metazoa	2	2
+9232	Aptenodytes	genus	Metazoa	2	2
+9233	Aptenodytes forsteri	species	Metazoa	2	2
+9655	Mustelidae	family	Metazoa	2	3
+9867	Dama	genus	Metazoa	2	2
+10158	Octodontidae	family	Metazoa	2	2
+10159	Octodon	genus	Metazoa	2	2
+10160	Octodon degus	species	Metazoa	2	2
+28983	Sclerotiniaceae	family	Fungi	2	1
+30367	Salamandroidea	superfamily	Metazoa	2	1
+30532	Dama dama	species	Metazoa	2	2
+31932	Nitrosopumilales	order	Thermoproteati	2	1
+32446	Clupeiformes	order	Metazoa	2	2
+33196	Botrytis	genus	Fungi	2	1
+33361	Fulgoromorpha	infraorder	Metazoa	2	2
+33362	Delphacidae	family	Metazoa	2	2
+34619	Dermacentor	genus	Metazoa	2	1
+34878	Cervinae	subfamily	Metazoa	2	3
+34879	Nyctereutes	genus	Metazoa	2	1
+34880	Nyctereutes procyonoides	species	Metazoa	2	1
+36151	Fulgoroidea	superfamily	Metazoa	2	2
+37682	Aegilops tauschii	species	Viridiplantae	2	2
+40559	Botrytis cinerea	species	Fungi	2	1
+41827	Culicoidea	superfamily	Metazoa	2	3
+41944	Myrtales	order	Viridiplantae	2	1
+43741	Acalyptratae	no rank	Metazoa	2	2
+43745	Diopsoidea	superfamily	Metazoa	2	2
+43786	Culicomorpha	infraorder	Metazoa	2	3
+43817	Culicinae	subfamily	Metazoa	2	1
+55118	Clupeidae	family	Metazoa	2	2
+56688	Halorubrum	genus	Methanobacteriati	2	3
+71139	Eucalyptus grandis	species	Viridiplantae	2	1
+71239	Cucurbitales	order	Viridiplantae	2	3
+108930	Nilaparvata	genus	Metazoa	2	2
+108931	Nilaparvata lugens	species	Metazoa	2	2
+111520	Penaeoidea	superfamily	Metazoa	2	3
+130551	Delphacinae	subfamily	Metazoa	2	2
+133894	Penaeus	genus	Metazoa	2	3
+139644	Diopsidae	family	Metazoa	2	2
+139649	Teleopsis dalmanni	species	Metazoa	2	2
+139679	Teleopsis	genus	Metazoa	2	2
+144004	Crematogastrini	tribe	Metazoa	2	1
+147387	Poeae	tribe	Viridiplantae	2	2
+147548	Leotiomycetes	class	Fungi	2	1
+147550	Sordariomycetes	class	Fungi	2	2
+163722	Cicereae	tribe	Viridiplantae	2	1
+172797	Solanum stenotomum	species	Viridiplantae	2	1
+186628	Characiphysae	superorder	Metazoa	2	3
+200361	Aegilops tauschii subsp. strangulata	subspecies	Viridiplantae	2	2
+217475	Arachis stenosperma	species	Viridiplantae	2	1
+222544	Sordariomycetidae	subclass	Fungi	2	2
+238069	Saliceae	tribe	Viridiplantae	2	2
+282425	Clupei	subcohort	Metazoa	2	2
+294381	Entamoeba histolytica HM-1:IMSS	strain	NA	2	1
+297308	Ixodoidea	superfamily	Metazoa	2	1
+300110	Temnothorax	genus	Metazoa	2	1
+300112	Temnothorax longispinosus	species	Metazoa	2	1
+332648	Botrytis cinerea B05.10	strain	Fungi	2	1
+338152	Felinae	subfamily	Metazoa	2	3
+338190	Nitrosopumilaceae	family	Thermoproteati	2	1
+338191	Nitrosopumilus	genus	Thermoproteati	2	1
+426437	Rhipicephalinae	subfamily	Metazoa	2	1
+640630	Loliinae	subtribe	Viridiplantae	2	2
+651137	Nitrososphaerota	phylum	Thermoproteati	2	1
+669657	Chrysosplenium wrightii	species	Viridiplantae	2	1
+721805	Amygdaleae	tribe	Viridiplantae	2	1
+859350	Candidatus Nitrosopumilus salarius BD31	strain	Thermoproteati	2	1
+981071	Brassiceae	tribe	Viridiplantae	2	2
+1003877	Benincaseae	tribe	Viridiplantae	2	3
+1170320	Candidatus Nitrosopumilus salarius	species	Thermoproteati	2	1
+1329911	Toxicofera	order	Metazoa	2	3
+1329912	Episquamata	order	Metazoa	2	3
+1329950	Unidentata	order	Metazoa	2	3
+1329961	Bifurcata	order	Metazoa	2	3
+1489460	Clupeoidei	suborder	Metazoa	2	2
+1643678	Nitrososphaeria	class	Thermoproteati	2	1
+1648037	Poodae	no rank	Viridiplantae	2	2
+1652081	Poeae Chloroplast Group 2 (Poeae type)	tribe	Viridiplantae	2	2
+1699513	Myrtoideae	subfamily	Viridiplantae	2	1
+1699524	Eucalypteae	tribe	Viridiplantae	2	1
+1783275	Thermoproteati	kingdom	Thermoproteati	2	1
+1955247	Auchenorrhyncha	suborder	Metazoa	2	3
+2233838	Hologalegina	subfamily	Viridiplantae	2	3
+2233839	IRL clade	subfamily	Viridiplantae	2	3
+2948571	Loliodinae	tribe	Viridiplantae	2	2
+3072906	Musteloidea	superfamily	Metazoa	2	3
+3073812	Aequornithes	infraclass	Metazoa	2	2
+133	Methylocystis	genus	Pseudomonadati	2	1
+134	Methylocystis parvus	species	Pseudomonadati	2	1
+317	Pseudomonas syringae	species	Pseudomonadati	2	2
+546	Citrobacter freundii	species	Pseudomonadati	2	2
+550	Enterobacter cloacae	species	Pseudomonadati	2	1
+566	Pseudescherichia vulneris	species	Pseudomonadati	2	1
+645	Aeromonas salmonicida	species	Pseudomonadati	2	1
+654	Aeromonas veronii	species	Pseudomonadati	2	1
+1308	Streptococcus thermophilus	species	Bacillati	2	1
+1351	Enterococcus faecalis	species	Bacillati	2	1
+1663	Arthrobacter	genus	Bacillati	2	2
+1743	Propionibacterium	genus	Bacillati	2	1
+1744	Propionibacterium freudenreichii	species	Bacillati	2	1
+1833	Rhodococcus erythropolis	species	Bacillati	2	1
+2035	Curtobacterium flaccumfaciens	species	Bacillati	2	1
+2247	Halorubrum lacusprofundi	species	Methanobacteriati	2	1
+2746	Halomonas elongata	species	Pseudomonadati	2	1
+3041	Chlorophyta	phylum	Viridiplantae	2	1
+3042	Chlamydomonadales	order	Viridiplantae	2	1
+3166	Chlorophyceae	class	Viridiplantae	2	1
+3847	Glycine max	species	Viridiplantae	2	1
+4096	Nicotiana sylvestris	species	Viridiplantae	2	1
+5039	Blastomyces dermatitidis	species	Fungi	2	1
+6893	Araneae	order	Metazoa	2	1
+6905	Araneomorphae	suborder	Metazoa	2	1
+6970	Dictyoptera	superorder	Metazoa	2	1
+6974	Blattidae	family	Metazoa	2	1
+6977	Periplaneta	genus	Metazoa	2	1
+6978	Periplaneta americana	species	Metazoa	2	1
+7954	Danio	genus	Metazoa	2	2
+9219	Piciformes	order	Metazoa	2	1
+9599	Pongo	genus	Metazoa	2	2
+9682	Felis	genus	Metazoa	2	2
+9685	Felis catus	species	Metazoa	2	2
+28450	Burkholderia pseudomallei	species	Pseudomonadati	2	1
+29491	Aeromonas salmonicida subsp. salmonicida	subspecies	Pseudomonadati	2	1
+30639	Mastomys	genus	Metazoa	2	1
+31993	Methylocystaceae	family	Pseudomonadati	2	1
+33183	Onygenales	order	Fungi	2	1
+33341	Polyneoptera	cohort	Metazoa	2	2
+35658	Mastomys coucha	species	Metazoa	2	1
+36291	Muscicapidae	family	Metazoa	2	2
+36292	Ficedula	genus	Metazoa	2	2
+59894	Ficedula albicollis	species	Metazoa	2	2
+60552	Burkholderia vietnamiensis	species	Pseudomonadati	2	2
+61645	Enterobacter asburiae	species	Pseudomonadati	2	1
+74971	Entelegynae	suborder	Metazoa	2	1
+77099	Blattinae	subfamily	Metazoa	2	1
+83654	Leclercia	genus	Pseudomonadati	2	2
+83655	Leclercia adecarboxylata	species	Pseudomonadati	2	1
+83676	Nocardiopsidaceae	family	Bacillati	2	1
+85012	Streptosporangiales	order	Bacillati	2	2
+85823	Blattodea	order	Metazoa	2	1
+95179	Noctuinae	subfamily	Metazoa	2	1
+104204	Streptomonospora	genus	Bacillati	2	1
+135487	Nocardia cyriacigeorgica	species	Bacillati	2	1
+152480	Burkholderia ambifaria	species	Pseudomonadati	2	1
+152500	Burkholderia dolosa	species	Pseudomonadati	2	1
+182639	Kribbella	genus	Bacillati	2	1
+186828	Carnobacteriaceae	family	Bacillati	2	2
+191028	Leisingera	genus	Pseudomonadati	2	1
+196818	unclassified Shewanella	no rank	Pseudomonadati	2	1
+208223	Kosakonia cowanii	species	Pseudomonadati	2	1
+208224	Enterobacter kobei	species	Pseudomonadati	2	1
+229219	Blastomyces	genus	Fungi	2	1
+235627	unclassified Arthrobacter	no rank	Bacillati	2	1
+251695	Pseudomonas syringae group genomosp. 1	species subgroup	Pseudomonadati	2	2
+293088	Martelella	genus	Pseudomonadati	2	1
+299071	Ajellomycetaceae	family	Fungi	2	1
+299767	Enterobacter ludwigii	species	Pseudomonadati	2	1
+342113	Burkholderia oklahomensis	species	Pseudomonadati	2	1
+350701	Burkholderia dolosa AU0158	strain	Pseudomonadati	2	1
+441162	Burkholderia oklahomensis C6786	strain	Pseudomonadati	2	1
+447588	Dechloromonas sp. A34	species	Pseudomonadati	2	1
+470931	Pantoea anthophila	species	Pseudomonadati	2	1
+521720	Denitrificimonas caeni	species	Pseudomonadati	2	1
+543349	Symbiobacteriaceae	family	Bacillati	2	1
+559297	Blastomyces dermatitidis ER-3	strain	Fungi	2	1
+572922	Xyleninae	subfamily	Metazoa	2	1
+607660	Ponginae	subfamily	Metazoa	2	2
+671077	Caldinitratiruptor microaerophilus	species	Bacillati	2	1
+688395	Amphipoea	genus	Metazoa	2	1
+987875	Amphipoea lucens	species	Metazoa	2	1
+1006480	Caldinitratiruptor	genus	Bacillati	2	1
+1049657	Blattoidea	superfamily	Metazoa	2	1
+1134687	Klebsiella michiganensis	species	Pseudomonadati	2	1
+1134912	Methylocystis parvus OBBP	strain	Pseudomonadati	2	1
+1142201	Danio aesculapii	species	Metazoa	2	2
+1259973	Klebsiella electrica	species	Pseudomonadati	2	1
+1323731	Streptomonospora nanhaiensis	species	Bacillati	2	1
+1330547	Kosakonia	genus	Pseudomonadati	2	1
+1344959	Citrobacter freundii complex	species group	Pseudomonadati	2	2
+1449978	Burkholderia vietnamiensis LMG 10929	strain	Pseudomonadati	2	1
+1486262	Martelella endophytica	species	Pseudomonadati	2	1
+1649877	Pseudomonas sp. CCOS 191	species	Pseudomonadati	2	1
+1853232	Hymenobacteraceae	family	Pseudomonadati	2	1
+1871048	Devosia sp.	species	Pseudomonadati	2	1
+2055880	Pseudescherichia	genus	Pseudomonadati	2	1
+2555556	Apameini	tribe	Metazoa	2	1
+2609666	unclassified Halomonas	no rank	Pseudomonadati	2	2
+2633351	unclassified Dechloromonas	no rank	Pseudomonadati	2	1
+2638247	unclassified Rhodopseudomonas	no rank	Pseudomonadati	2	1
+2644121	unclassified Kribbella	no rank	Bacillati	2	1
+2692248	core chlorophytes	phylum	Viridiplantae	2	1
+2726069	Kribbellaceae	family	Bacillati	2	1
+2743709	Danionidae	family	Metazoa	2	2
+2743711	Danioninae	subfamily	Metazoa	2	2
+2744474	Streptomyces sp. KMM 9044	species	Bacillati	2	1
+2809700	Streptomyces sp. AD2-2	species	Bacillati	2	1
+2812636	CS clade	class	Viridiplantae	2	1
+2854170	Roseobacteraceae	family	Pseudomonadati	2	1
+2867264	Pseudomonas phytophila	species	Pseudomonadati	2	1
+2895493	Pseudomonas sp. B21-053	species	Pseudomonadati	2	1
+2895495	Pseudomonas sp. B21-056	species	Pseudomonadati	2	1
+2901189	Halopseudomonas	genus	Pseudomonadati	2	1
+2901190	unclassified Halopseudomonas	no rank	Pseudomonadati	2	1
+2901261	Denitrificimonas	genus	Pseudomonadati	2	1
+2909836	Hyphomonadaceae bacterium ML37	species	Pseudomonadati	2	1
+2930199	Leisingera thetidis	species	Pseudomonadati	2	1
+2971235	Xanthomonas sp. CFBP 8443	species	Pseudomonadati	2	1
+2981135	Streptomyces albidocamelliae	species	Bacillati	2	1
+2982692	Halomonas sp. M4R1S46	species	Pseudomonadati	2	1
+2984338	Nocardia sputorum	species	Bacillati	2	1
+2986837	Flavobacterium sp. N502536	species	Pseudomonadati	2	1
+2991940	Shewanella sp. DAU305	species	Pseudomonadati	2	1
+2991972	Rhodopseudomonas sp. P2A-2r	species	Pseudomonadati	2	1
+2994661	Pseudomonas sp. SL4(2022)	species	Pseudomonadati	2	1
+2998079	Pseudomonas sp. GOM7	species	Pseudomonadati	2	1
+3002436	Kribbella sp. CA-293567	species	Bacillati	2	1
+3003265	Aurantiacibacter sp. MUD11	species	Pseudomonadati	2	1
+3012344	Sphingomonas abietis	species	Pseudomonadati	2	1
+3014784	Sphingomonas sp. NIBR02145	species	Pseudomonadati	2	1
+3015994	Halopseudomonas sp. MFKK-1	species	Pseudomonadati	2	1
+3073810	Coraciimorphae	infraclass	Metazoa	2	1
+3114300	Sphingomonas sp. M1-B02	species	Pseudomonadati	2	1
+279	Xanthobacter	genus	Pseudomonadati	2	1
+644	Aeromonas hydrophila	species	Pseudomonadati	2	1
+821	Phocaeicola vulgatus	species	Pseudomonadati	2	1
+836	Porphyromonas	genus	Pseudomonadati	2	1
+837	Porphyromonas gingivalis	species	Pseudomonadati	2	1
+848	Fusobacterium	genus	Fusobacteriati	2	1
+1280	Staphylococcus aureus	species	Bacillati	2	1
+1575	Leifsonia xyli	species	Bacillati	2	1
+1814	Amycolatopsis methanolica	species	Bacillati	2	1
+1847	Pseudonocardia	genus	Bacillati	2	1
+2747	Carnobacterium	genus	Bacillati	2	1
+2751	Carnobacterium maltaromaticum	species	Bacillati	2	1
+8023	Oncorhynchus nerka	species	Metazoa	2	1
+9513	Cebus	genus	Metazoa	2	1
+9529	Cercocebus	genus	Metazoa	2	1
+9531	Cercocebus atys	species	Metazoa	2	1
+9541	Macaca fascicularis	species	Metazoa	2	1
+9545	Macaca nemestrina	species	Metazoa	2	1
+9598	Pan troglodytes	species	Metazoa	2	1
+9600	Pongo pygmaeus	species	Metazoa	2	1
+9859	Cervus	genus	Metazoa	2	1
+10026	Cricetinae	subfamily	Metazoa	2	1
+31963	Clavibacter nebraskensis	species	Bacillati	2	1
+31966	Leifsonia xyli subsp. cynodontis	subspecies	Bacillati	2	1
+33052	Sphingopyxis terrae	species	Pseudomonadati	2	1
+33877	Agromyces	genus	Bacillati	2	1
+43770	Corynebacterium striatum	species	Bacillati	2	1
+68287	Mesorhizobium	genus	Pseudomonadati	2	1
+72763	Tessaracoccus	genus	Bacillati	2	1
+75309	Rhodanobacter	genus	Pseudomonadati	2	1
+76773	Malassezia globosa	species	Fungi	2	1
+76859	Fusobacterium animalis	species	Fusobacteriati	2	1
+98668	Mycolicibacterium septicum	species	Bacillati	2	1
+145357	Dermacoccaceae	family	Bacillati	2	1
+164608	Novosphingobium sp. KA1	species	Pseudomonadati	2	1
+169418	Mustelinae	subfamily	Metazoa	2	1
+171551	Porphyromonadaceae	family	Pseudomonadati	2	1
+203492	Fusobacteriaceae	family	Fusobacteriati	2	1
+231455	Dyella japonica	species	Pseudomonadati	2	1
+323620	Shinella	genus	Pseudomonadati	2	1
+325217	unclassified Mesorhizobium	no rank	Pseudomonadati	2	1
+337677	Cricetidae	family	Metazoa	2	1
+352475	Shinella zoogloeoides	species	Pseudomonadati	2	1
+376911	Strepsirrhini	suborder	Metazoa	2	1
+397260	Sphingomonas sanxanigenens	species	Pseudomonadati	2	1
+425265	Malassezia globosa CBS 7966	strain	Fungi	2	1
+452646	Neogale vison	species	Metazoa	2	1
+457405	Fusobacterium animalis 7_1	strain	Fusobacteriati	2	1
+684066	Streptococcus lactarius	species	Bacillati	2	1
+715473	Amycolatopsis acidiphila	species	Bacillati	2	1
+858423	Bradyrhizobium arachidis	species	Pseudomonadati	2	1
+909656	Phocaeicola	genus	Pseudomonadati	2	1
+1068978	Amycolatopsis methanolica 239	strain	Bacillati	2	1
+1097677	Clavibacter nebraskensis NCPPB 2581	strain	Bacillati	2	1
+1123269	Sphingomonas sanxanigenens DSM 19645 = NX02	strain	Pseudomonadati	2	1
+1217721	Dyella japonica A8	strain	Pseudomonadati	2	1
+1232667	Comamonas sp. 7D-2	species	Pseudomonadati	2	1
+1234679	Carnobacterium maltaromaticum LMA28	strain	Bacillati	2	1
+1276648	Cutibacterium acnes hdn-1	strain	Bacillati	2	1
+1389489	Leifsonia xyli subsp. cynodontis DSM 46306	strain	Bacillati	2	1
+1489922	Eupercaria	cohort	Metazoa	2	1
+1751095	Flavobacterium ammoniigenes	species	Pseudomonadati	2	1
+1880678	Pseudomonas sivasensis	species	Pseudomonadati	2	1
+2448440	Sphingopyxis terrae subsp. terrae	subspecies	Pseudomonadati	2	1
+2619320	unclassified Pseudonocardia	no rank	Bacillati	2	1
+2621553	unclassified Rhodanobacter	no rank	Pseudomonadati	2	1
+2644732	unclassified Novosphingobium	no rank	Pseudomonadati	2	1
+2648467	unclassified Methylorubrum	no rank	Pseudomonadati	2	1
+2653850	Erythrobacter sp. 3-20A1M	species	Pseudomonadati	2	1
+2715852	Cebus imitator	species	Metazoa	2	1
+2752515	Brevundimonas sp. AJA228-03	species	Pseudomonadati	2	1
+2778082	Rhodanobacter sp. FDAARGOS 1247	species	Pseudomonadati	2	1
+2781962	Agromyces archimandritae	species	Bacillati	2	1
+2811425	Variovorax sp. PDNC026	species	Pseudomonadati	2	1
+2829499	Tessaracoccus palaemonis	species	Bacillati	2	1
+2849501	Nocardioides panacis	species	Bacillati	2	1
+2853163	Comamonas sp. NLF-1-9	species	Pseudomonadati	2	1
+2861280	Microbacterium sp. PAMC21962	species	Bacillati	2	1
+2861281	Microbacterium sp. PAMC22086	species	Bacillati	2	1
+2865833	Pseudonocardia sp. DSM 110487	species	Bacillati	2	1
+2866278	Pseudomonas sp. S07E 245	species	Pseudomonadati	2	1
+2870840	Pseudomonas sp. DR208	species	Pseudomonadati	2	1
+2884220	Streptomyces sp. WA1-19	species	Bacillati	2	1
+2893674	Amycolatopsis methanolica group	species group	Bacillati	2	1
+2897332	Roseomonas cutis	species	Pseudomonadati	2	1
+2897334	Methylorubrum sp. B1-46	species	Pseudomonadati	2	1
+2902005	Neogale	genus	Metazoa	2	1
+3240790	Pseudomonas gorinensis	species	Pseudomonadati	2	1
+9373	Talpidae	family	Metazoa	1	2
+143301	Condylura	genus	Metazoa	1	2
+143302	Condylura cristata	species	Metazoa	1	2
+291793	Chanodichthys	genus	Metazoa	1	1
+933992	Chanodichthys erythropterus	species	Metazoa	1	1
+2743745	Xenocyprididae	family	Metazoa	1	2
+2743747	Xenocypridinae	subfamily	Metazoa	1	2
+9625	Vulpes	genus	Metazoa	1	2
+9627	Vulpes vulpes	species	Metazoa	1	1
+143281	Canis lupus baileyi	subspecies	Metazoa	1	1
+3313	Pinidae	subclass	Viridiplantae	1	1
+3367	Cupressaceae	family	Viridiplantae	1	1
+3368	Cryptomeria	genus	Viridiplantae	1	1
+3369	Cryptomeria japonica	species	Viridiplantae	1	1
+3524	Caryophyllales	order	Viridiplantae	1	1
+3749	Malus	genus	Viridiplantae	1	1
+3750	Malus domestica	species	Viridiplantae	1	1
+3914	Vigna angularis	species	Viridiplantae	1	2
+4136	Lamiaceae	family	Viridiplantae	1	1
+4199	Dipsacales	order	Viridiplantae	1	1
+4200	Caprifoliaceae	family	Viridiplantae	1	1
+4328	Proteaceae	family	Viridiplantae	1	1
+4329	Macadamia	genus	Viridiplantae	1	1
+4527	Oryza	genus	Viridiplantae	1	1
+4538	Oryza glaberrima	species	Viridiplantae	1	1
+4609	Cyperaceae	family	Viridiplantae	1	1
+4729	Sparganium	genus	Viridiplantae	1	1
+4731	Typhaceae	family	Viridiplantae	1	1
+5146	Sordaria	genus	Fungi	1	1
+5147	Sordaria macrospora	species	Fungi	1	1
+5148	Sordariaceae	family	Fungi	1	1
+5258	Pucciniales	order	Fungi	1	1
+5262	Pucciniaceae	family	Fungi	1	1
+5296	Puccinia	genus	Fungi	1	1
+5794	Apicomplexa	phylum	NA	1	1
+6546	Mytilida	order	Metazoa	1	1
+6547	Mytilidae	family	Metazoa	1	1
+6548	Mytilus	genus	Metazoa	1	1
+6550	Mytilus edulis	species	Metazoa	1	1
+6722	Cherax	genus	Metazoa	1	1
+6724	Astacoidea	superfamily	Metazoa	1	1
+6725	Cambaridae	family	Metazoa	1	1
+6726	Procambarus	genus	Metazoa	1	1
+6728	Procambarus clarkii	species	Metazoa	1	1
+7158	Aedes	genus	Metazoa	1	1
+7159	Aedes aegypti	species	Metazoa	1	1
+7438	Vespidae	family	Metazoa	1	1
+7439	Vespinae	subfamily	Metazoa	1	1
+7451	Vespula	genus	Metazoa	1	1
+7949	Clupea	genus	Metazoa	1	1
+7950	Clupea harengus	species	Metazoa	1	1
+7995	Siluriformes	order	Metazoa	1	3
+7999	Pangasiidae	family	Metazoa	1	1
+8033	Salvelinus	genus	Metazoa	1	1
+8036	Salvelinus alpinus	species	Metazoa	1	1
+8219	Gobioidei	suborder	Metazoa	1	1
+8220	Gobiidae	family	Metazoa	1	1
+8288	Polypteriformes	order	Metazoa	1	1
+8289	Polypteridae	family	Metazoa	1	1
+8342	Anura	order	Metazoa	1	1
+8397	Ranidae	family	Metazoa	1	1
+8399	Rana	genus	Metazoa	1	1
+8407	Rana temporaria	species	Metazoa	1	1
+8416	Neobatrachia	suborder	Metazoa	1	1
+8511	Iguania	suborder	Metazoa	1	2
+8570	Serpentes	infraorder	Metazoa	1	1
+8689	Viperidae	family	Metazoa	1	1
+8710	Crotalinae	subfamily	Metazoa	1	1
+8826	Anseriformes	order	Metazoa	1	1
+8830	Anatidae	family	Metazoa	1	1
+8835	Anas	genus	Metazoa	1	1
+8929	Columbiformes	order	Metazoa	1	1
+8930	Columbidae	family	Metazoa	1	1
+8931	Columba	genus	Metazoa	1	1
+8932	Columba livia	species	Metazoa	1	1
+9090	Coturnix	genus	Metazoa	1	1
+9397	Chiroptera	order	Metazoa	1	3
+9415	Phyllostomidae	family	Metazoa	1	1
+9416	Artibeus	genus	Metazoa	1	1
+9417	Artibeus jamaicensis	species	Metazoa	1	1
+9554	Papio	genus	Metazoa	1	2
+9555	Papio anubis	species	Metazoa	1	2
+9564	Theropithecus	genus	Metazoa	1	2
+9565	Theropithecus gelada	species	Metazoa	1	2
+9615	Canis lupus familiaris	subspecies	Metazoa	1	3
+9656	Lutra	genus	Metazoa	1	1
+9657	Lutra lutra	species	Metazoa	1	1
+9696	Puma concolor	species	Metazoa	1	1
+9709	Phocidae	family	Metazoa	1	3
+9761	Mysticeti	parvorder	Metazoa	1	1
+9765	Balaenopteridae	family	Metazoa	1	1
+9766	Balaenoptera	genus	Metazoa	1	1
+9767	Balaenoptera acutorostrata	species	Metazoa	1	1
+9798	Equus przewalskii	species	Metazoa	1	1
+9803	Rhinocerotidae	family	Metazoa	1	1
+9834	Tylopoda	suborder	Metazoa	1	1
+9835	Camelidae	family	Metazoa	1	1
+9836	Camelus	genus	Metazoa	1	1
+9838	Camelus dromedarius	species	Metazoa	1	1
+9871	Odocoileus	genus	Metazoa	1	2
+9874	Odocoileus virginianus	species	Metazoa	1	2
+13124	Lynx	genus	Metazoa	1	1
+13398	Carex	genus	Viridiplantae	1	1
+16714	Juglandaceae	family	Viridiplantae	1	1
+16718	Juglans	genus	Viridiplantae	1	1
+21880	Salvia	genus	Viridiplantae	1	1
+26122	Gesneriaceae	family	Viridiplantae	1	1
+27350	Puccinia striiformis	species	Fungi	1	1
+27406	Cherax quadricarinatus	species	Metazoa	1	1
+27482	Aphididae	family	Metazoa	1	1
+27686	Erpetoichthys	genus	Metazoa	1	1
+27687	Erpetoichthys calabaricus	species	Metazoa	1	1
+27696	Sardina	genus	Metazoa	1	2
+27697	Sardina pilchardus	species	Metazoa	1	2
+28680	Anas acuta	species	Metazoa	1	1
+29000	Pucciniomycotina	subphylum	Fungi	1	1
+29088	Neomonachus schauinslandi	species	Metazoa	1	2
+29961	Parastacoidea	superfamily	Metazoa	1	1
+30213	Vespula pensylvanica	species	Metazoa	1	1
+30352	Ranoidea	superfamily	Metazoa	1	1
+30560	Yangochiroptera	suborder	Metazoa	1	3
+30992	Pangasianodon	genus	Metazoa	1	1
+33373	Sternorrhyncha	suborder	Metazoa	1	1
+33380	Aphidomorpha	infraorder	Metazoa	1	1
+33385	Aphidoidea	superfamily	Metazoa	1	1
+33387	Aphidini	tribe	Metazoa	1	1
+33553	Sciuromorpha	suborder	Metazoa	1	1
+33630	Alveolata	domain	NA	1	1
+34725	Vespoidea	superfamily	Metazoa	1	1
+34989	Colubroidea	superfamily	Metazoa	1	1
+35086	Gregarinasina	subclass	NA	1	1
+35087	Eugregarinorida	order	NA	1	1
+35088	Gregarinidae	family	NA	1	1
+35089	Gregarina	genus	NA	1	1
+37581	Gelechioidea	superfamily	Metazoa	1	1
+37850	Parastacidae	family	Metazoa	1	1
+38942	Quercus robur	species	Viridiplantae	1	1
+39200	Hippuris	genus	Viridiplantae	1	1
+39321	Hippuris vulgaris	species	Viridiplantae	1	1
+40234	Stenodermatinae	subfamily	Metazoa	1	1
+40931	Rhopalosiphum	genus	Metazoa	1	1
+43146	Rhopalosiphum maidis	species	Metazoa	1	1
+43179	Ictidomys tridecemlineatus	species	Metazoa	1	1
+49451	Nicotiana attenuata	species	Viridiplantae	1	1
+51240	Juglans regia	species	Viridiplantae	1	1
+52201	Pogona	genus	Metazoa	1	1
+53541	Stegomyia	subgenus	Metazoa	1	1
+53549	Sabethini	tribe	Metazoa	1	1
+53551	Sabethes	genus	Metazoa	1	1
+53552	Sabethes cyaneus	species	Metazoa	1	1
+55153	Sciuridae	family	Metazoa	1	1
+58019	Pinopsida	class	Viridiplantae	1	1
+60249	Dermacentor albipictus	species	Metazoa	1	1
+60698	Macadamia integrifolia	species	Viridiplantae	1	1
+61384	Lynx rufus	species	Metazoa	1	1
+72430	Cambarinae	subfamily	Metazoa	1	1
+81953	Agamidae	family	Metazoa	1	1
+83232	Acrodonta	suborder	Metazoa	1	1
+86204	Periophthalmus	genus	Metazoa	1	1
+87007	Scabiosa	genus	Viridiplantae	1	1
+89462	Bubalus bubalis	species	Metazoa	1	2
+93934	Coturnix japonica	species	Metazoa	1	1
+97700	Quercus lobata	species	Viridiplantae	1	1
+100815	Madurella	genus	Fungi	1	1
+103695	Pogona vitticeps	species	Metazoa	1	1
+103943	Protobothrops	genus	Metazoa	1	1
+103944	Protobothrops mucrosquamatus	species	Metazoa	1	1
+106220	Mytiloidea	superfamily	Metazoa	1	1
+107590	Montia	genus	Viridiplantae	1	1
+110158	Sordariales incertae sedis	no rank	Fungi	1	1
+110365	Gregarina niphandrodes	species	NA	1	1
+121175	Rana	subgenus	Metazoa	1	1
+133076	Aphidinae	subfamily	Metazoa	1	1
+139456	Penaeus chinensis	species	Metazoa	1	2
+145349	Amphibolurinae	subfamily	Metazoa	1	1
+146712	Puma	genus	Metazoa	1	1
+147367	Oryzoideae	subfamily	Viridiplantae	1	1
+147380	Oryzeae	tribe	Viridiplantae	1	1
+156152	Plantaginaceae	family	Viridiplantae	1	1
+162484	Pucciniomycetes	class	Fungi	1	1
+168172	Puccinia striiformis f. sp. tritici	forma specialis	Fungi	1	1
+169417	Lutrinae	subfamily	Metazoa	1	2
+173647	Cosmopterigidae	family	Metazoa	1	1
+180561	Scabiosa columbaria	species	Viridiplantae	1	1
+199091	Henckelia	genus	Viridiplantae	1	1
+214597	Didymocarpoideae	subfamily	Viridiplantae	1	1
+214607	Trichosporeae	tribe	Viridiplantae	1	1
+216706	Nepetoideae	subfamily	Viridiplantae	1	1
+216718	Mentheae	tribe	Viridiplantae	1	1
+216791	Hippurideae	tribe	Viridiplantae	1	1
+222862	Coelodonta	genus	Metazoa	1	1
+222863	Coelodonta antiquitatis	species	Metazoa	1	1
+226208	Salvia miltiorrhiza	species	Viridiplantae	1	1
+248746	Cosmopteriginae	subfamily	Metazoa	1	1
+301959	Mytilinae	subfamily	Metazoa	1	1
+310915	Pangasianodon hypophthalmus	species	Metazoa	1	1
+313220	Montia fontana	species	Viridiplantae	1	1
+319741	Sparganium glomeratum	species	Viridiplantae	1	1
+337726	Xerinae	subfamily	Metazoa	1	1
+337730	Marmotini	tribe	Metazoa	1	1
+405737	Henckelia pumila	species	Viridiplantae	1	1
+409849	Periophthalmus magnuspinnatus	species	Metazoa	1	1
+418171	Carex laxa	species	Viridiplantae	1	1
+466544	Perdicinae	subfamily	Metazoa	1	1
+494514	Vulpes lagopus	species	Metazoa	1	1
+497678	Oxudercinae	subfamily	Metazoa	1	1
+543639	Dermacentor silvarum	species	Metazoa	1	1
+545366	Hyposmocoma	genus	Metazoa	1	1
+703407	Montiaceae	family	Viridiplantae	1	1
+721813	Maleae	tribe	Viridiplantae	1	1
+866800	Cactineae	suborder	Viridiplantae	1	1
+986140	Cyperoideae	subfamily	Viridiplantae	1	1
+986155	Cariceae	tribe	Viridiplantae	1	1
+1056966	Aedini	tribe	Metazoa	1	1
+1141640	Ictidomys	genus	Metazoa	1	1
+1157608	Madurella fahalii	species	Fungi	1	1
+1280412	Conoidasida	class	NA	1	1
+1338366	Cladistia	class	Metazoa	1	1
+1437180	Acrogymnospermae	subphylum	Viridiplantae	1	1
+1446379	Cupressales	order	Viridiplantae	1	1
+1477025	Hyposmocoma kahamanoa	species	Metazoa	1	1
+1477611	Didymocarpinae	subtribe	Viridiplantae	1	1
+1489793	Siluroidei	suborder	Metazoa	1	3
+1489875	Gobiaria	cohort	Metazoa	1	3
+1489878	Gobiiformes	order	Metazoa	1	1
+1648021	Oryzinae	subtribe	Viridiplantae	1	1
+1907176	Neomonachus	genus	Metazoa	1	2
+2068716	Anatinae	subfamily	Metazoa	1	1
+2282129	Halorubrum sp. Atlit-28R	species	Methanobacteriati	1	1
+2291027	Salvia incertae sedis	no rank	Viridiplantae	1	1
+2642239	unclassified Halorubrum	no rank	Methanobacteriati	1	2
+2759858	Carex subgen. Carex	subgenus	Viridiplantae	1	1
+2821351	Conifers II	subclass	Viridiplantae	1	1
+2836339	Salviinae	subtribe	Viridiplantae	1	1
+3057774	Geotrichum pandrosion	species	Fungi	1	1
+3072905	Pinnipedia	suborder	Metazoa	1	3
+3073799	Columbimorphae	infraclass	Metazoa	1	1
+3410119	Monachinae	subfamily	Metazoa	1	3
+3410121	Monachini	tribe	Metazoa	1	2
+29	Myxococcales	order	Pseudomonadati	1	1
+31	Myxococcaceae	family	Pseudomonadati	1	1
+32	Myxococcus	genus	Pseudomonadati	1	1
+81	Hyphomicrobium	genus	Pseudomonadati	1	1
+265	Paracoccus	genus	Pseudomonadati	1	1
+321	Pseudomonas syringae pv. syringae	no rank	Pseudomonadati	1	1
+346	Xanthomonas citri	species	Pseudomonadati	1	1
+571	Klebsiella oxytoca	species	Pseudomonadati	1	1
+573	Klebsiella pneumoniae	species	Pseudomonadati	1	1
+583	Proteus	genus	Pseudomonadati	1	1
+584	Proteus mirabilis	species	Pseudomonadati	1	1
+629	Yersinia	genus	Pseudomonadati	1	1
+631	Yersinia intermedia	species	Pseudomonadati	1	1
+635	Edwardsiella	genus	Pseudomonadati	1	1
+1117	Cyanobacteriota	phylum	Bacillati	1	1
+1161	Nostocales	order	Bacillati	1	1
+1188	Tolypothrix sp. PCC 7601	species	Bacillati	1	1
+1578	Lactobacillus	genus	Bacillati	1	1
+1582	Lacticaseibacillus casei	species	Bacillati	1	1
+1589	Lactiplantibacillus pentosus	species	Bacillati	1	1
+1763	Mycobacterium	genus	Bacillati	1	1
+1772	Mycolicibacterium smegmatis	species	Bacillati	1	1
+1774	Mycobacteroides chelonae	species	Bacillati	1	1
+1835	Saccharopolyspora	genus	Bacillati	1	1
+2237	Haloarcula	genus	Methanobacteriati	1	1
+2742	Marinobacter	genus	Pseudomonadati	1	1
+3051	Chlamydomonadaceae	family	Viridiplantae	1	1
+3052	Chlamydomonas	genus	Viridiplantae	1	1
+3055	Chlamydomonas reinhardtii	species	Viridiplantae	1	1
+3065	Volvocaceae	family	Viridiplantae	1	1
+3066	Volvox	genus	Viridiplantae	1	1
+3067	Volvox carteri	species	Viridiplantae	1	1
+3068	Volvox carteri f. nagariensis	forma	Viridiplantae	1	1
+3514	Betulaceae	family	Viridiplantae	1	2
+3515	Alnus	genus	Viridiplantae	1	1
+3517	Alnus glutinosa	species	Viridiplantae	1	1
+3629	Malvaceae	family	Viridiplantae	1	1
+3633	Gossypium	genus	Viridiplantae	1	1
+3853	Lathyrus	genus	Viridiplantae	1	2
+3888	Lathyrus oleraceus	species	Viridiplantae	1	2
+4036	Apiales	order	Viridiplantae	1	2
+4037	Apiaceae	family	Viridiplantae	1	2
+4038	Daucus	genus	Viridiplantae	1	1
+4039	Daucus carota	species	Viridiplantae	1	1
+4118	Convolvulaceae	family	Viridiplantae	1	1
+4119	Ipomoea	genus	Viridiplantae	1	1
+4572	Triticum urartu	species	Viridiplantae	1	1
+6599	Heteroconchia	subclass	Metazoa	1	1
+6687	Penaeus monodon	species	Metazoa	1	1
+6689	Penaeus vannamei	species	Metazoa	1	1
+6830	Copepoda	subclass	Metazoa	1	2
+6831	Tigriopus	genus	Metazoa	1	2
+6832	Tigriopus californicus	species	Metazoa	1	2
+7164	Anopheles	genus	Metazoa	1	2
+7214	Drosophilidae	family	Metazoa	1	1
+7215	Drosophila	genus	Metazoa	1	1
+7222	Drosophila grimshawi	species	Metazoa	1	1
+7366	Muscidae	family	Metazoa	1	1
+7369	Musca	genus	Metazoa	1	1
+7370	Musca domestica	species	Metazoa	1	1
+7777	Chondrichthyes	class	Metazoa	1	1
+7778	Elasmobranchii	subclass	Metazoa	1	1
+7933	Anguilliformes	order	Metazoa	1	1
+7934	Anguillidae	family	Metazoa	1	1
+7935	Anguilla	genus	Metazoa	1	1
+7938	Anguilla rostrata	species	Metazoa	1	1
+8783	Palaeognathae	superorder	Metazoa	1	2
+8819	Apterygiformes	order	Metazoa	1	1
+8820	Apterygidae	family	Metazoa	1	1
+8821	Apteryx	genus	Metazoa	1	1
+8990	Numididae	family	Metazoa	1	1
+8995	Numida	genus	Metazoa	1	1
+8996	Numida meleagris	species	Metazoa	1	1
+9003	Tympanuchus	genus	Metazoa	1	1
+9170	Sturnidae	family	Metazoa	1	1
+9171	Sturnus	genus	Metazoa	1	1
+9172	Sturnus vulgaris	species	Metazoa	1	1
+9220	Picidae	family	Metazoa	1	1
+9263	Metatheria	class	Metazoa	1	3
+9335	Phalangeridae	family	Metazoa	1	1
+9336	Trichosurus	genus	Metazoa	1	1
+9337	Trichosurus vulpecula	species	Metazoa	1	1
+9431	Vespertilionidae	family	Metazoa	1	1
+9456	Cynocephalus	genus	Metazoa	1	2
+9601	Pongo abelii	species	Metazoa	1	1
+9750	Physeteridae	family	Metazoa	1	2
+9751	Kogia	genus	Metazoa	1	1
+9793	Equus asinus	species	Metazoa	1	1
+9885	Muntiacus	genus	Metazoa	1	1
+9886	Muntiacus reevesi	species	Metazoa	1	1
+9980	Lepus	genus	Metazoa	1	1
+9983	Lepus europaeus	species	Metazoa	1	1
+10114	Rattus	genus	Metazoa	1	1
+10116	Rattus norvegicus	species	Metazoa	1	1
+10128	Apodemus	genus	Metazoa	1	1
+10129	Apodemus sylvaticus	species	Metazoa	1	1
+16360	Alismatales	order	Viridiplantae	1	1
+27254	Zosteraceae	family	Viridiplantae	1	1
+27257	Zostera	genus	Viridiplantae	1	1
+27615	Kogia breviceps	species	Metazoa	1	1
+27671	Pipistrellus	genus	Metazoa	1	1
+28376	Anolis	genus	Metazoa	1	1
+29465	Veillonella	genus	Bacillati	1	1
+29729	Gossypium arboreum	species	Viridiplantae	1	1
+30102	Cicadellidae	family	Metazoa	1	1
+30137	Macrosteles	genus	Metazoa	1	1
+30503	Orectolobiformes	order	Metazoa	1	1
+30656	Dermoptera	order	Metazoa	1	2
+30657	Cynocephalidae	family	Metazoa	1	2
+31017	Ariidae	family	Metazoa	1	1
+31977	Veillonellaceae	family	Bacillati	1	1
+32015	Myxococcia	class	Pseudomonadati	1	1
+32378	grimshawi subgroup	species subgroup	Metazoa	1	1
+32521	Elopomorpha	infraclass	Metazoa	1	1
+33365	Cicadomorpha	infraorder	Metazoa	1	1
+33368	Membracoidea	superfamily	Metazoa	1	1
+33372	Deltocephalinae	subfamily	Metazoa	1	1
+33910	Amycolatopsis mediterranei	species	Bacillati	1	1
+34767	Chiloscyllium	genus	Metazoa	1	1
+34877	Muntiacinae	subfamily	Metazoa	1	1
+34881	Enhydra	genus	Metazoa	1	1
+34882	Enhydra lutris	species	Metazoa	1	1
+35718	Chaetomiaceae	family	Fungi	1	1
+35885	Ipomoea triloba	species	Viridiplantae	1	1
+36176	Chiloscyllium plagiosum	species	Metazoa	1	1
+37931	Paenarthrobacter ureafaciens	species	Bacillati	1	1
+38313	Shewanella algae	species	Pseudomonadati	1	1
+38609	Diprotodontia	order	Metazoa	1	1
+38937	Anolis sagrei	species	Metazoa	1	1
+39779	unclassified Eubacteriales	no rank	Bacillati	1	1
+40580	Hemiscylliidae	family	Metazoa	1	1
+41212	Harpacticoida	order	Metazoa	1	2
+41938	Malvales	order	Viridiplantae	1	1
+43151	Anopheles darlingi	species	Metazoa	1	1
+43742	Calyptratae	no rank	Metazoa	1	1
+43746	Ephydroidea	superfamily	Metazoa	1	1
+43754	Muscoidea	superfamily	Metazoa	1	1
+43816	Anophelinae	subfamily	Metazoa	1	2
+43845	Drosophilinae	subfamily	Metazoa	1	1
+43910	Muscinae	subfamily	Metazoa	1	1
+44008	Enterococcus cecorum	species	Bacillati	1	1
+44052	Musca	subgenus	Metazoa	1	1
+44543	Nyssorhynchus	subgenus	Metazoa	1	1
+44545	argyritarsis section	subgenus	Metazoa	1	1
+44546	argyritarsis series	subgenus	Metazoa	1	1
+44552	darlingi group	species group	Metazoa	1	1
+45401	Hyphomicrobiaceae	family	Pseudomonadati	1	1
+45950	Dreissenidae	family	Metazoa	1	1
+45951	Dreissena	genus	Metazoa	1	1
+45954	Dreissena polymorpha	species	Metazoa	1	1
+46124	Granulicatella adiacens	species	Bacillati	1	1
+46218	Excalfactoria chinensis	species	Metazoa	1	1
+46877	Drosophilini	tribe	Metazoa	1	1
+47770	Lactobacillus crispatus	species	Bacillati	1	1
+48301	grimshawi clade	no rank	Metazoa	1	1
+48302	grimshawi group	species group	Metazoa	1	1
+48384	picture wing clade	no rank	Metazoa	1	1
+48461	Verrucomicrobiales	order	Pseudomonadati	1	1
+53407	Pseudomonas asplenii	species	Pseudomonadati	1	1
+54136	Trachypithecus	genus	Metazoa	1	2
+54180	Trachypithecus francoisi	species	Metazoa	1	2
+56082	Melanerpes	genus	Metazoa	1	1
+56454	Xanthomonas hortorum	species	Pseudomonadati	1	1
+57894	Muscini	tribe	Metazoa	1	1
+59472	Pipistrellus kuhlii	species	Metazoa	1	1
+59814	Pantoea dispersa	species	Pseudomonadati	1	1
+61652	Serratia rubidaea	species	Pseudomonadati	1	1
+62104	environmental samples	no rank	Pseudomonadati	1	1
+67258	Streptomyces cavourensis	species	Bacillati	1	1
+72037	Hexanauplia	class	Metazoa	1	2
+74068	Macrosteles quadrilineatus	species	Metazoa	1	1
+74201	Verrucomicrobiota	phylum	Pseudomonadati	1	1
+74974	Orbiculariae	suborder	Metazoa	1	1
+79200	Daucus carota subsp. sativus	subspecies	Viridiplantae	1	1
+80811	Cystobacterineae	suborder	Pseudomonadati	1	1
+83889	unclassified Marinobacter	no rank	Pseudomonadati	1	1
+89674	Lolium rigidum	species	Viridiplantae	1	1
+89966	Hymenobacter	genus	Pseudomonadati	1	1
+93708	Uloboridae	family	Metazoa	1	1
+94032	Uloborus	genus	Metazoa	1	1
+105711	Dreissenoidea	superfamily	Metazoa	1	1
+109042	Tympanuchus pallidicinctus	species	Metazoa	1	1
+110931	Cynocephalus volans	species	Metazoa	1	2
+111782	Tolypothrix	genus	Bacillati	1	1
+114707	uncultured Pseudomonas sp.	species	Pseudomonadati	1	1
+116569	Neocopepoda	infraclass	Metazoa	1	2
+116571	Podoplea	superorder	Metazoa	1	2
+117563	Granulicatella	genus	Bacillati	1	1
+119195	Galeoidea	superorder	Metazoa	1	1
+119197	Galeomorphii	infraclass	Metazoa	1	1
+119203	Selachii	infraclass	Metazoa	1	1
+119859	Tolypothrichaceae	family	Bacillati	1	1
+136857	Corynebacterium testudinoris	species	Bacillati	1	1
+150830	Roseibium	genus	Pseudomonadati	1	2
+159612	Curtobacterium poinsettiae	species	Bacillati	1	1
+163743	Fabeae	tribe	Viridiplantae	1	2
+175332	Eresoidea	superfamily	Metazoa	1	1
+175333	Eresidae	family	Metazoa	1	1
+175340	Stegodyphus	genus	Metazoa	1	1
+186624	Elopocephala	infraclass	Metazoa	1	1
+187286	Zostera japonica	species	Viridiplantae	1	1
+189527	Indicatoridae	family	Metazoa	1	1
+189528	Indicator	genus	Metazoa	1	1
+191292	Rhodococcus aetherivorans	species	Bacillati	1	1
+200795	Chloroflexota	phylum	Bacillati	1	1
+200940	Thermodesulfobacteriota	phylum	Pseudomonadati	1	1
+202533	Stegodyphus dumicola	species	Metazoa	1	1
+203494	Verrucomicrobiia	class	Pseudomonadati	1	1
+203557	Verrucomicrobiaceae	family	Pseudomonadati	1	1
+204037	Dickeya	genus	Pseudomonadati	1	2
+204038	Dickeya dadantii	species	Pseudomonadati	1	2
+211600	Melanerpes formicivorus	species	Metazoa	1	1
+213422	Geobacteraceae	family	Pseudomonadati	1	1
+214907	Malvoideae	subfamily	Viridiplantae	1	1
+216572	Oscillospiraceae	family	Bacillati	1	1
+241778	Apioideae	subfamily	Viridiplantae	1	2
+241789	Scandiceae	tribe	Viridiplantae	1	1
+241799	Daucinae	subtribe	Viridiplantae	1	1
+244366	Klebsiella variicola	species	Pseudomonadati	1	1
+267213	Ipomoeeae	tribe	Viridiplantae	1	1
+274591	Hoeflea	genus	Pseudomonadati	1	1
+278205	Myida	order	Metazoa	1	1
+323449	Pontibacter	genus	Pseudomonadati	1	1
+327109	Uloborus diversus	species	Metazoa	1	1
+351604	Geotalea uraniireducens	species	Pseudomonadati	1	1
+364270	Apiineae	suborder	Viridiplantae	1	2
+391180	Enhydra lutris kenyoni	subspecies	Metazoa	1	1
+399176	Sphingomonas sp. R1	species	Pseudomonadati	1	1
+400053	Sylvaemus group	species group	Metazoa	1	1
+400092	Pontibacter korlensis	species	Pseudomonadati	1	1
+400634	Lysinibacillus	genus	Bacillati	1	1
+423477	Veillonella rogosae	species	Bacillati	1	1
+441156	Burkholderia pseudomallei 7894	strain	Pseudomonadati	1	1
+443677	Neoarius graeffei	species	Metazoa	1	1
+450947	Deinopoidea	superfamily	Metazoa	1	1
+466585	Tetraoninae	subfamily	Metazoa	1	2
+473772	unclassified Oscillospiraceae	no rank	Bacillati	1	1
+475172	Neoarius	genus	Metazoa	1	1
+485898	Pseudomonas promysalinigenes	species	Pseudomonadati	1	1
+504493	Hawaiian Drosophila	no rank	Metazoa	1	1
+512265	Harpacticidae	family	Metazoa	1	2
+518753	Luteolibacter	genus	Pseudomonadati	1	1
+524884	Saccharopolyspora rosea	species	Bacillati	1	1
+578455	Thermothielavioides terrestris NRRL 8126	strain	Fungi	1	1
+643453	Xanthomonas citri group	species group	Pseudomonadati	1	1
+670516	Mycobacteroides	genus	Bacillati	1	1
+735337	Euheterodonta	infraclass	Metazoa	1	1
+909932	Negativicutes	class	Bacillati	1	1
+987457	Fissipunctia	genus	Metazoa	1	1
+987458	Fissipunctia ypsillon	species	Metazoa	1	1
+1002788	Indicator indicator	species	Metazoa	1	1
+1070314	Halorussus	genus	Methanobacteriati	1	1
+1082930	Pelagibacterium	genus	Pseudomonadati	1	1
+1176649	Agrobacterium fabrum	species	Pseudomonadati	1	1
+1196325	Pseudomonas putida DOT-T1E	strain	Pseudomonadati	1	1
+1324931	Pseudomonas syringae pv. syringae B301D	strain	Pseudomonadati	1	1
+1434010	Jatrophihabitans	genus	Bacillati	1	1
+1453544	Tahibacter	genus	Pseudomonadati	1	1
+1463165	Klebsiella quasipneumoniae	species	Pseudomonadati	1	1
+1489340	Elopocephalai	infraclass	Metazoa	1	1
+1545728	Mycobacterium sp. EPa45	species	Bacillati	1	1
+1578828	Edwardsiella sp. EA181011	species	Pseudomonadati	1	1
+1620421	Hoeflea sp. IMCC20628	species	Pseudomonadati	1	1
+1742992	Paenarthrobacter	genus	Bacillati	1	1
+1783257	PVC group	kingdom	Pseudomonadati	1	1
+1798711	Cyanobacteriota/Melainabacteria group	kingdom	Bacillati	1	1
+1843489	Veillonellales	order	Bacillati	1	1
+1858093	Dicycla	genus	Metazoa	1	1
+1858094	Dicycla oo	species	Metazoa	1	1
+1873447	Daucus sect. Daucus	section	Viridiplantae	1	1
+1898207	Clostridiales bacterium	species	Bacillati	1	1
+1903410	Pectobacteriaceae	family	Pseudomonadati	1	2
+1903412	Hafniaceae	family	Pseudomonadati	1	1
+1903414	Morganellaceae	family	Pseudomonadati	1	2
+1963268	Haloarculaceae	family	Methanobacteriati	1	1
+1979385	Candidatus Roseilinea	genus	Bacillati	1	1
+2024747	Dactyloidae	family	Metazoa	1	1
+2100821	Lacticaseibacillus chiayiensis	species	Bacillati	1	1
+2364196	Candidatus Thermofontia	class	Bacillati	1	1
+2364209	Candidatus Thermofonsia Clade 3	class	Bacillati	1	1
+2485925	Oscillospiraceae bacterium	species	Bacillati	1	1
+2587410	Thermothielavioides terrestris	species	Fungi	1	1
+2609811	Thermothielavioides	genus	Fungi	1	1
+2614931	unclassified Hoeflea	no rank	Pseudomonadati	1	1
+2619925	unclassified Hyphomicrobium	no rank	Pseudomonadati	1	1
+2629323	unclassified Roseibium	no rank	Pseudomonadati	1	1
+2636778	unclassified Lysinibacillus	no rank	Bacillati	1	1
+2637149	unclassified Luteolibacter	no rank	Pseudomonadati	1	1
+2642494	unclassified Mycobacterium	no rank	Bacillati	1	1
+2644389	unclassified Citrobacter	no rank	Pseudomonadati	1	1
+2648731	unclassified Myxococcus	no rank	Pseudomonadati	1	1
+2649714	unclassified Tolypothrix	no rank	Bacillati	1	1
+2676541	unclassified Edwardsiella (in: enterobacteria)	no rank	Pseudomonadati	1	1
+2696672	Apteryx mantelli	species	Metazoa	1	1
+2704249	unclassified Candidatus Roseilinea	no rank	Bacillati	1	1
+2731552	Pseudomonas solani	species	Pseudomonadati	1	1
+2749809	Lysinibacillus sp. JK80	species	Bacillati	1	1
+2762577	Pseudomonas kielensis	species	Pseudomonadati	1	1
+2785015	Imparidentia	superorder	Metazoa	1	1
+2805415	Jatrophihabitantales	order	Bacillati	1	1
+2805416	Jatrophihabitantaceae	family	Bacillati	1	1
+2806252	Haloglomus	genus	Methanobacteriati	1	1
+2818505	Myxococcota	phylum	Pseudomonadati	1	1
+2821314	Excalfactoria	genus	Metazoa	1	1
+2821832	Stappiaceae	family	Pseudomonadati	1	2
+2838777	Candidatus Roseilinea sp.	species	Bacillati	1	1
+2886045	Brevibacterium sp. JSBI002	species	Bacillati	1	1
+2886046	Marinobacter sp. AN1	species	Pseudomonadati	1	1
+2887365	Marinobacteraceae	family	Pseudomonadati	1	1
+2895496	Pseudomonas sp. B21-059	species	Pseudomonadati	1	1
+2904790	Cellulomonas sp. S1-8	species	Bacillati	1	1
+2908833	Neoheterodontei	superorder	Metazoa	1	1
+2909835	Hyphomonadaceae bacterium BL14	species	Pseudomonadati	1	1
+2910589	Geotalea	genus	Pseudomonadati	1	1
+2937524	Halorussus gelatinilyticus	species	Methanobacteriati	1	1
+2944128	Jatrophihabitans cynanchi	species	Bacillati	1	1
+2976241	Tahibacter amnicola	species	Pseudomonadati	1	1
+2978393	Devosia sp. A8/3-2	species	Pseudomonadati	1	1
+2982796	Myxococcus sp. MH1	species	Pseudomonadati	1	1
+2984530	Pelagibacterium flavum	species	Pseudomonadati	1	1
+2986826	Flavobacterium sp. N1946	species	Pseudomonadati	1	1
+2986839	Flavobacterium sp. N503310	species	Pseudomonadati	1	1
+2991074	Sphingomonas sp. S1-29	species	Pseudomonadati	1	1
+2991496	Streptomyces endophytica	species	Bacillati	1	1
+2991715	Arthrobacter sp. ATA002	species	Bacillati	1	1
+2994319	Flavobacterium sp. GSB-24	species	Pseudomonadati	1	1
+2995170	Luteolibacter sp. SL250	species	Pseudomonadati	1	1
+2995223	Amycolatopsis cynarae	species	Bacillati	1	1
+2997335	Arthrobacter sp. FX8	species	Bacillati	1	1
+2999067	Hymenobacter canadensis	species	Pseudomonadati	1	1
+3004093	Streptomyces camelliae	species	Bacillati	1	1
+3009083	Aurantiacibacter sp. MUD61	species	Pseudomonadati	1	1
+3015149	Verrucosispora sp. WMMD573	species	Bacillati	1	1
+3015154	Streptomyces sp. WMMC500	species	Bacillati	1	1
+3015156	Verrucosispora sp. WMMC514	species	Bacillati	1	1
+3015952	Citrobacter sp. 21OH12SH02A-Citro	species	Pseudomonadati	1	1
+3016006	Roseibium sp. Sym1	species	Pseudomonadati	1	1
+3017781	Paracoccus aerodenitrificans	species	Pseudomonadati	1	1
+3019544	Hyphomicrobium sp. DMF-1	species	Pseudomonadati	1	1
+3028117	Cyanophyceae	class	Bacillati	1	1
+3031651	Desulfuromonadia	class	Pseudomonadati	1	1
+3031668	Geobacterales	order	Pseudomonadati	1	1
+3034026	Haloglomus litoreum	species	Methanobacteriati	1	1
+3064797	Haladaptataceae	family	Methanobacteriati	1	1
+3111776	Haloarcula montana	species	Methanobacteriati	1	1
+3402413	Natronomonadaceae	family	Methanobacteriati	1	1
+280	Xanthobacter autotrophicus	species	Pseudomonadati	1	1
+300	Ectopseudomonas mendocina	species	Pseudomonadati	1	1
+343	Xanthomonas translucens	species	Pseudomonadati	1	1
+375	Bradyrhizobium japonicum	species	Pseudomonadati	1	1
+376	Bradyrhizobium sp.	species	Pseudomonadati	1	1
+379	Rhizobium	genus	Pseudomonadati	1	1
+399	Neorhizobium galegae	species	Pseudomonadati	1	1
+470	Acinetobacter baumannii	species	Pseudomonadati	1	1
+497	Psychrobacter	genus	Pseudomonadati	1	1
+529	Brucella anthropi	species	Pseudomonadati	1	1
+535	Chromobacterium	genus	Pseudomonadati	1	1
+581	Morganella	genus	Pseudomonadati	1	1
+582	Morganella morganii	species	Pseudomonadati	1	1
+712	Pasteurellaceae	family	Pseudomonadati	1	1
+724	Haemophilus	genus	Pseudomonadati	1	1
+726	Haemophilus haemolyticus	species	Pseudomonadati	1	1
+816	Bacteroides	genus	Pseudomonadati	1	1
+818	Bacteroides thetaiotaomicron	species	Pseudomonadati	1	1
+1042	Erythrobacter sp.	species	Pseudomonadati	1	1
+1274	Dermacoccus nishinomiyaensis	species	Bacillati	1	1
+1378	Gemella	genus	Bacillati	1	1
+1824	Nocardia asteroides	species	Bacillati	1	1
+1830	Rhodococcus ruber	species	Bacillati	1	1
+1886	Streptomyces albidoflavus	species	Bacillati	1	1
+2004	Streptosporangiaceae	family	Bacillati	1	1
+2006	Thermobispora bispora	species	Bacillati	1	1
+2060	Tsukamurella	genus	Bacillati	1	1
+3484	Humulus	genus	Viridiplantae	1	1
+3486	Humulus lupulus	species	Viridiplantae	1	1
+3647	Caricaceae	family	Viridiplantae	1	1
+3648	Carica	genus	Viridiplantae	1	1
+3649	Carica papaya	species	Viridiplantae	1	1
+4011	Anacardiaceae	family	Viridiplantae	1	1
+4264	Cynara	genus	Viridiplantae	1	1
+4265	Cynara cardunculus	species	Viridiplantae	1	1
+4441	Camellia	genus	Viridiplantae	1	1
+4442	Camellia sinensis	species	Viridiplantae	1	1
+4710	Arecaceae	family	Viridiplantae	1	1
+5052	Aspergillus	genus	Fungi	1	1
+5653	Kinetoplastea	class	NA	1	1
+5654	Trypanosomatidae	family	NA	1	1
+5658	Leishmania	genus	NA	1	1
+5665	Leishmania mexicana	species	NA	1	1
+6448	Gastropoda	class	Metazoa	1	1
+6578	Pecten	genus	Metazoa	1	1
+6579	Pecten maximus	species	Metazoa	1	1
+6993	Orthoptera	order	Metazoa	1	1
+6994	Ensifera	suborder	Metazoa	1	1
+7878	Dipnomorpha	subclass	Metazoa	1	2
+7879	Lepidosirenoidei	suborder	Metazoa	1	2
+7884	Protopteridae	family	Metazoa	1	2
+7885	Protopterus	genus	Metazoa	1	2
+7888	Protopterus annectens	species	Metazoa	1	2
+7958	Ctenopharyngodon	genus	Metazoa	1	1
+7959	Ctenopharyngodon idella	species	Metazoa	1	1
+7968	Catostomidae	family	Metazoa	1	1
+7991	Characiformes	order	Metazoa	1	1
+8014	Osmerus mordax	species	Metazoa	1	1
+8028	Salmo	genus	Metazoa	1	1
+8032	Salmo trutta	species	Metazoa	1	1
+8070	Lophiiformes	order	Metazoa	1	1
+8548	Anguimorpha	infraorder	Metazoa	1	1
+8784	Casuariiformes	order	Metazoa	1	1
+8788	Dromaiidae	family	Metazoa	1	1
+8789	Dromaius	genus	Metazoa	1	1
+8790	Dromaius novaehollandiae	species	Metazoa	1	1
+9153	Paridae	family	Metazoa	1	1
+9154	Parus	genus	Metazoa	1	1
+9157	Parus major	species	Metazoa	1	1
+9277	Dasyuridae	family	Metazoa	1	1
+9304	Sarcophilus	genus	Metazoa	1	1
+9305	Sarcophilus harrisii	species	Metazoa	1	1
+9348	Xenarthra	superorder	Metazoa	1	1
+9357	Choloepus	genus	Metazoa	1	1
+9445	Lemuridae	family	Metazoa	1	1
+9446	Lemur	genus	Metazoa	1	1
+9447	Lemur catta	species	Metazoa	1	1
+9475	Tarsiidae	family	Metazoa	1	1
+9504	Aotus	genus	Metazoa	1	1
+9515	Sapajus apella	species	Metazoa	1	1
+9544	Macaca mulatta	species	Metazoa	1	1
+9570	Colobus	genus	Metazoa	1	1
+9590	Symphalangus syndactylus	species	Metazoa	1	1
+9714	Mirounga	genus	Metazoa	1	1
+9716	Mirounga angustirostris	species	Metazoa	1	1
+9747	Monodontidae	family	Metazoa	1	1
+9748	Delphinapterus	genus	Metazoa	1	1
+9749	Delphinapterus leucas	species	Metazoa	1	1
+9753	Physeter	genus	Metazoa	1	1
+9755	Physeter macrocephalus	species	Metazoa	1	1
+9756	Ziphiidae	family	Metazoa	1	1
+9757	Mesoplodon	genus	Metazoa	1	1
+9774	Sirenia	order	Metazoa	1	1
+9775	Trichechidae	family	Metazoa	1	1
+9776	Trichechus	genus	Metazoa	1	1
+9778	Trichechus manatus	species	Metazoa	1	1
+9860	Cervus elaphus	species	Metazoa	1	1
+10028	Cricetulus	genus	Metazoa	1	1
+10029	Cricetulus griseus	species	Metazoa	1	1
+10035	Mesocricetus	genus	Metazoa	1	1
+10036	Mesocricetus auratus	species	Metazoa	1	1
+10150	Chinchillidae	family	Metazoa	1	1
+10151	Chinchilla	genus	Metazoa	1	1
+27065	Theaceae	family	Viridiplantae	1	1
+27532	Tenthredinidae	family	Metazoa	1	1
+27675	Choloepus didactylus	species	Metazoa	1	1
+27718	Erythrinidae	family	Metazoa	1	1
+27719	Hoplias	genus	Metazoa	1	1
+27720	Hoplias malabaricus	species	Metazoa	1	1
+29385	Staphylococcus saprophyticus	species	Bacillati	1	1
+29391	Gemella morbillorum	species	Bacillati	1	1
+30409	Lagopus	genus	Metazoa	1	1
+30410	Lagopus leucura	species	Metazoa	1	1
+30610	Otolemur	genus	Metazoa	1	1
+30611	Otolemur garnettii	species	Metazoa	1	1
+30648	Dipodidae	family	Metazoa	1	1
+31013	Bagridae	family	Metazoa	1	1
+31022	Tetraodontiformes	order	Metazoa	1	1
+31028	Tetraodontoidei	suborder	Metazoa	1	1
+31031	Tetraodontidae	family	Metazoa	1	1
+31032	Takifugu	genus	Metazoa	1	1
+32067	Leptotrichia	genus	Fusobacteriati	1	1
+32517	Tetradontoidea	superfamily	Metazoa	1	1
+33682	Euglenozoa	phylum	NA	1	1
+34839	Chinchilla lanigera	species	Metazoa	1	1
+35737	Dipodinae	subfamily	Metazoa	1	1
+37293	Aotus nancymaae	species	Metazoa	1	1
+38568	Leishmania	subgenus	NA	1	1
+38582	Leishmania mexicana species complex	species group	NA	1	1
+38608	Dasyuromorphia	order	Metazoa	1	1
+40297	Galagidae	family	Metazoa	1	1
+40551	Arecales	order	Viridiplantae	1	1
+41937	Sapindales	order	Viridiplantae	1	1
+43356	Kutzneria	genus	Bacillati	1	1
+43357	Kutzneria albida	species	Bacillati	1	1
+43765	Corynebacterium amycolatum	species	Bacillati	1	1
+43767	Prescottella equi	species	Bacillati	1	1
+43860	Spondias	genus	Viridiplantae	1	1
+44534	Cellia	subgenus	Metazoa	1	1
+44535	Neocellia	subgenus	Metazoa	1	1
+46366	Bupleurum	genus	Viridiplantae	1	1
+47312	Tsukamurella pulmonis	species	Bacillati	1	1
+47697	Holocentridae	family	Metazoa	1	1
+47698	Myripristinae	subfamily	Metazoa	1	1
+47699	Myripristis	genus	Metazoa	1	1
+47879	Pseudomonas corrugata	species	Pseudomonadati	1	1
+47883	Pseudomonas synxantha	species	Pseudomonadati	1	1
+48708	Mesoplodon densirostris	species	Metazoa	1	1
+48867	Jaculus	genus	Metazoa	1	1
+51201	Streptomyces griseocarneus	species	Bacillati	1	1
+51337	Jaculus jaculus	species	Metazoa	1	1
+51952	Elaeis	genus	Viridiplantae	1	1
+51953	Elaeis guineensis	species	Viridiplantae	1	1
+51964	Anguidae	family	Metazoa	1	1
+52221	Elgaria	genus	Metazoa	1	1
+54131	Colobus angolensis	species	Metazoa	1	1
+55007	Peltospiridae	family	Metazoa	1	1
+55968	Leucobacter	genus	Bacillati	1	1
+57495	Dermacoccus	genus	Bacillati	1	1
+57706	Citrobacter braakii	species	Pseudomonadati	1	1
+58919	Tilletiopsis washingtonensis	species	Fungi	1	1
+59445	Mormoopidae	family	Metazoa	1	1
+59475	Pteronotus	genus	Metazoa	1	1
+59895	Cynara cardunculus var. scolymus	varietas	Viridiplantae	1	1
+60711	Chlorocebus sabaeus	species	Metazoa	1	1
+61451	Neofelis	genus	Metazoa	1	1
+61452	Neofelis nebulosa	species	Metazoa	1	1
+61646	Lelliottia amnigena	species	Pseudomonadati	1	1
+61853	Nomascus leucogenys	species	Metazoa	1	1
+62784	Tettigoniidae	family	Metazoa	1	1
+62914	Entylomatales	order	Fungi	1	1
+68203	Streptomyces fungicidicus	species	Bacillati	1	1
+70542	Myxocyprinus	genus	Metazoa	1	1
+70543	Myxocyprinus asiaticus	species	Metazoa	1	1
+70905	Tettigonioidea	superfamily	Metazoa	1	1
+71008	Elgaria multicarinata	species	Metazoa	1	1
+72045	Syngnathidae	family	Metazoa	1	1
+74940	Oncorhynchus tshawytscha	species	Metazoa	1	1
+81426	unclassified Bradyrhizobiaceae	no rank	Pseudomonadati	1	1
+83614	Luteimonas	genus	Pseudomonadati	1	1
+83881	Apogonidae	family	Metazoa	1	2
+85028	Tsukamurellaceae	family	Bacillati	1	1
+85772	Tenthredinoidea	superfamily	Metazoa	1	1
+86185	Pseudomonas lundensis	species	Pseudomonadati	1	1
+102210	Benincasa	genus	Viridiplantae	1	1
+102211	Benincasa hispida	species	Viridiplantae	1	1
+102818	Cardueae	tribe	Viridiplantae	1	1
+103816	Rhodococcus pyridinivorans	species	Bacillati	1	1
+106591	Ensifer	genus	Pseudomonadati	1	1
+106592	Ensifer adhaerens	species	Pseudomonadati	1	1
+106649	Acinetobacter guillouiae	species	Pseudomonadati	1	1
+112287	Tenthredininae	subfamily	Metazoa	1	1
+112291	Tenthredo	genus	Metazoa	1	1
+118077	Ceratodontae	superorder	Metazoa	1	2
+127582	Trichechus manatus latirostris	subspecies	Metazoa	1	1
+129912	Syngnathiformes	order	Metazoa	1	1
+129914	Syngnathinae	subfamily	Metazoa	1	1
+135620	Oceanospirillaceae	family	Pseudomonadati	1	1
+135625	Pasteurellales	order	Pseudomonadati	1	1
+138117	Quatrionicoccus	genus	Pseudomonadati	1	1
+138118	Quatrionicoccus australiensis	species	Pseudomonadati	1	1
+138278	Aspergillus ochraceoroseus	species	Fungi	1	1
+147067	Thermobispora	genus	Bacillati	1	1
+152142	Mycolicibacterium holsaticum	species	Bacillati	1	1
+155892	Caulobacter vibrioides	species	Pseudomonadati	1	1
+156980	Arthrobacter woluwensis	species	Bacillati	1	1
+159076	Nerophis	genus	Metazoa	1	1
+159077	Nerophis ophidion	species	Metazoa	1	1
+159646	Elgaria multicarinata webbii	subspecies	Metazoa	1	1
+162479	Entylomatales incertae sedis	no rank	Fungi	1	1
+169697	Arecoideae	subfamily	Viridiplantae	1	1
+169705	Cocoseae	tribe	Viridiplantae	1	1
+169729	Elaeidinae	subtribe	Viridiplantae	1	1
+172042	Rothia aeria	species	Bacillati	1	1
+175792	Tachysurus vachellii	species	Metazoa	1	1
+181483	Holocentrimorphaceae	cohort	Metazoa	1	1
+185979	unclassified Bacillus (in: firmicutes)	no rank	Bacillati	1	1
+187304	Roseibium aggregatum	species	Pseudomonadati	1	1
+188770	Streptomyces koyangensis	species	Bacillati	1	1
+188907	Oleispira	genus	Pseudomonadati	1	1
+188908	Oleispira antarctica	species	Pseudomonadati	1	1
+196806	unclassified Psychrobacter	no rank	Pseudomonadati	1	1
+196816	unclassified Acinetobacter	no rank	Pseudomonadati	1	1
+200618	Nocardioides aromaticivorans	species	Bacillati	1	1
+203192	Stutzerimonas chloritidismutans	species	Pseudomonadati	1	1
+216274	Neomphaloidea	superfamily	Metazoa	1	1
+216778	Stenotrophomonas rhizophila	species	Pseudomonadati	1	1
+219103	Carduoideae	subfamily	Viridiplantae	1	1
+227292	Sinorhizobium/Ensifer group	no rank	Pseudomonadati	1	1
+227508	Megalonychidae	family	Metazoa	1	1
+241785	Bupleureae	tribe	Viridiplantae	1	1
+241818	Antennarioidei	suborder	Metazoa	1	1
+241819	Antennariidae	family	Metazoa	1	1
+241820	Antennarius striatus	species	Metazoa	1	1
+242978	Antennarius	genus	Metazoa	1	1
+245059	Oenanthe	genus	Metazoa	1	1
+267128	Sphingopyxis granuli	species	Pseudomonadati	1	1
+273526	Serratia marcescens subsp. marcescens Db11	strain	Pseudomonadati	1	1
+309979	Cynara cardunculus subsp. cardunculus	subspecies	Viridiplantae	1	1
+316455	Anabrus	genus	Metazoa	1	1
+316456	Anabrus simplex	species	Metazoa	1	1
+319017	Bradyrhizobium sp. WSM471	species	Pseudomonadati	1	1
+323650	Tettigoniinae	subfamily	Metazoa	1	1
+325165	Nomascus	genus	Metazoa	1	1
+325166	Symphalangus	genus	Metazoa	1	1
+336983	Colobus angolensis palliatus	subspecies	Metazoa	1	1
+338153	Pantherinae	subfamily	Metazoa	1	1
+362091	Tenthredo notha	species	Metazoa	1	1
+363886	unclassified Xanthobacteraceae	no rank	Pseudomonadati	1	1
+375763	Sphaeramia	genus	Metazoa	1	2
+375764	Sphaeramia orbicularis	species	Metazoa	1	2
+376912	Tarsiiformes	infraorder	Metazoa	1	1
+376915	Lemuriformes	infraorder	Metazoa	1	1
+376917	Lorisiformes	infraorder	Metazoa	1	1
+376918	Aotidae	family	Metazoa	1	1
+392815	Chlorocebus	genus	Metazoa	1	1
+433684	Takifugu flavidus	species	Metazoa	1	1
+452283	Exobasidiomycetes	class	Fungi	1	1
+465797	Acinetobacter septicus	species	Pseudomonadati	1	1
+475176	Apogoninae	subfamily	Metazoa	1	2
+476282	Bradyrhizobium japonicum SEMIA 5079	strain	Pseudomonadati	1	1
+487316	Acinetobacter soli	species	Pseudomonadati	1	1
+515350	Micromonospora endophytica	species	Bacillati	1	1
+539738	Gemellaceae	family	Bacillati	1	1
+554344	Ectopseudomonas toyotomiensis	species	Pseudomonadati	1	1
+571800	Psychrobacter sp. G	species	Pseudomonadati	1	1
+586833	Myripristis murdjan	species	Metazoa	1	1
+591932	Piliocolobus	genus	Metazoa	1	1
+591936	Piliocolobus tephrosceles	species	Metazoa	1	1
+641818	Tachysurus	genus	Metazoa	1	1
+698738	Oleispira antarctica RB-8	strain	Pseudomonadati	1	1
+710648	Acinetobacter sp. Tol 5	species	Pseudomonadati	1	1
+712362	Leptotrichia sp. oral taxon 221	species	Fusobacteriati	1	1
+742010	Carduinae	subtribe	Viridiplantae	1	1
+754502	Paraburkholderia sprentiae WSM5005	strain	Pseudomonadati	1	1
+909768	Acinetobacter calcoaceticus/baumannii complex	species group	Pseudomonadati	1	1
+929439	Leishmania mexicana MHOM/GT/2001/U1103	strain	NA	1	1
+948107	Paraburkholderia sprentiae	species	Pseudomonadati	1	1
+948950	Pilosa	order	Metazoa	1	1
+948953	Folivora	suborder	Metazoa	1	1
+991123	Spondias tuberosa	species	Viridiplantae	1	1
+993502	Bradyrhizobium daqingense	species	Pseudomonadati	1	1
+1129771	Leptotrichiaceae	family	Fusobacteriati	1	1
+1190508	Corynebacterium aquatimens	species	Bacillati	1	1
+1226752	Mycolicibacterium holsaticum DSM 44478 = JCM 12374	strain	Bacillati	1	1
+1286322	Leishmaniinae	subfamily	NA	1	1
+1301349	Bupleurum arcticum	species	Viridiplantae	1	1
+1329922	Anguioidea	infraorder	Metazoa	1	1
+1330543	Neoanguimorpha	infraorder	Metazoa	1	1
+1330545	Lelliottia	genus	Pseudomonadati	1	1
+1344094	Pseudomonas sp. HN11	species	Pseudomonadati	1	1
+1368430	Rhizobium rosettiformans	species	Pseudomonadati	1	1
+1392256	Aspergillus ochraceoroseus IBT 24754	strain	Fungi	1	1
+1407059	Pseudomonas aeruginosa PA38182	strain	Pseudomonadati	1	1
+1449976	Kutzneria albida DSM 43870	strain	Bacillati	1	1
+1477431	Streptomyces albidoflavus group	species group	Bacillati	1	1
+1478019	Cupriavidus sp. KK10	species	Pseudomonadati	1	1
+1489739	Characoidei	suborder	Metazoa	1	1
+1489876	Kurtiformes	order	Metazoa	1	2
+1489877	Apogonoidei	suborder	Metazoa	1	2
+1489883	Syngnathiaria	cohort	Metazoa	1	1
+1489884	Syngnathoidei	suborder	Metazoa	1	1
+1490028	Holocentriformes	order	Metazoa	1	1
+1496333	Anopheles maculipalpis	species	Metazoa	1	1
+1499392	Chromobacteriaceae	family	Pseudomonadati	1	1
+1500560	Tilletiopsis	genus	Fungi	1	1
+1525371	Neorhizobium	genus	Pseudomonadati	1	1
+1532884	Sapajus	genus	Metazoa	1	1
+1535304	Streptomyces sp. OUCMDZ-3434	species	Bacillati	1	1
+1537265	Halorubrum sp. SP3	species	Methanobacteriati	1	1
+1574408	Cervus canadensis	species	Metazoa	1	1
+1735270	Gigantopelta	genus	Metazoa	1	1
+1735272	Gigantopelta aegis	species	Metazoa	1	1
+1751056	Flavobacterium ammonificans	species	Pseudomonadati	1	1
+1778675	Chromobacterium rhizoryzae	species	Pseudomonadati	1	1
+1868481	Carlito	genus	Metazoa	1	1
+1868482	Carlito syrichta	species	Metazoa	1	1
+1884717	Pteronotus mesoamericanus	species	Metazoa	1	1
+1906274	Microbacterium sp. JZ31	species	Bacillati	1	1
+1963761	Dipodoidea	superfamily	Metazoa	1	1
+1985254	Xanthomonas phaseoli	species	Pseudomonadati	1	1
+2018325	Tettigoniidea	infraorder	Metazoa	1	1
+2021379	Xanthobacteraceae bacterium	species	Pseudomonadati	1	1
+2040262	Allobranchiibius	genus	Bacillati	1	1
+2056231	Pseudomonas qingdaonensis	species	Pseudomonadati	1	1
+2072420	Bradyrhizobiaceae bacterium	species	Pseudomonadati	1	1
+2219556	Neomphalina	subclass	Metazoa	1	1
+2509193	Catostomoidei	suborder	Metazoa	1	1
+2528964	Xanthobacter dioxanivorans	species	Pseudomonadati	1	1
+2559073	Cutibacterium modestum	species	Bacillati	1	1
+2589888	Mesorhizobium sp. B4-1-4	species	Pseudomonadati	1	1
+2589976	Mesorhizobium sp. B1-1-8	species	Pseudomonadati	1	1
+2611352	Discoba	domain	NA	1	1
+2633022	unclassified Leptotrichia	no rank	Fusobacteriati	1	1
+2649857	unclassified Allobranchiibius	no rank	Bacillati	1	1
+2657482	unclassified Gordonia (in: high G+C Gram-positive bacteria)	no rank	Bacillati	1	1
+2681552	Variovorax sp. RKNM96	species	Pseudomonadati	1	1
+2697023	Pseudomonas sp. AN-B15	species	Pseudomonadati	1	1
+2698673	Novosphingobium decolorationis	species	Pseudomonadati	1	1
+2704647	Metakinetoplastina	subclass	NA	1	1
+2704949	Trypanosomatida	order	NA	1	1
+2720870	Aspergillus subgen. Nidulantes	subgenus	Fungi	1	1
+2774189	Brevundimonas pondensis	species	Pseudomonadati	1	1
+2774190	Brevundimonas goettingensis	species	Pseudomonadati	1	1
+2795387	Lysobacter arenosi	species	Pseudomonadati	1	1
+2812759	Bacillus sp. PDNC022	species	Bacillati	1	1
+2815358	Leclercia pneumoniae	species	Pseudomonadati	1	1
+2815936	Pseudomonas sp. PP3	species	Pseudomonadati	1	1
+2820280	Sphingosinicellaceae	family	Pseudomonadati	1	1
+2823314	Ceratodontiformes	order	Metazoa	1	2
+2836943	unclassified Sphingosinicellaceae	no rank	Pseudomonadati	1	1
+2836944	Sphingosinicellaceae bacterium	species	Pseudomonadati	1	1
+2838335	Streptomyces aurantiacus group	species group	Bacillati	1	1
+2839983	Cupriavidus sp. EM10	species	Pseudomonadati	1	1
+2840457	Nocardioides sp. LMS-CY	species	Bacillati	1	1
+2840468	Asticcacaulis sp. AND118	species	Pseudomonadati	1	1
+2853436	Microbacterium sp. E22	species	Bacillati	1	1
+2855441	Halomonas sp. 18071143	species	Pseudomonadati	1	1
+2861285	Brevundimonas sp. PAMC22021	species	Pseudomonadati	1	1
+2866386	Pseudomonas sp. ERGC3:05	species	Pseudomonadati	1	1
+2867233	Qipengyuania aurantiaca	species	Pseudomonadati	1	1
+2867236	Qipengyuania xiapuensis	species	Pseudomonadati	1	1
+2867410	Streptomyces profundus	species	Bacillati	1	1
+2870860	Pseudomonas sp. DNDY-54	species	Pseudomonadati	1	1
+2871174	Stenotrophomonas sp. DR822	species	Pseudomonadati	1	1
+2873270	Leucobacter tenebrionis	species	Bacillati	1	1
+2878678	Gordonia sp. WA4-43	species	Bacillati	1	1
+2886361	Pseudomonas sp. HN8-3	species	Pseudomonadati	1	1
+2893885	Flavobacterium cupriresistens	species	Pseudomonadati	1	1
+2893886	Flavobacterium galactosidilyticum	species	Pseudomonadati	1	1
+2894081	Nocardioides okcheonensis	species	Bacillati	1	1
+2898483	Pseudomonas sp. 7-41	species	Pseudomonadati	1	1
+2899123	Sphingomonas cannabina	species	Pseudomonadati	1	1
+2901869	Luteimonas fraxinea	species	Pseudomonadati	1	1
+2904523	Allobranchiibius sp. GilTou73	species	Bacillati	1	1
+2939378	Oenanthe melanoleuca	species	Metazoa	1	1
+2979332	Prescottella	genus	Bacillati	1	1
+3093767	Pseudomonas hormoni	species	Pseudomonadati	1	1
+3120499	Neomphalida	order	Metazoa	1	1
+3390202	Xanthomonas translucens group	species group	Pseudomonadati	1	1
+3410122	Miroungini	tribe	Metazoa	1	1
+9265	Didelphidae	family	Metazoa	1	1
+13450	Corylus	genus	Viridiplantae	1	1
+13451	Corylus avellana	species	Viridiplantae	1	1
+24646	Lycium	genus	Viridiplantae	1	1
+28738	Cyprinodontiformes	order	Metazoa	1	1
+28771	Rivulidae	family	Metazoa	1	1
+38605	Didelphimorphia	order	Metazoa	1	1
+45443	Aplocheiloidei	suborder	Metazoa	1	1
+112863	Lycium barbarum	species	Viridiplantae	1	1
+126287	Didelphinae	subfamily	Metazoa	1	1
+126288	Gracilinanus	genus	Metazoa	1	1
+191870	Gracilinanus agilis	species	Metazoa	1	1
+424569	Lycieae	tribe	Viridiplantae	1	1
+451745	Nematolebias whitei	species	Metazoa	1	1
+942014	Nematolebias	genus	Metazoa	1	1
